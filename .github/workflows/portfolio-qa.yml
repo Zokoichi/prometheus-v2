@@ -1,0 +1,33 @@
+name: Portfolio QA
+
+on:
+  push:
+    paths:
+      - 'portfolio/**'
+      - 'scripts/portfolio-qa.ps1'
+      - 'scripts/evidence-scan.ps1'
+      - 'scripts/portfolio-generate.ps1'
+      - '.github/workflows/portfolio-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    name: Portfolio QA
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run portfolio QA
+        shell: pwsh
+        run: |
+          ./scripts/portfolio-qa.ps1
+
+      - name: Git diff check
+        shell: pwsh
+        run: |
+          git diff --check
