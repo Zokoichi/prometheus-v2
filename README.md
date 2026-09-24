@@ -238,3 +238,9 @@ Les nouveaux composants doivent idéalement être accompagnés de :
 **Statut :** actif  
 **Evidence Layer :** installée  
 **Publication :** préparée pour audit avant exposition publique
+
+## Portfolio technique
+
+Le dossier [`portfolio/presentation`](./portfolio/presentation/) présente les réalisations techniques documentées à partir d'artefacts réellement produits et vérifiés.
+
+La publication distingue explicitement structure démontrée, comportement observable, validation expérimentale et résultats externes.
