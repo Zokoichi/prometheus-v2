@@ -1,0 +1,1381 @@
+[
+    {
+        "source":  "tests/0f062-fixture.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  1016,
+        "sha256":  "966F0577E103B3B654EFB7D9A2B2C68B9D244BABD3FAC15FD3A2D8B34AB77B53",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validated"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/0f062-v4-fixture.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  1034,
+        "sha256":  "CC51FEE6908DA3C75BCF22498D35A9259C64AEC028FA75496DC4217C676D3B72",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validated"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E10-engine-readonly/01-engine-readonly.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  5149,
+        "sha256":  "28B66F757E40739E31847EEC9289228DCADD4EE81FE5F97C72B27C3D1C6E1005",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "sha256",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "sha256"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-E10-engine-readonly/01-engine-readonly.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  17930,
+        "sha256":  "5B3F2209314529922F48C6AD3F9AD65F30B441F02F9DA336F9D1A3DF9318818E",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "sha256",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validated",
+                                 "sha256"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-E11-failure-engine/01-failure-engine-archaeology.sql",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  3902,
+        "sha256":  "AF8E015045EF5320317DBACFD513E1734AE68F43FD0B8F71AD2C8F85F44FE271",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "fail",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "result"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  false,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  false,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E24-fail-stage-atomic/01-fail-stage-atomic-transaction.sql",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  11933,
+        "sha256":  "88FA1D998E841D87810D0852C120903B595F0345B7306B6E2881F24E8E6E5D5B",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "fail",
+                        "validation",
+                        "test",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "validation",
+                                 "result"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  false,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E28-fail-run-atomic/01-fail-run-atomic-transaction.sql",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  13723,
+        "sha256":  "06E4341C265349666053C54729C03B31C90959EABAE5DDC9CC36F13C7DB9A6AD",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "fail",
+                        "validation",
+                        "test",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "validation",
+                                 "result"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  false,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E28-fail-run-atomic/01-fail-run-atomic-transaction.txt",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  18980,
+        "sha256":  "27A3F8733BB51CF487FE709B46E6DE8971A671712CDB5E2E0F58F09F5A87BE6B",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "fail",
+                        "validation",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass",
+                                 "validation"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  true,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E30-persistent-run-error-integration/01-persistent-run-error-integration.sql",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  5866,
+        "sha256":  "A505D7E6C3823BBC92C3B48F7A9300702504F88356039D0F0511D89F5FCA3E1D",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "fail",
+                        "test"
+                    ],
+        "positive_markers":  [
+
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  false,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E30-persistent-run-error-integration/01-persistent-run-error-integration.txt",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  16126,
+        "sha256":  "FE2FA801892381874A6FFE1FF0417DB74E7DAE814CFD449F62614B1042C7C77E",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "fail",
+                        "validation",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass",
+                                 "validation"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  true,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E32-stage-run-concurrency/16-retest-v2-verify.txt",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  6170,
+        "sha256":  "8B97E96B201BD78C8AC4955B7732BD5C82582BECA9391C31944856DD364C7862",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "fail",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  true,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E32-stage-run-concurrency/18-stage-first-escalation.sql",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  4548,
+        "sha256":  "60C246DC419D38B1F8532C891D50730825323497F0CE96B8BE86FC6BCAC54E40",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "fail",
+                        "test"
+                    ],
+        "positive_markers":  [
+
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  false,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E32-stage-run-concurrency/18-stage-first-escalation.txt",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  9096,
+        "sha256":  "A4607DCCEC5B5B9FE621363F8ACE159752150A02E1226423F1D2EAAAB0C50405",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "fail",
+                        "test"
+                    ],
+        "positive_markers":  [
+
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  false,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E32-stage-run-concurrency/23-fix-consistency-retryable-error.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  13932,
+        "sha256":  "3D4B48501EA5C1458F46AF01259E940B09217E8395295E190D3BEF4C468ABECA",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "validated",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass",
+                                 "validated"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  true,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E32-stage-run-concurrency/23-fix-consistency-retryable-error.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  27860,
+        "sha256":  "F0F82E9AA9F23AA92E25E19C9A66237BF8BB8EB3D7E1B49B8CD85BC48D1E999E",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "validated",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass",
+                                 "validated"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  true,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E32-stage-run-concurrency/24-integrated-retry-escalation.sql",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  12157,
+        "sha256":  "4F7DFA80F7A9019D8F5DA9D35EA47179198562BA1D1F5C9C7D9840D6DC7AD0FC",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "fail",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  true,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E32-stage-run-concurrency/24-integrated-retry-escalation.txt",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  24302,
+        "sha256":  "416C2FD4645FBBCBA601F7445385CABC3346FB19028711068D81C1841C66A814",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "fail",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  true,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E32-stage-run-concurrency/25-concurrent-post-fix.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  9944,
+        "sha256":  "A61716403890B6A4918906871EE164725671A6044A2C71B182730E787E696BAF",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "validation",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass",
+                                 "validation"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  true,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E32-stage-run-concurrency/FREEZE-11-E.32.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  3152,
+        "sha256":  "3FD35A160F4BBC3653590FE066E3390250FF715CB6E26B69E07E817A2FCAAED2",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  true,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E5-evidence/06-targeted-engine-analysis.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  112090,
+        "sha256":  "A995974871866724CE398F15663D7B00C355CE87D626022ED1A863F587F75A7A",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validation",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validation"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-E9-artifact-engine/02-artifact-engine-corrected.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  2805,
+        "sha256":  "89584D1B68D3D3424D573CAC844CE00561C578C2B96E45DB72ABAFA886A3F3B5",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validation",
+                        "sha256",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "validation",
+                                 "sha256",
+                                 "result"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  false,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-E9-artifact-engine/02-artifact-engine-corrected.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  89720,
+        "sha256":  "954C7861C825B05F1E4A6A91CF9AFA75136036F0D13B9A910B7F42795BFADBB7",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "validation",
+                        "sha256",
+                        "test",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "validated",
+                                 "validation",
+                                 "sha256",
+                                 "result"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-E9-artifact-engine/03-artifact-creation-forensics.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  3514,
+        "sha256":  "D1E4A087857AE13D144DE9C508E9B005B8B0ADFD3F78C31FD53DFC9472C9880D",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "sha256",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "sha256",
+                                 "result"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  false,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-E9-artifact-engine/05-storage-adapter.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  10842,
+        "sha256":  "016F66CD8D365777B6F5728110481C05C019547F726FB0E424F3842D5CE83F66",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "sha256",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "sha256"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-E9-artifact-engine/06-artifact-engine-name-inventory.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  1770,
+        "sha256":  "1DF81BB8259589FEAFFBC4316F424FC6AF21A7F05D2D30FB943EB9E959D5807C",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "sha256",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "sha256",
+                                 "result"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  false,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-E9-artifact-engine/06-artifact-engine-name-inventory.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  11342,
+        "sha256":  "8707F2A603DE11651A2E89B33D3E2B4EC9B5135CE3E9BA56C3986AA7A4C49EED",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "sha256",
+                        "test",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "validated",
+                                 "sha256",
+                                 "result"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-E9-artifact-engine/08-storage-operation-inventory.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  5314,
+        "sha256":  "BBC4D8AA235462DBC322D202E6CA8F22B071499DCBA28813E22613C26044ACC5",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "sha256",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "sha256"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-F-orchestration/01-orchestration-forensics.txt",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  795280,
+        "sha256":  "F12EC80C25B54052D86995DE6E9FD254F69537B6C7DED81BFE545CC07B34AB3A",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "fail",
+                        "validated",
+                        "validation",
+                        "sha256",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass",
+                                 "validated",
+                                 "validation",
+                                 "sha256"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  true,
+        "has_fail":  true,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-F-orchestration/02-orchestrator-contract-test.sql",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  11700,
+        "sha256":  "A1B19BDDE0D20FE45076CBD2A84E439B02FB020750FA40D49A98D498D123D039",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "fail",
+                        "validated",
+                        "validation",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass",
+                                 "validated",
+                                 "validation"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  true,
+        "has_fail":  true,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-F-orchestration/02-orchestrator-contract-test.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  5187,
+        "sha256":  "52F4A6971E0764FA78CE404AC612F70259F7D0DA4484421BAAD7BD08A402F441",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "validation",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass",
+                                 "validation"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  true,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-F-orchestration/11-F.3-B/01-concurrency-matrix.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  2605,
+        "sha256":  "4BB2FE6D906DD9F902273B3C228EE61130F6D577DD0373BC174947FA613A38EB",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  true,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-F-orchestration/11-F.3-B/01-concurrency-matrix.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  1337,
+        "sha256":  "E21B3D22424E4C1A43FA1C927D83AE956AECB2418145ACF101A49139442A2B7B",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  true,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-F-orchestration/11-F.3-B/04-setup-real-matrix-v2.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  5795,
+        "sha256":  "C15C10AFBE8BCC7A1EB0DC7B9E1BB6ABAB6CF27D85674076772325008200FEEC",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "sha256",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validated",
+                                 "sha256"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-F-orchestration/11-F.3-B/04-setup-real-matrix-v2.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  1358,
+        "sha256":  "8314D61FAC9F77447824D4208DF058B63FB84AC456FE1F8B35667334142CB800",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validated"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-F-orchestration/11-F.3-B/07-setup-C.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  847,
+        "sha256":  "7FF4099696F568906FF3A410E2800E7D51B73F24D711C21EC1B97D73C7B07EF1",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "sha256",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validated",
+                                 "sha256"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-F-orchestration/11-F.3-B/10-setup-D.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  847,
+        "sha256":  "E185F8643789DD4D653BD6DF089C64601F8FAF9EAFC7A496FD0B097AE38E6D3E",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "sha256",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validated",
+                                 "sha256"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-F-orchestration/11-F.3-B/13-setup-E.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  847,
+        "sha256":  "35B2AD1C9050C110E636D39F96B9DDA4C9A36FF6DD057919AAC3306AD5D71C84",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "sha256",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validated",
+                                 "sha256"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-F-orchestration/11-F.3-B/17-D-deadlock-forensics.txt",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "text",
+        "size_bytes":  102026,
+        "sha256":  "956EBF7EC6B339081F86BA1B080BEA0C0C71898A426FC46ED40435D0AF41FC3F",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "validated",
+                                 "result"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  false,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/11-F-orchestration/11-F.3-B/25-targeted-D-setup.sql",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  1263,
+        "sha256":  "B7969E2827DCACEA68ACE43E54CF12A7192CA71540DCF221172BA27D30DDB45E",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "sha256",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validated",
+                                 "sha256"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/11-F-orchestration/11-F.3-B/29-verify-complete-lock-order-semantic.sql",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "sql",
+        "size_bytes":  4797,
+        "sha256":  "3C87844B23299623C7CD27DFE0D00E7127A62892B881E1BE63DC30C190A30408",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "fail",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "pass",
+                                 "result"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  true,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  false,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/media-production/media-production-contract-integration.ps1",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "powershell",
+        "size_bytes":  1793,
+        "sha256":  "E9DAF94C0C9BA3821AF2A948BF7515CAAE5E6792665693A941B656A2858CD20F",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "validation",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass",
+                                 "validation"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  true,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/p2.2/kokoro-openapi.json",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "json",
+        "size_bytes":  15141,
+        "sha256":  "73E9291698FF4693D7C8D4BB161BC378415EBD508F351EECD0BACEE11DF25799",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validation",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validation"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/p2.2/scene-plan-quality-validator.ps1",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "powershell",
+        "size_bytes":  6898,
+        "sha256":  "852E894444225A42A8D479D699656E838737ECD3CE30996C0A62822BD4C962B0",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "fail",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  true,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/p2.2-kokoro-openapi.json",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "json",
+        "size_bytes":  15146,
+        "sha256":  "829008F53F4CEBAAF07111012EAD54B70E25612473880537230CA12F41B8353E",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validation",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "validation"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/phase-0e-6-3-orphan-recovery.ps1",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "powershell",
+        "size_bytes":  21760,
+        "sha256":  "244CE47BC001F1A3EA406C58D8DFA250404C1175FF79761D3EBDEA96E449F663",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "validation",
+                        "sha256",
+                        "test",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "validated",
+                                 "validation",
+                                 "sha256",
+                                 "result"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/phase-0e-6-4-stale-stage-recovery.ps1",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "powershell",
+        "size_bytes":  15897,
+        "sha256":  "832B304256F3EDDF0E376CA298867789680AF13CD917F398E7D5C195F5D47D93",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "validated",
+                        "validation",
+                        "test",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "validated",
+                                 "validation",
+                                 "result"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  false,
+        "has_fail":  false,
+        "has_validated":  true,
+        "has_test":  true,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    },
+    {
+        "source":  "tests/storage-adapter/storage-adapter-integration.ps1",
+        "qualification":  "EVIDENCE_CANDIDATE",
+        "category":  "test",
+        "format":  "powershell",
+        "size_bytes":  2283,
+        "sha256":  "96DE0A7404EAFB12CDEC38F944AF90E0D9295DE46B6EF03F1EA59AFD02D7F9E5",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "sha256",
+                        "test",
+                        "result"
+                    ],
+        "positive_markers":  [
+                                 "pass",
+                                 "sha256",
+                                 "result"
+                             ],
+        "negative_markers":  [
+
+                             ],
+        "has_pass":  true,
+        "has_fail":  false,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  true,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  true
+    },
+    {
+        "source":  "tests/test-09-encoding/TEST-09-20260921-120710-report.json",
+        "qualification":  "NEGATIVE_OR_MIXED",
+        "category":  "test",
+        "format":  "json",
+        "size_bytes":  21453,
+        "sha256":  "1BD09D854B47015C56C13823A48CAC982BD3A4C240E2848536F687F534677C8A",
+        "evidence_status":  "observed",
+        "markers":  [
+                        "pass",
+                        "fail",
+                        "test"
+                    ],
+        "positive_markers":  [
+                                 "pass"
+                             ],
+        "negative_markers":  [
+                                 "fail"
+                             ],
+        "has_pass":  true,
+        "has_fail":  true,
+        "has_validated":  false,
+        "has_test":  true,
+        "has_result":  false,
+        "has_proof":  false,
+        "has_reproducible":  false,
+        "has_sha256":  false
+    }
+]

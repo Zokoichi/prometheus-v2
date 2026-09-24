@@ -1,0 +1,601 @@
+﻿{
+    "schema_version":  "1.0",
+    "project":  "prometheus-v2",
+    "generated_at":  "2026-09-24T18:43:54.7923668Z",
+    "rule":  "Candidate only. Manual validation required before portfolio claims.",
+    "candidate_count":  74,
+    "candidates":  [
+                       {
+                           "source":  "tests/0f062-fixture.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "validated,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/0f062-v4-fixture.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "validated,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E10-engine-readonly/01-engine-readonly.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "sha256,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E10-engine-readonly/01-engine-readonly.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "validated,sha256,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-E11-failure-engine/01-failure-engine-archaeology.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "FAIL,result",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E13-error-policy-data/01-error-policy-data.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,validation",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E16-error-retry-source/01-critical-routines.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "validated,validation",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E22-final-failure-contract/01-final-failure-contract.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "validated,validation",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E24-fail-stage-atomic/01-fail-stage-atomic-transaction.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "FAIL,validation,test,result",
+                           "marker_count":  4
+                       },
+                       {
+                           "source":  "tests/11-E24-fail-stage-atomic/01-fail-stage-atomic-transaction.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "test,result",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E24-fail-stage-atomic/02-install-fail-stage-atomically.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E25-failure-retry-integration/01-failure-retry-integration.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "FAIL,validation",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E26-run-error-escalation/02-run-error-escalation-forensics-corrected.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E26-run-error-escalation/02-run-error-escalation-forensics-corrected.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,validated",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E27-run-failure-contract/01-run-failure-contract-preflight.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E27-run-failure-contract/01-run-failure-contract-preflight.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,validated",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E28-fail-run-atomic/01-fail-run-atomic-transaction.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "FAIL,validation,test,result",
+                           "marker_count":  4
+                       },
+                       {
+                           "source":  "tests/11-E28-fail-run-atomic/01-fail-run-atomic-transaction.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,validation,test",
+                           "marker_count":  4
+                       },
+                       {
+                           "source":  "tests/11-E29-fail-run-install/01-install-fail-run-atomically.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E29-fail-run-install/02-post-install-verify.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,sha256",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-E29-fail-run-install/02-post-install-verify.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,sha256",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E30-persistent-run-error-integration/01-persistent-run-error-integration.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "FAIL,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E30-persistent-run-error-integration/01-persistent-run-error-integration.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,validation,test",
+                           "marker_count":  4
+                       },
+                       {
+                           "source":  "tests/11-E31-fail-run-concurrency/03-verify.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/04-verify.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/07-lock-order-forensics.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,validated,validation",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/08-fix-lock-order.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/08-fix-lock-order.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/09-fix-source-verification.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/16-retest-v2-verify.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/16-retest-v2-verify.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/18-stage-first-escalation.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "FAIL,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/18-stage-first-escalation.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "FAIL,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/23-fix-consistency-retryable-error.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,validated,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/23-fix-consistency-retryable-error.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,validated,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/24-integrated-retry-escalation.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/24-integrated-retry-escalation.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/25-concurrent-post-fix.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,validation,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-E32-stage-run-concurrency/FREEZE-11-E.32.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E5-evidence/02-engine-functions.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "validated,validation",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E5-evidence/06-targeted-engine-analysis.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "validation,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E7-engine-primitives/01-primitives.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "validated,validation",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E8-engine-primitives/01-targeted-primitives.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "validated,validation",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E9-artifact-engine/02-artifact-engine-corrected.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "validation,sha256,result",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-E9-artifact-engine/02-artifact-engine-corrected.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "validated,validation,sha256,test,result",
+                           "marker_count":  5
+                       },
+                       {
+                           "source":  "tests/11-E9-artifact-engine/03-artifact-creation-forensics.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "sha256,result",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E9-artifact-engine/05-storage-adapter.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "sha256,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E9-artifact-engine/06-artifact-engine-name-inventory.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "sha256,result",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-E9-artifact-engine/06-artifact-engine-name-inventory.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "validated,sha256,test,result",
+                           "marker_count":  4
+                       },
+                       {
+                           "source":  "tests/11-E9-artifact-engine/08-storage-operation-inventory.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "sha256,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/01-orchestration-forensics.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,validated,validation,sha256,test",
+                           "marker_count":  6
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/02-orchestrator-contract-test.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,validated,validation,test",
+                           "marker_count":  5
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/02-orchestrator-contract-test.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,validation,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/03-lock-concurrency-forensics.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/03-lock-concurrency-forensics.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,validated,validation",
+                           "marker_count":  4
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/11-F.3-B/01-concurrency-matrix.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/11-F.3-B/01-concurrency-matrix.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "PASS,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/11-F.3-B/04-setup-real-matrix-v2.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "validated,sha256,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/11-F.3-B/04-setup-real-matrix-v2.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "validated,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/11-F.3-B/07-setup-C.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "validated,sha256,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/11-F.3-B/10-setup-D.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "validated,sha256,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/11-F.3-B/13-setup-E.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "validated,sha256,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/11-F.3-B/15-final-observation.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "test,result",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/11-F.3-B/17-D-deadlock-forensics.txt",
+                           "category":  "test",
+                           "format":  "text",
+                           "status":  "observed",
+                           "markers":  "validated,result",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/11-F.3-B/25-targeted-D-setup.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "validated,sha256,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/11-F-orchestration/11-F.3-B/29-verify-complete-lock-order-semantic.sql",
+                           "category":  "test",
+                           "format":  "sql",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,result",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/media-production/media-production-contract-integration.ps1",
+                           "category":  "test",
+                           "format":  "powershell",
+                           "status":  "observed",
+                           "markers":  "PASS,validation,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/p2.2/kokoro-openapi.json",
+                           "category":  "test",
+                           "format":  "json",
+                           "status":  "observed",
+                           "markers":  "validation,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/p2.2/scene-plan-quality-validator.ps1",
+                           "category":  "test",
+                           "format":  "powershell",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,test",
+                           "marker_count":  3
+                       },
+                       {
+                           "source":  "tests/p2.2-kokoro-openapi.json",
+                           "category":  "test",
+                           "format":  "json",
+                           "status":  "observed",
+                           "markers":  "validation,test",
+                           "marker_count":  2
+                       },
+                       {
+                           "source":  "tests/phase-0e-6-3-orphan-recovery.ps1",
+                           "category":  "test",
+                           "format":  "powershell",
+                           "status":  "observed",
+                           "markers":  "validated,validation,sha256,test,result",
+                           "marker_count":  5
+                       },
+                       {
+                           "source":  "tests/phase-0e-6-4-stale-stage-recovery.ps1",
+                           "category":  "test",
+                           "format":  "powershell",
+                           "status":  "observed",
+                           "markers":  "validated,validation,test,result",
+                           "marker_count":  4
+                       },
+                       {
+                           "source":  "tests/storage-adapter/storage-adapter-integration.ps1",
+                           "category":  "test",
+                           "format":  "powershell",
+                           "status":  "observed",
+                           "markers":  "PASS,sha256,test,result",
+                           "marker_count":  4
+                       },
+                       {
+                           "source":  "tests/test-09-encoding/TEST-09-20260921-120710-report.json",
+                           "category":  "test",
+                           "format":  "json",
+                           "status":  "observed",
+                           "markers":  "PASS,FAIL,test",
+                           "marker_count":  3
+                       }
+                   ]
+}

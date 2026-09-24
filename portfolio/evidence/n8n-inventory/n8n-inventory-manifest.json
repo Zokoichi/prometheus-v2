@@ -1,0 +1,329 @@
+﻿{
+    "schema_version":  "1.0",
+    "generated_at_utc":  "2026-09-24T20:42:42.4834995Z",
+    "purpose":  "Inventaire read-only des instances n8n et des exports locaux",
+    "containers":  [
+                       {
+                           "container":  "automation-policy-auditor-v1-n8n",
+                           "image":  "n8nio/n8n:2.37.11",
+                           "status":  "Up 2 hours",
+                           "mounts":  [
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "automation-policy-auditor-v1-data",
+                                              "Source":  "/var/lib/docker/volumes/automation-policy-auditor-v1-data/_data",
+                                              "Destination":  "/home/node/.n8n",
+                                              "Driver":  "local",
+                                              "Mode":  "z",
+                                              "RW":  true,
+                                              "Propagation":  ""
+                                          }
+                                      ]
+                       },
+                       {
+                           "container":  "prometheus-v2-n8n",
+                           "image":  "n8nio/n8n:2.37.11",
+                           "status":  "Up 8 days (healthy)",
+                           "mounts":  [
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "prometheus-v2-n8n-data",
+                                              "Source":  "/var/lib/docker/volumes/prometheus-v2-n8n-data/_data",
+                                              "Destination":  "/home/node/.n8n",
+                                              "Driver":  "local",
+                                              "Mode":  "rw",
+                                              "RW":  true,
+                                              "Propagation":  ""
+                                          }
+                                      ]
+                       },
+                       {
+                           "container":  "genesis-stack-n8n",
+                           "image":  "n8nio/n8n:1.116.2",
+                           "status":  "Up 8 days",
+                           "mounts":  [
+                                          {
+                                              "Type":  "volume",
+                                              "Name":  "genesis-stack_n8n_data",
+                                              "Source":  "/var/lib/docker/volumes/genesis-stack_n8n_data/_data",
+                                              "Destination":  "/home/node/.n8n",
+                                              "Driver":  "local",
+                                              "Mode":  "rw",
+                                              "RW":  true,
+                                              "Propagation":  ""
+                                          }
+                                      ]
+                       }
+                   ],
+    "cli":  [
+                {
+                    "container":  "automation-policy-auditor-v1-n8n",
+                    "cli":  true,
+                    "version":  "2.37.11"
+                },
+                {
+                    "container":  "prometheus-v2-n8n",
+                    "cli":  true,
+                    "version":  "2.37.11"
+                },
+                {
+                    "container":  "genesis-stack-n8n",
+                    "cli":  true,
+                    "version":  "1.116.2"
+                }
+            ],
+    "local_files":  [
+                        {
+                            "path":  "C:\\AI-Lab\\product-radar-v1\\09_evidence\\WAVE_04B_BUYER_JTBD_ZERO_PROSPECTING.md",
+                            "size_bytes":  4380,
+                            "sha256":  "0C24B002C5437822B5F68C955EC52AC37E6E8C8311739996DF1456DF6DA4B32D"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\01_workflows\\APA-V1-Policy-Auditor.json",
+                            "size_bytes":  9145,
+                            "sha256":  "AF133D15B041F5FA00116043C0DB36337278A18C3ADE1125DF08F40388702AFC"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\01_workflows\\APA-V1-Real-Target-Workflow.json",
+                            "size_bytes":  1920,
+                            "sha256":  "6563BC268A1679D5D91D2025235533AE11EA7C2090D9EA43C0A1C771078A3C26"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\02_policies\\P7.1\\n8n-adapter-contract-v0.1.json",
+                            "size_bytes":  717,
+                            "sha256":  "DF5BC8EB46A5413921267C69E07898073DA93C9A2D028E8DDD0B7D160E7F75B0"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\03_evidence\\APA-V1-Policy-Auditor-n8n-export.json",
+                            "size_bytes":  7137,
+                            "sha256":  "25B3359FB25DDE1BE4D2C4429F422C7AD05CF7C3CC6B91038096C954A3174725"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P5.2\\R3\\clean-install\\.apa\\audit\\audit-result.json",
+                            "size_bytes":  1992,
+                            "sha256":  "97743D6DAB4BEC4784EF9E824321C43F0E96C450864EF77B2759CC3C1A2A1F46"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P5.2\\R3\\e2e-output\\audit-output.txt",
+                            "size_bytes":  2892,
+                            "sha256":  "C8F6602327ED1D3E017F9FFE7F5594AB7B36488E2810A1AC45B583F5B9AAD9B4"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P5.2\\R5\\clean-install\\.apa\\audit\\audit-result.json",
+                            "size_bytes":  1992,
+                            "sha256":  "796F6BB4D6C7EC7EC4A1AA369E53599778C6AE6E174B82DE13BEBA283240B638"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P5.2\\R5\\e2e-output\\audit.txt",
+                            "size_bytes":  2892,
+                            "sha256":  "D847AD57A736E135A011A3033C1C1568874264B0C53C20CBC54524940A244122"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P5.2\\R6\\install-A\\.apa\\audit\\audit-result.json",
+                            "size_bytes":  1984,
+                            "sha256":  "715FB5A74591B2AACFDFF291699DBA1841F609C4E646444AF96AAEA684291FF9"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P5.2\\R6\\install-B\\.apa\\audit\\audit-result.json",
+                            "size_bytes":  1984,
+                            "sha256":  "A2894A466B3F81769A0FE6573B7B09D85374B05548092EF915DB6DEE6D1F6DBC"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P5.2\\R6\\output-A\\audit.json",
+                            "size_bytes":  2868,
+                            "sha256":  "38FE2257329F7A5DCB5033545AB12AC27EACCB3ABA44C62E3468F4BAF92C6D93"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P5.2\\R6\\output-B\\audit.json",
+                            "size_bytes":  2868,
+                            "sha256":  "67191BEAE47DC71C350ECCB3BA364DA3211E8A16DE086AF3221491EBC68BBCAD"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P5.2\\real-test\\.apa\\audit\\audit-result.json",
+                            "size_bytes":  1989,
+                            "sha256":  "A42537A9A7F605BB6F89022E531B5F9CB359B1C653FA90C7F07BBD903013966F"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\APA-V1-n8n-HTTP-Adapter-Workflow.json",
+                            "size_bytes":  1839,
+                            "sha256":  "046DC94994F28A15ED69E6E0E212633C8DA1485D063B2FA0BE4065A311754EE5"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\direct-audit-response.json",
+                            "size_bytes":  1727,
+                            "sha256":  "C5F38408BCBBAC613F1B63368C0F9833DC471FC0D860DD467A00224D65FE8EF2"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\P7.2-R3-n8n-e2e-response.json",
+                            "size_bytes":  1503,
+                            "sha256":  "7FB9FCAC15F88FE0903BA89B4221230E253929BCAF7D25F8F504582A328D08D8"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-022A412FC80D5F7C-audit.json",
+                            "size_bytes":  1877,
+                            "sha256":  "7BC92F56901B1FFA7A13E72CC33E094AC1107F3E25618CBF8147BEAE79C60851"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-022A412FC80D5F7C-workflow.json",
+                            "size_bytes":  1891,
+                            "sha256":  "ED5D9DBFF566AB9E2A6BB4D48F50CFB40C6B31E7C56109619A8C35C0C6207402"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-02CD834428F20756-audit.json",
+                            "size_bytes":  1877,
+                            "sha256":  "F1A6CD31CC0A88519019550A329AFA08EA89ADD30B9F49DF7D80B9CB69A86C30"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-02CD834428F20756-workflow.json",
+                            "size_bytes":  1891,
+                            "sha256":  "ED5D9DBFF566AB9E2A6BB4D48F50CFB40C6B31E7C56109619A8C35C0C6207402"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-16EDB555674315A4-audit.json",
+                            "size_bytes":  1929,
+                            "sha256":  "6EB8BD30AA5F042F0FB9F6627CF40947173BA24773F128C89CB92E5E30C5ADED"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-16EDB555674315A4-workflow.json",
+                            "size_bytes":  626,
+                            "sha256":  "710035BCB0965CB794E430E61D92486307C0DA0B375192522BD9D8CA8D61811D"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-5CCC661D2C85F85D-audit.json",
+                            "size_bytes":  1885,
+                            "sha256":  "0639290CD160C144537D18032719F8F9CA266297D82EE1BB5EB7D5A5F9D13F99"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-5CCC661D2C85F85D-workflow.json",
+                            "size_bytes":  715,
+                            "sha256":  "F56456AE7267F41D5CBF99A5743E660400615AD09CB30F30A2467D3BBDE1F8C3"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-764C2745497EB421-audit.json",
+                            "size_bytes":  1894,
+                            "sha256":  "B98F05D9E218F554799DA35B5347A0F300BBD8E1BBAC995CFDE0EFEF23B1FC8C"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-764C2745497EB421-workflow.json",
+                            "size_bytes":  306,
+                            "sha256":  "2B4152CB80D194D9DBE369A211F807671570C71097A757606730492744B530FD"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-77DF5C7D34C8DF17-audit.json",
+                            "size_bytes":  1862,
+                            "sha256":  "98982C0513F7371889CAFBE355D749E707D38337F0F76594F3F25DA0FB5A3E20"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-77DF5C7D34C8DF17-workflow.json",
+                            "size_bytes":  159,
+                            "sha256":  "CDE4F62F6F24E5066233703C0192C25CBDB7867D10B1BF0715C4FAB8CB63DF14"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-9DAE401A1680D550-audit.json",
+                            "size_bytes":  1926,
+                            "sha256":  "5805F51B0ACAFDD9335E7AD88597D463EC762D3D9D7A03434B8EBC9D5DC48358"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-9DAE401A1680D550-workflow.json",
+                            "size_bytes":  1920,
+                            "sha256":  "6563BC268A1679D5D91D2025235533AE11EA7C2090D9EA43C0A1C771078A3C26"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-A1A79BD83C25CF45-audit.json",
+                            "size_bytes":  1926,
+                            "sha256":  "28D437A4E9393FEDC6DE417E08782F3FA85AB445B5467CE05DC64FA5DB7F67BF"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-A1A79BD83C25CF45-workflow.json",
+                            "size_bytes":  1920,
+                            "sha256":  "6563BC268A1679D5D91D2025235533AE11EA7C2090D9EA43C0A1C771078A3C26"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-B6442214A9F47BA1-audit.json",
+                            "size_bytes":  1883,
+                            "sha256":  "F177AF323D4C2B61885B8ACF599C37C7A78F4AB42286E1A7107AD2E0DC7E81EC"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-B6442214A9F47BA1-workflow.json",
+                            "size_bytes":  1894,
+                            "sha256":  "4A3A76A7486AE70A8C7F71CADC0A82BA29DCBC196E024344D471F370524E472F"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-BDB6681F9EEDD151-audit.json",
+                            "size_bytes":  1926,
+                            "sha256":  "E5F03FCD6E361C3720730ED001C5658BC8F867206397C2790A7A4BFA7A0A46CE"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-BDB6681F9EEDD151-workflow.json",
+                            "size_bytes":  1920,
+                            "sha256":  "6563BC268A1679D5D91D2025235533AE11EA7C2090D9EA43C0A1C771078A3C26"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-BEAB661915BE756B-audit.json",
+                            "size_bytes":  1877,
+                            "sha256":  "6BCE9A48A91C75E7A1E99A99CDBBB385E6AF27545DBB55B7B2CC4CF06B52E782"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-BEAB661915BE756B-workflow.json",
+                            "size_bytes":  1891,
+                            "sha256":  "ED5D9DBFF566AB9E2A6BB4D48F50CFB40C6B31E7C56109619A8C35C0C6207402"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-EC3C9073DD1FF853-audit.json",
+                            "size_bytes":  1931,
+                            "sha256":  "6B71B2DC0EAADE97CD66B24884124D6FB884B440BE046AF520EE0587B2477756"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-EC3C9073DD1FF853-workflow.json",
+                            "size_bytes":  2038,
+                            "sha256":  "D03AAB99B045187CE2B24D313CED3F08AF1595C3340FAA3DAC30A64522EA673D"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-FE5283A45D8026F9-audit.json",
+                            "size_bytes":  1926,
+                            "sha256":  "D8E98B099FD8D6E879085DC7D0244E368D483D680D8273F8E7D3857B75D52455"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\04_tests\\P7.2\\runtime\\APA-HTTP-FE5283A45D8026F9-workflow.json",
+                            "size_bytes":  1920,
+                            "sha256":  "6563BC268A1679D5D91D2025235533AE11EA7C2090D9EA43C0A1C771078A3C26"
+                        },
+                        {
+                            "path":  "C:\\AI-Lab\\projects\\automation-policy-auditor-v1\\05_reports\\P7.2\\P7.2-R3-n8n-e2e-report.json",
+                            "size_bytes":  2523,
+                            "sha256":  "083E8DECFB41A3C02B8E9CA8DCB6EC094798FBA794D70BBB70F6F6F42898EA1A"
+                        },
+                        {
+                            "path":  "C:\\Projects\\audit-v1\\workflows_export.json",
+                            "size_bytes":  649696,
+                            "sha256":  "0D5282E9485E5030201D16C4AC2C89A1CC9D60FC7C7D63D8127B075AB72254AC"
+                        },
+                        {
+                            "path":  "C:\\Projects\\genesis-stack\\n8n_data\\workflow.json",
+                            "size_bytes":  28257,
+                            "sha256":  "73055F3FF2002790F85B26206ED636F302D09B3E32D2BD7A8BBED904AD737B45"
+                        },
+                        {
+                            "path":  "C:\\Projects\\genesis-stack\\n8n_data\\workflow_backup.json",
+                            "size_bytes":  28257,
+                            "sha256":  "73055F3FF2002790F85B26206ED636F302D09B3E32D2BD7A8BBED904AD737B45"
+                        },
+                        {
+                            "path":  "C:\\Projects\\genesis-stack\\n8n_workflow.json",
+                            "size_bytes":  28257,
+                            "sha256":  "73055F3FF2002790F85B26206ED636F302D09B3E32D2BD7A8BBED904AD737B45"
+                        },
+                        {
+                            "path":  "C:\\Projects\\genesis-stack\\recherche par apollo pour audit securité.txt",
+                            "size_bytes":  1610,
+                            "sha256":  "588EC5942E5FFD3DB53BB0589A0B4EA85D404B0B099AB06995F7A16BF6F94B61"
+                        },
+                        {
+                            "path":  "C:\\Projects\\prometheus-v2\\portfolio\\evidence\\n8n-inventory\\n8n-inventory-manifest.json",
+                            "size_bytes":  21458,
+                            "sha256":  "70C90E1131FEBD3B6CC17C7D8CC2EDF7E104E2B41CDF38DF806ECEC447D61855"
+                        }
+                    ],
+    "credentials_exported":  false,
+    "workflows_modified":  false
+}

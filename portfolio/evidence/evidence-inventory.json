@@ -1,0 +1,2759 @@
+﻿{
+    "schema_version":  "1.0",
+    "project":  "prometheus-v2",
+    "generated_at":  "2026-09-24T18:43:54.7741411Z",
+    "total_records":  275,
+    "rule":  "Structural classification and objective markers only. No automatic skill or achievement inference.",
+    "records":  [
+                    {
+                        "evidence_id":  "sha256:fc2423b3d258a2167032a72980367c2052ae58a9492cd4cea957a33ff60ec793",
+                        "source":  "config/media-production.json",
+                        "category":  "configuration",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1464,
+                        "sha256":  "fc2423b3d258a2167032a72980367c2052ae58a9492cd4cea957a33ff60ec793"
+                    },
+                    {
+                        "evidence_id":  "sha256:fc65f9b14fc0e30178dfbc1dab6e9b29a2e5d3486af8a7fe144d9c7cd4353500",
+                        "source":  "config/seaweedfs-s3.json",
+                        "category":  "configuration",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  911,
+                        "sha256":  "fc65f9b14fc0e30178dfbc1dab6e9b29a2e5d3486af8a7fe144d9c7cd4353500"
+                    },
+                    {
+                        "evidence_id":  "sha256:e7f10ff1af3ee20288d48e3e419a2c2c9e3124e1df3f61a30d9ae81dd46bfd2c",
+                        "source":  "config/storage.json",
+                        "category":  "configuration",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  873,
+                        "sha256":  "e7f10ff1af3ee20288d48e3e419a2c2c9e3124e1df3f61a30d9ae81dd46bfd2c"
+                    },
+                    {
+                        "evidence_id":  "sha256:587b8e86d1a772bfd71bcd9952716805b1190b02c6d2b017f20103c30f4f69a7",
+                        "source":  "contracts/media/caption-plan-v1.json",
+                        "category":  "contract",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1889,
+                        "sha256":  "587b8e86d1a772bfd71bcd9952716805b1190b02c6d2b017f20103c30f4f69a7"
+                    },
+                    {
+                        "evidence_id":  "sha256:f9d4d7c36104dfd42a6fe936e002ee02c63cb305cddaa6e5d3e9e910e3676c2b",
+                        "source":  "contracts/media/editing-blueprint-v1.json",
+                        "category":  "contract",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4391,
+                        "sha256":  "f9d4d7c36104dfd42a6fe936e002ee02c63cb305cddaa6e5d3e9e910e3676c2b"
+                    },
+                    {
+                        "evidence_id":  "sha256:7840a479d405e5a18c0eda29227b822e41a43f7a0a3d7951aaae04ffe6c4ce14",
+                        "source":  "contracts/media/music-asset-v1.json",
+                        "category":  "contract",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1367,
+                        "sha256":  "7840a479d405e5a18c0eda29227b822e41a43f7a0a3d7951aaae04ffe6c4ce14"
+                    },
+                    {
+                        "evidence_id":  "sha256:7ffce5a35d9d2a1aba77280624d7fcdbc96a7a6a3d55751865abb12806ab823a",
+                        "source":  "contracts/media/sfx-asset-v1.json",
+                        "category":  "contract",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1075,
+                        "sha256":  "7ffce5a35d9d2a1aba77280624d7fcdbc96a7a6a3d55751865abb12806ab823a"
+                    },
+                    {
+                        "evidence_id":  "sha256:262f3e00b70d71feb7daf65f06fd3f619297b4cad0d8b591266800ee77017fb4",
+                        "source":  "contracts/media/tts-audio-wav-v1.json",
+                        "category":  "contract",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1914,
+                        "sha256":  "262f3e00b70d71feb7daf65f06fd3f619297b4cad0d8b591266800ee77017fb4"
+                    },
+                    {
+                        "evidence_id":  "sha256:ce401e38a0ab19785bb7e8455b91fb4e594b72dcd81f3ed04ccea627a07d5f66",
+                        "source":  "contracts/media/tts-kokoro-raw-v1.json",
+                        "category":  "contract",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1482,
+                        "sha256":  "ce401e38a0ab19785bb7e8455b91fb4e594b72dcd81f3ed04ccea627a07d5f66"
+                    },
+                    {
+                        "evidence_id":  "sha256:b0db97ff5bd5dc112f89831cde89344adc754dcfae8ee3103143575cc57a2573",
+                        "source":  "contracts/media/video-master-v1.json",
+                        "category":  "contract",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2226,
+                        "sha256":  "b0db97ff5bd5dc112f89831cde89344adc754dcfae8ee3103143575cc57a2573"
+                    },
+                    {
+                        "evidence_id":  "sha256:ab841b0e8c8629dc7caad9011995b945021ee9dc0cd1548ea36476369007932d",
+                        "source":  "contracts/media/visual-asset-v1.json",
+                        "category":  "contract",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1228,
+                        "sha256":  "ab841b0e8c8629dc7caad9011995b945021ee9dc0cd1548ea36476369007932d"
+                    },
+                    {
+                        "evidence_id":  "sha256:e07837f4f8de88934473bff164b91b1af484b49d058246845a0e14013bceaeb8",
+                        "source":  "contracts/media/voice-output-v1.json",
+                        "category":  "contract",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1302,
+                        "sha256":  "e07837f4f8de88934473bff164b91b1af484b49d058246845a0e14013bceaeb8"
+                    },
+                    {
+                        "evidence_id":  "sha256:cbcbb60a574c4e696de04d5af0b11d3915b30ee296bb322f90958ace0bb062fb",
+                        "source":  "docs/media-production-contract-v1.md",
+                        "category":  "documentation",
+                        "format":  "markdown",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2834,
+                        "sha256":  "cbcbb60a574c4e696de04d5af0b11d3915b30ee296bb322f90958ace0bb062fb"
+                    },
+                    {
+                        "evidence_id":  "sha256:5be42bd179a176d66a0c60adc4a4d11a7ee9aa10cb74dca49789e385f402a88e",
+                        "source":  "docs/storage-adapter-contract-v1.md",
+                        "category":  "documentation",
+                        "format":  "markdown",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1224,
+                        "sha256":  "5be42bd179a176d66a0c60adc4a4d11a7ee9aa10cb74dca49789e385f402a88e"
+                    },
+                    {
+                        "evidence_id":  "sha256:89c289b4eb98efc6af4bb6c4c05de85173541769f7b9f3c5bd8e99b386161a5f",
+                        "source":  "scripts/evidence-scan.ps1",
+                        "category":  "script",
+                        "format":  "powershell",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5433,
+                        "sha256":  "89c289b4eb98efc6af4bb6c4c05de85173541769f7b9f3c5bd8e99b386161a5f"
+                    },
+                    {
+                        "evidence_id":  "sha256:1e15d90c7f967470faee832522ef04ffcdaae37478f094aebebc9f33732f1da7",
+                        "source":  "scripts/media-production-validator.ps1",
+                        "category":  "script",
+                        "format":  "powershell",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  13268,
+                        "sha256":  "1e15d90c7f967470faee832522ef04ffcdaae37478f094aebebc9f33732f1da7"
+                    },
+                    {
+                        "evidence_id":  "sha256:4008a6d53bec3c903cb2de259c96e65db09a3958a58360559f7ee75cfbd7b29d",
+                        "source":  "scripts/portfolio-generate.ps1",
+                        "category":  "script",
+                        "format":  "powershell",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4840,
+                        "sha256":  "4008a6d53bec3c903cb2de259c96e65db09a3958a58360559f7ee75cfbd7b29d"
+                    },
+                    {
+                        "evidence_id":  "sha256:0c4414c9a5870a17df534d47770593f8fb02e2f3f61bada1ff01d077067ea0a0",
+                        "source":  "scripts/portfolio-qa.ps1",
+                        "category":  "script",
+                        "format":  "powershell",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3198,
+                        "sha256":  "0c4414c9a5870a17df534d47770593f8fb02e2f3f61bada1ff01d077067ea0a0"
+                    },
+                    {
+                        "evidence_id":  "sha256:e61a338bb66e8e36f8bce738ee94d94262bd7c1c28330be49a08d0c91c84cc5e",
+                        "source":  "scripts/scene-plan-compiler.ps1",
+                        "category":  "script",
+                        "format":  "powershell",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  12078,
+                        "sha256":  "e61a338bb66e8e36f8bce738ee94d94262bd7c1c28330be49a08d0c91c84cc5e"
+                    },
+                    {
+                        "evidence_id":  "sha256:ec5b3c06f39fd7f2be6e0afae144f089195870314a6fae080651dc520487bd30",
+                        "source":  "scripts/storage-adapter.ps1",
+                        "category":  "script",
+                        "format":  "powershell",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5223,
+                        "sha256":  "ec5b3c06f39fd7f2be6e0afae144f089195870314a6fae080651dc520487bd30"
+                    },
+                    {
+                        "evidence_id":  "sha256:893cf01e4d765bb72292473f85039a6961de152438e19bf4e821c10f40e8adad",
+                        "source":  "tests/0f062-cleanup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  617,
+                        "sha256":  "893cf01e4d765bb72292473f85039a6961de152438e19bf4e821c10f40e8adad"
+                    },
+                    {
+                        "evidence_id":  "sha256:b8a09a8e79df6c8a89f459eaef4c7b934f2cd6d4146641ffeb601a3e08cff8f6",
+                        "source":  "tests/0f062-events.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1378,
+                        "sha256":  "b8a09a8e79df6c8a89f459eaef4c7b934f2cd6d4146641ffeb601a3e08cff8f6"
+                    },
+                    {
+                        "evidence_id":  "sha256:966f0577e103b3b654efb7d9a2b2c68b9d244babd3fac15fd3a2d8b34ab77b53",
+                        "source":  "tests/0f062-fixture.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1016,
+                        "sha256":  "966f0577e103b3b654efb7d9a2b2c68b9d244babd3fac15fd3a2d8b34ab77b53"
+                    },
+                    {
+                        "evidence_id":  "sha256:6da11d30ccb90972b427d71edfe97db288b4c5dc8400df43b9b13239a2c96b74",
+                        "source":  "tests/0f062-v4-cleanup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  644,
+                        "sha256":  "6da11d30ccb90972b427d71edfe97db288b4c5dc8400df43b9b13239a2c96b74"
+                    },
+                    {
+                        "evidence_id":  "sha256:f7b0e5077a5bfc51e805bd8d346dcf9da199738403afc8074fd55bdbf5b1a34f",
+                        "source":  "tests/0f062-v4-diagnose.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1614,
+                        "sha256":  "f7b0e5077a5bfc51e805bd8d346dcf9da199738403afc8074fd55bdbf5b1a34f"
+                    },
+                    {
+                        "evidence_id":  "sha256:a19bf0579243951e1fc0008627336bd452b9f3f13b82c4e3d211d5ae25a39442",
+                        "source":  "tests/0f062-v4-events.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1447,
+                        "sha256":  "a19bf0579243951e1fc0008627336bd452b9f3f13b82c4e3d211d5ae25a39442"
+                    },
+                    {
+                        "evidence_id":  "sha256:af6c18a950be15217c41c60a9c9e28ca1cb0e32ec204c07896c5593dfa243a95",
+                        "source":  "tests/0f062-v4-final-cleanup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  656,
+                        "sha256":  "af6c18a950be15217c41c60a9c9e28ca1cb0e32ec204c07896c5593dfa243a95"
+                    },
+                    {
+                        "evidence_id":  "sha256:cc51fee6908da3c75bcf22498d35a9259c64aec028fa75496dc4217c676d3b72",
+                        "source":  "tests/0f062-v4-fixture.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1034,
+                        "sha256":  "cc51fee6908da3c75bcf22498d35a9259c64aec028fa75496dc4217c676d3b72"
+                    },
+                    {
+                        "evidence_id":  "sha256:4658106027eb53cb832daffcbfffb43d81955888f36d4af7ade340e3f81d8f42",
+                        "source":  "tests/0f062-v4-missing.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  268,
+                        "sha256":  "4658106027eb53cb832daffcbfffb43d81955888f36d4af7ade340e3f81d8f42"
+                    },
+                    {
+                        "evidence_id":  "sha256:04a363bee727a659db88f6e8065ad38ab73196aa7e9c76b659cf5d175d91d3cf",
+                        "source":  "tests/0f062-v4-readonly.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  840,
+                        "sha256":  "04a363bee727a659db88f6e8065ad38ab73196aa7e9c76b659cf5d175d91d3cf"
+                    },
+                    {
+                        "evidence_id":  "sha256:a92c201af433a9f52c6814c67d6a04615e18dc6c37c48415d41c25d1f21ba18e",
+                        "source":  "tests/0f062-v4-signature.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  230,
+                        "sha256":  "a92c201af433a9f52c6814c67d6a04615e18dc6c37c48415d41c25d1f21ba18e"
+                    },
+                    {
+                        "evidence_id":  "sha256:91bd4d1f45d187df092600e38c8cadd5ef63f433a1a21e61b02dbababb25991e",
+                        "source":  "tests/0f062-v4-verify.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  720,
+                        "sha256":  "91bd4d1f45d187df092600e38c8cadd5ef63f433a1a21e61b02dbababb25991e"
+                    },
+                    {
+                        "evidence_id":  "sha256:d817e84643bb79472c0b147f1322e97b31f7c2f06b21e11a767af5a0afec686c",
+                        "source":  "tests/0f062-v4-view.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  951,
+                        "sha256":  "d817e84643bb79472c0b147f1322e97b31f7c2f06b21e11a767af5a0afec686c"
+                    },
+                    {
+                        "evidence_id":  "sha256:6172fd025c716d0b45977d2136ee793a33df8837d21ea2f1719cbdd13fc5cd1f",
+                        "source":  "tests/0f062-verify.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  517,
+                        "sha256":  "6172fd025c716d0b45977d2136ee793a33df8837d21ea2f1719cbdd13fc5cd1f"
+                    },
+                    {
+                        "evidence_id":  "sha256:28b66f757e40739e31847eec9289228dcadd4ee81fe5f97c72b27c3d1c6e1005",
+                        "source":  "tests/11-E10-engine-readonly/01-engine-readonly.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5149,
+                        "sha256":  "28b66f757e40739e31847eec9289228dcadd4ee81fe5f97c72b27c3d1c6e1005"
+                    },
+                    {
+                        "evidence_id":  "sha256:5b3f2209314529922f48c6ad3f9ad65f30b441f02f9da336f9d1a3df9318818e",
+                        "source":  "tests/11-E10-engine-readonly/01-engine-readonly.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  17930,
+                        "sha256":  "5b3f2209314529922f48c6ad3f9ad65f30b441f02f9da336f9d1a3df9318818e"
+                    },
+                    {
+                        "evidence_id":  "sha256:af8e015045ef5320317dbacfd513e1734ae68f43fd0b8f71ad2c8f85f44fe271",
+                        "source":  "tests/11-E11-failure-engine/01-failure-engine-archaeology.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3902,
+                        "sha256":  "af8e015045ef5320317dbacfd513e1734ae68f43fd0b8f71ad2c8f85f44fe271"
+                    },
+                    {
+                        "evidence_id":  "sha256:80f1ff9b85dba1d0b89a68bef4e2956d9a602524f72edf98328846fedb386449",
+                        "source":  "tests/11-E11-failure-engine/01-failure-engine-archaeology.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  22692,
+                        "sha256":  "80f1ff9b85dba1d0b89a68bef4e2956d9a602524f72edf98328846fedb386449"
+                    },
+                    {
+                        "evidence_id":  "sha256:1e856de9ff0454dc66c064a2b01bf1adc1b4aed36263305bdba0509433ba7028",
+                        "source":  "tests/11-E12-error-policy/01-error-policy.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2976,
+                        "sha256":  "1e856de9ff0454dc66c064a2b01bf1adc1b4aed36263305bdba0509433ba7028"
+                    },
+                    {
+                        "evidence_id":  "sha256:2b1e8eea220a1bb8fa7079fbe2f3f78415776633b75109f0db6e8e44694bd6e8",
+                        "source":  "tests/11-E12-error-policy/01-error-policy.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  57432,
+                        "sha256":  "2b1e8eea220a1bb8fa7079fbe2f3f78415776633b75109f0db6e8e44694bd6e8"
+                    },
+                    {
+                        "evidence_id":  "sha256:43e4f7a8471f75a22b5c6a4a594d2e7431f9037338073245b16acabcf6ff09e8",
+                        "source":  "tests/11-E13-error-policy-data/01-error-policy-data.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3745,
+                        "sha256":  "43e4f7a8471f75a22b5c6a4a594d2e7431f9037338073245b16acabcf6ff09e8"
+                    },
+                    {
+                        "evidence_id":  "sha256:54b0f6af1061c78bd85a683b3b9555116851faac7b154684d226e62f389e315c",
+                        "source":  "tests/11-E13-error-policy-data/01-error-policy-data.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  15568,
+                        "sha256":  "54b0f6af1061c78bd85a683b3b9555116851faac7b154684d226e62f389e315c"
+                    },
+                    {
+                        "evidence_id":  "sha256:e9c54ced1dea68e77c27688dd7025473cbacffd79c7a6d6cf269f28094ed8b33",
+                        "source":  "tests/11-E14-classify-usage/01-classify-usage.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4215,
+                        "sha256":  "e9c54ced1dea68e77c27688dd7025473cbacffd79c7a6d6cf269f28094ed8b33"
+                    },
+                    {
+                        "evidence_id":  "sha256:1b94f34a1642d2c0517ee4ed26686bc6c869373c420f8e8456ff22b2e4069537",
+                        "source":  "tests/11-E14-classify-usage/01-classify-usage.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  17256,
+                        "sha256":  "1b94f34a1642d2c0517ee4ed26686bc6c869373c420f8e8456ff22b2e4069537"
+                    },
+                    {
+                        "evidence_id":  "sha256:aefe4345236bcb3e4cf779c871c82798e6ea9f8a1d5b1e5accacf0162ed788aa",
+                        "source":  "tests/11-E15-error-retry-transition/01-error-retry-transition.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3975,
+                        "sha256":  "aefe4345236bcb3e4cf779c871c82798e6ea9f8a1d5b1e5accacf0162ed788aa"
+                    },
+                    {
+                        "evidence_id":  "sha256:1b2b72be45a452321bad476ec5eb698df242273d54e0a32d54929944b01866e4",
+                        "source":  "tests/11-E15-error-retry-transition/01-error-retry-transition.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  14062,
+                        "sha256":  "1b2b72be45a452321bad476ec5eb698df242273d54e0a32d54929944b01866e4"
+                    },
+                    {
+                        "evidence_id":  "sha256:d32caf08ef928ccc9ac52b00028acb79b4b681ffbb2c1f3d8801debde9845238",
+                        "source":  "tests/11-E16-error-retry-source/01-critical-routines.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2279,
+                        "sha256":  "d32caf08ef928ccc9ac52b00028acb79b4b681ffbb2c1f3d8801debde9845238"
+                    },
+                    {
+                        "evidence_id":  "sha256:dab9c5eff83def10e9386befea2618917b604415d8561c20085eb495c4703027",
+                        "source":  "tests/11-E16-error-retry-source/01-critical-routines.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  159572,
+                        "sha256":  "dab9c5eff83def10e9386befea2618917b604415d8561c20085eb495c4703027"
+                    },
+                    {
+                        "evidence_id":  "sha256:208371c5feffb964d7a58be5fcf30dac918427dd4f7631f2a0dbafa3f47b09e0",
+                        "source":  "tests/11-E17-failure-contract/01-failure-contract.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4150,
+                        "sha256":  "208371c5feffb964d7a58be5fcf30dac918427dd4f7631f2a0dbafa3f47b09e0"
+                    },
+                    {
+                        "evidence_id":  "sha256:5c94926b5e4523a1a80968f32fed5c38a793847608ce9f7915e0ee291c61e4ee",
+                        "source":  "tests/11-E17-failure-contract/01-failure-contract.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  30308,
+                        "sha256":  "5c94926b5e4523a1a80968f32fed5c38a793847608ce9f7915e0ee291c61e4ee"
+                    },
+                    {
+                        "evidence_id":  "sha256:6605fdf74e815beb026c6b0db4be297cc36bdea865bfaecb8a16662316b219d5",
+                        "source":  "tests/11-E18-run-failure-responsibility/01-run-failure-responsibility.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3184,
+                        "sha256":  "6605fdf74e815beb026c6b0db4be297cc36bdea865bfaecb8a16662316b219d5"
+                    },
+                    {
+                        "evidence_id":  "sha256:cf8bcbbe40f431a1e4d91a7f10fbd274bd9edda77aa2937eb1ff4542106e9310",
+                        "source":  "tests/11-E18-run-failure-responsibility/01-run-failure-responsibility.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  207018,
+                        "sha256":  "cf8bcbbe40f431a1e4d91a7f10fbd274bd9edda77aa2937eb1ff4542106e9310"
+                    },
+                    {
+                        "evidence_id":  "sha256:98ac394b187e5c524cceccd1bea36a7bd5636600237da4718dbeeb21a75918e2",
+                        "source":  "tests/11-E19-failure-writers/01-failure-writers.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5017,
+                        "sha256":  "98ac394b187e5c524cceccd1bea36a7bd5636600237da4718dbeeb21a75918e2"
+                    },
+                    {
+                        "evidence_id":  "sha256:388abb6d649b49c2ca4d17b355f25c6e7e2fefc233c109593b165e79d7710e40",
+                        "source":  "tests/11-E19-failure-writers/01-failure-writers.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  23046,
+                        "sha256":  "388abb6d649b49c2ca4d17b355f25c6e7e2fefc233c109593b165e79d7710e40"
+                    },
+                    {
+                        "evidence_id":  "sha256:d8500685f4a89ee4502ccc2c57bacf8d52a38e1a146e2599293f4095171ce354",
+                        "source":  "tests/11-E20-run-error-consistency/01-run-error-consistency.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2996,
+                        "sha256":  "d8500685f4a89ee4502ccc2c57bacf8d52a38e1a146e2599293f4095171ce354"
+                    },
+                    {
+                        "evidence_id":  "sha256:1c66c6e6b2661247060774863e4924cc5b95a815d4dda368c657ca6dad1d2bde",
+                        "source":  "tests/11-E20-run-error-consistency/01-run-error-consistency.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  73296,
+                        "sha256":  "1c66c6e6b2661247060774863e4924cc5b95a815d4dda368c657ca6dad1d2bde"
+                    },
+                    {
+                        "evidence_id":  "sha256:4d24d860770f220d0164a39fb9cda663da9751c96ab25c5e611ab7ead9c72df5",
+                        "source":  "tests/11-E22-final-failure-contract/01-final-failure-contract.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  8035,
+                        "sha256":  "4d24d860770f220d0164a39fb9cda663da9751c96ab25c5e611ab7ead9c72df5"
+                    },
+                    {
+                        "evidence_id":  "sha256:b3e419f91fe6c0080dffd0daf0231b1ddf7b6078a45cc959c6915a833357bca3",
+                        "source":  "tests/11-E22-final-failure-contract/01-final-failure-contract.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  355710,
+                        "sha256":  "b3e419f91fe6c0080dffd0daf0231b1ddf7b6078a45cc959c6915a833357bca3"
+                    },
+                    {
+                        "evidence_id":  "sha256:2fcc68b0b5ac93d08d1a1642974cc4f1065c3a2f3f4ac3aa029786c45847a00d",
+                        "source":  "tests/11-E23-fail-stage-preflight/01-fail-stage-preflight.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4781,
+                        "sha256":  "2fcc68b0b5ac93d08d1a1642974cc4f1065c3a2f3f4ac3aa029786c45847a00d"
+                    },
+                    {
+                        "evidence_id":  "sha256:9170ebe846a613cf11d98036122bcdc98b397e9469bb8ab7fdc3977b5862441c",
+                        "source":  "tests/11-E23-fail-stage-preflight/01-fail-stage-preflight.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  10376,
+                        "sha256":  "9170ebe846a613cf11d98036122bcdc98b397e9469bb8ab7fdc3977b5862441c"
+                    },
+                    {
+                        "evidence_id":  "sha256:52ba1c29f54d8b5059fa195d9f69e05e086b3108bf6b941170cfe1ace7c79479",
+                        "source":  "tests/11-E23-fail-stage-preflight/02-fail-stage-preflight.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4945,
+                        "sha256":  "52ba1c29f54d8b5059fa195d9f69e05e086b3108bf6b941170cfe1ace7c79479"
+                    },
+                    {
+                        "evidence_id":  "sha256:b8e68c5481974afd26f1ef536eac79e86bf3986ba4ae763c083af120b7531747",
+                        "source":  "tests/11-E23-fail-stage-preflight/02-fail-stage-preflight.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  25592,
+                        "sha256":  "b8e68c5481974afd26f1ef536eac79e86bf3986ba4ae763c083af120b7531747"
+                    },
+                    {
+                        "evidence_id":  "sha256:88fa1d998e841d87810d0852c120903b595f0345b7306b6e2881f24e8e6e5d5b",
+                        "source":  "tests/11-E24-fail-stage-atomic/01-fail-stage-atomic-transaction.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  11933,
+                        "sha256":  "88fa1d998e841d87810d0852c120903b595f0345b7306b6e2881f24e8e6e5d5b"
+                    },
+                    {
+                        "evidence_id":  "sha256:2bab679b6cd3bdfbccf34d7afb68a488dc028dba0b146688d7a9b663161c3ec9",
+                        "source":  "tests/11-E24-fail-stage-atomic/01-fail-stage-atomic-transaction.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  16968,
+                        "sha256":  "2bab679b6cd3bdfbccf34d7afb68a488dc028dba0b146688d7a9b663161c3ec9"
+                    },
+                    {
+                        "evidence_id":  "sha256:a21305e95ef69a80e49114b8ece7806c7859244d40411f83dec9a7e12346edec",
+                        "source":  "tests/11-E24-fail-stage-atomic/02-install-fail-stage-atomically.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5644,
+                        "sha256":  "a21305e95ef69a80e49114b8ece7806c7859244d40411f83dec9a7e12346edec"
+                    },
+                    {
+                        "evidence_id":  "sha256:f5a758cc9293ce408aa72240315cd81b59406f40ce297d074d66cf938479f8ce",
+                        "source":  "tests/11-E24-fail-stage-atomic/02-install-fail-stage-atomically.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3950,
+                        "sha256":  "f5a758cc9293ce408aa72240315cd81b59406f40ce297d074d66cf938479f8ce"
+                    },
+                    {
+                        "evidence_id":  "sha256:aa1e902dccfd5d3a701129ad90c7032d1249125173bdd7aae7e937cc81ff8470",
+                        "source":  "tests/11-E25-failure-retry-integration/01-failure-retry-integration.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  6851,
+                        "sha256":  "aa1e902dccfd5d3a701129ad90c7032d1249125173bdd7aae7e937cc81ff8470"
+                    },
+                    {
+                        "evidence_id":  "sha256:9f9b19b784f912a595d5ec14dd79e238a14f7f53da4175c2160643f613e2db96",
+                        "source":  "tests/11-E25-failure-retry-integration/01-failure-retry-integration.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  22378,
+                        "sha256":  "9f9b19b784f912a595d5ec14dd79e238a14f7f53da4175c2160643f613e2db96"
+                    },
+                    {
+                        "evidence_id":  "sha256:48579220efb63a3de6f0d617eebf20bc9fc38aa1932d4bed7bf6b95ad1fbcee8",
+                        "source":  "tests/11-E26-run-error-escalation/01-run-error-escalation-forensics.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  6159,
+                        "sha256":  "48579220efb63a3de6f0d617eebf20bc9fc38aa1932d4bed7bf6b95ad1fbcee8"
+                    },
+                    {
+                        "evidence_id":  "sha256:3811360a665e370e00fd96a51d70b7f462808b5aa6a71db4a3fa608b5e88e770",
+                        "source":  "tests/11-E26-run-error-escalation/01-run-error-escalation-forensics.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  13108,
+                        "sha256":  "3811360a665e370e00fd96a51d70b7f462808b5aa6a71db4a3fa608b5e88e770"
+                    },
+                    {
+                        "evidence_id":  "sha256:83309ec1780472011462883671f63b47cfda05ac7ff0db13f58d546041e9a5e9",
+                        "source":  "tests/11-E26-run-error-escalation/02-run-error-escalation-forensics-corrected.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  6664,
+                        "sha256":  "83309ec1780472011462883671f63b47cfda05ac7ff0db13f58d546041e9a5e9"
+                    },
+                    {
+                        "evidence_id":  "sha256:b1cc77077aad93eb7f4cdd49d905b34fcb9b10de23d93204f819c68c468ca752",
+                        "source":  "tests/11-E26-run-error-escalation/02-run-error-escalation-forensics-corrected.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  130446,
+                        "sha256":  "b1cc77077aad93eb7f4cdd49d905b34fcb9b10de23d93204f819c68c468ca752"
+                    },
+                    {
+                        "evidence_id":  "sha256:4540acd44d00a9dedb3af7c2157767294e0d02a3df632bd9f2ed859b4ff45afa",
+                        "source":  "tests/11-E27-run-failure-contract/01-run-failure-contract-preflight.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  7213,
+                        "sha256":  "4540acd44d00a9dedb3af7c2157767294e0d02a3df632bd9f2ed859b4ff45afa"
+                    },
+                    {
+                        "evidence_id":  "sha256:194dc0c7d0252203a88ea6de6dd5023f40474b394644b7779990bcad072a9380",
+                        "source":  "tests/11-E27-run-failure-contract/01-run-failure-contract-preflight.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  257380,
+                        "sha256":  "194dc0c7d0252203a88ea6de6dd5023f40474b394644b7779990bcad072a9380"
+                    },
+                    {
+                        "evidence_id":  "sha256:06e4341c265349666053c54729c03b31c90959eabae5ddc9cc36f13c7db9a6ad",
+                        "source":  "tests/11-E28-fail-run-atomic/01-fail-run-atomic-transaction.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  13723,
+                        "sha256":  "06e4341c265349666053c54729c03b31c90959eabae5ddc9cc36f13c7db9a6ad"
+                    },
+                    {
+                        "evidence_id":  "sha256:27a3f8733bb51cf487fe709b46e6de8971a671712cdb5e2e0f58f09f5a87be6b",
+                        "source":  "tests/11-E28-fail-run-atomic/01-fail-run-atomic-transaction.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  18980,
+                        "sha256":  "27a3f8733bb51cf487fe709b46e6de8971a671712cdb5e2e0f58f09f5a87be6b"
+                    },
+                    {
+                        "evidence_id":  "sha256:f8282314bb3b85d0869f01315a198c481956986f150e82072c08f947eaa055d6",
+                        "source":  "tests/11-E29-fail-run-install/01-install-fail-run-atomically.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  8239,
+                        "sha256":  "f8282314bb3b85d0869f01315a198c481956986f150e82072c08f947eaa055d6"
+                    },
+                    {
+                        "evidence_id":  "sha256:26ba9e4e233273ba1abeb49cd5c40c2a7c476804f27862ec4bc5cae75156342b",
+                        "source":  "tests/11-E29-fail-run-install/01-install-fail-run-atomically.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2482,
+                        "sha256":  "26ba9e4e233273ba1abeb49cd5c40c2a7c476804f27862ec4bc5cae75156342b"
+                    },
+                    {
+                        "evidence_id":  "sha256:494a0bb7b1e9719f06869a6634e6c81b65954f91965c63ffaeb6e4b32624fd38",
+                        "source":  "tests/11-E29-fail-run-install/02-post-install-verify.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5449,
+                        "sha256":  "494a0bb7b1e9719f06869a6634e6c81b65954f91965c63ffaeb6e4b32624fd38"
+                    },
+                    {
+                        "evidence_id":  "sha256:031397cb2375c2dbae183d7434a80a0d6eb50028528b6c562250de5e1b1a2bdc",
+                        "source":  "tests/11-E29-fail-run-install/02-post-install-verify.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  6184,
+                        "sha256":  "031397cb2375c2dbae183d7434a80a0d6eb50028528b6c562250de5e1b1a2bdc"
+                    },
+                    {
+                        "evidence_id":  "sha256:a505d7e6c3823bbc92c3b48f7a9300702504f88356039d0f0511d89f5fca3e1d",
+                        "source":  "tests/11-E30-persistent-run-error-integration/01-persistent-run-error-integration.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5866,
+                        "sha256":  "a505d7e6c3823bbc92c3b48f7a9300702504f88356039d0f0511d89f5fca3e1d"
+                    },
+                    {
+                        "evidence_id":  "sha256:fe2fa801892381874a6ffe1ff0417db74e7dae814cfd449f62614b1042c7c77e",
+                        "source":  "tests/11-E30-persistent-run-error-integration/01-persistent-run-error-integration.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  16126,
+                        "sha256":  "fe2fa801892381874a6ffe1ff0417db74e7dae814cfd449f62614b1042c7c77e"
+                    },
+                    {
+                        "evidence_id":  "sha256:f5636c84f10156cb617532dd7a0053c36465dd3a972fabcb6d76da3f3fee36a6",
+                        "source":  "tests/11-E31-fail-run-concurrency/01-setup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  961,
+                        "sha256":  "f5636c84f10156cb617532dd7a0053c36465dd3a972fabcb6d76da3f3fee36a6"
+                    },
+                    {
+                        "evidence_id":  "sha256:1e13b5847964351e611a65916ac860769b85283914f294ddf4799f9a12596c02",
+                        "source":  "tests/11-E31-fail-run-concurrency/01-setup.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  672,
+                        "sha256":  "1e13b5847964351e611a65916ac860769b85283914f294ddf4799f9a12596c02"
+                    },
+                    {
+                        "evidence_id":  "sha256:798b3865c4b868b9aac127f3d8c5dc6e06aada3c8194b1655341de0c69f6ea91",
+                        "source":  "tests/11-E31-fail-run-concurrency/02-concurrent-worker.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  207,
+                        "sha256":  "798b3865c4b868b9aac127f3d8c5dc6e06aada3c8194b1655341de0c69f6ea91"
+                    },
+                    {
+                        "evidence_id":  "sha256:3e14daec269d1d414df8adb71e893e33f9b6902513a29d737fb3ccbed3c33b7d",
+                        "source":  "tests/11-E31-fail-run-concurrency/02-worker-A.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  630,
+                        "sha256":  "3e14daec269d1d414df8adb71e893e33f9b6902513a29d737fb3ccbed3c33b7d"
+                    },
+                    {
+                        "evidence_id":  "sha256:2b85fd04e78a0d88987478544a06fcc6da780ae8e83792c1048ff5a4e62a2032",
+                        "source":  "tests/11-E31-fail-run-concurrency/02-worker-B.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  570,
+                        "sha256":  "2b85fd04e78a0d88987478544a06fcc6da780ae8e83792c1048ff5a4e62a2032"
+                    },
+                    {
+                        "evidence_id":  "sha256:a8203e5079bd9cf5ba62791083e95299f0d3a93b42b589a13ccb71b6c3017347",
+                        "source":  "tests/11-E31-fail-run-concurrency/03-verify.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2289,
+                        "sha256":  "a8203e5079bd9cf5ba62791083e95299f0d3a93b42b589a13ccb71b6c3017347"
+                    },
+                    {
+                        "evidence_id":  "sha256:3e29c6cf6340e9af082e733dda263d0aa4d5d40e83ff69e1c58e7126672aa3b4",
+                        "source":  "tests/11-E31-fail-run-concurrency/03-verify.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5244,
+                        "sha256":  "3e29c6cf6340e9af082e733dda263d0aa4d5d40e83ff69e1c58e7126672aa3b4"
+                    },
+                    {
+                        "evidence_id":  "sha256:691c43846b756e71e5a19f3313ae232c6ef15f53a4d8ae2e350c729cfb0e9151",
+                        "source":  "tests/11-E31-fail-run-concurrency/04-cleanup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  654,
+                        "sha256":  "691c43846b756e71e5a19f3313ae232c6ef15f53a4d8ae2e350c729cfb0e9151"
+                    },
+                    {
+                        "evidence_id":  "sha256:fbf7d21cbc3f45b3ecf49ffad21cade59d13d1530d0ba41b797a91b0eb1901c5",
+                        "source":  "tests/11-E31-fail-run-concurrency/04-cleanup.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  544,
+                        "sha256":  "fbf7d21cbc3f45b3ecf49ffad21cade59d13d1530d0ba41b797a91b0eb1901c5"
+                    },
+                    {
+                        "evidence_id":  "sha256:3a8b3cb724b53bd52748299993fc721c50a63e954668dd8683bd07413808f8ca",
+                        "source":  "tests/11-E32-stage-run-concurrency/01-setup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  866,
+                        "sha256":  "3a8b3cb724b53bd52748299993fc721c50a63e954668dd8683bd07413808f8ca"
+                    },
+                    {
+                        "evidence_id":  "sha256:82ffb4f0ecf12ba3c5d3a98484d2099f27b110730a3bbbd9bbf3d53828eff6eb",
+                        "source":  "tests/11-E32-stage-run-concurrency/01-setup.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  672,
+                        "sha256":  "82ffb4f0ecf12ba3c5d3a98484d2099f27b110730a3bbbd9bbf3d53828eff6eb"
+                    },
+                    {
+                        "evidence_id":  "sha256:bbb188ef8d8150002dae1f7be2411482889043b86eb4005d674f64222a8b7e04",
+                        "source":  "tests/11-E32-stage-run-concurrency/02-worker-stage.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  226,
+                        "sha256":  "bbb188ef8d8150002dae1f7be2411482889043b86eb4005d674f64222a8b7e04"
+                    },
+                    {
+                        "evidence_id":  "sha256:0524ecdfcc2e012584b24345564d4e5a4e4239d2df50087756152216f8e4dce4",
+                        "source":  "tests/11-E32-stage-run-concurrency/02-worker-stage.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  724,
+                        "sha256":  "0524ecdfcc2e012584b24345564d4e5a4e4239d2df50087756152216f8e4dce4"
+                    },
+                    {
+                        "evidence_id":  "sha256:7e1a1d9e36436356f769c3127d4b611845156af55e16fe18698d8e0a1db6c07b",
+                        "source":  "tests/11-E32-stage-run-concurrency/03-worker-run.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  204,
+                        "sha256":  "7e1a1d9e36436356f769c3127d4b611845156af55e16fe18698d8e0a1db6c07b"
+                    },
+                    {
+                        "evidence_id":  "sha256:50d8d00cbd5cf605123c59fc28d7b81fc570dd1ddc31710df2e42d34689d1f46",
+                        "source":  "tests/11-E32-stage-run-concurrency/03-worker-run.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  44,
+                        "sha256":  "50d8d00cbd5cf605123c59fc28d7b81fc570dd1ddc31710df2e42d34689d1f46"
+                    },
+                    {
+                        "evidence_id":  "sha256:639d8faec4805b6149dd2925f28236a2a55e71e16ca6b2837d06d018c13a11bf",
+                        "source":  "tests/11-E32-stage-run-concurrency/04-verify.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2974,
+                        "sha256":  "639d8faec4805b6149dd2925f28236a2a55e71e16ca6b2837d06d018c13a11bf"
+                    },
+                    {
+                        "evidence_id":  "sha256:f85ecf2017350e3ec6b1802ef00f00d741d25fd99dde6683e9b9963af56dba0f",
+                        "source":  "tests/11-E32-stage-run-concurrency/05-cleanup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  870,
+                        "sha256":  "f85ecf2017350e3ec6b1802ef00f00d741d25fd99dde6683e9b9963af56dba0f"
+                    },
+                    {
+                        "evidence_id":  "sha256:9dfed317409466dc9683ebe4992979d786aaa26f909ab224f404aa7e6ce062b0",
+                        "source":  "tests/11-E32-stage-run-concurrency/06-cleanup-after-deadlock.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2311,
+                        "sha256":  "9dfed317409466dc9683ebe4992979d786aaa26f909ab224f404aa7e6ce062b0"
+                    },
+                    {
+                        "evidence_id":  "sha256:1f9cce42bddf403aff634446a7438b91e982a53808703260713c12f43f7a10a5",
+                        "source":  "tests/11-E32-stage-run-concurrency/06-cleanup-after-deadlock.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3192,
+                        "sha256":  "1f9cce42bddf403aff634446a7438b91e982a53808703260713c12f43f7a10a5"
+                    },
+                    {
+                        "evidence_id":  "sha256:f5073c5c7fd254345beacecbbb87b08ba7145b42753fcc9177e866db4cc1d94a",
+                        "source":  "tests/11-E32-stage-run-concurrency/07-lock-order-forensics.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4678,
+                        "sha256":  "f5073c5c7fd254345beacecbbb87b08ba7145b42753fcc9177e866db4cc1d94a"
+                    },
+                    {
+                        "evidence_id":  "sha256:9b99b332920e0f8ebf691918c63fe3f99641b8e270f8b8bf867ea4d18851d66a",
+                        "source":  "tests/11-E32-stage-run-concurrency/07-lock-order-forensics.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  275100,
+                        "sha256":  "9b99b332920e0f8ebf691918c63fe3f99641b8e270f8b8bf867ea4d18851d66a"
+                    },
+                    {
+                        "evidence_id":  "sha256:dffb53617cf56f270daf3e7c2140bd1933d93978c9c107ef13f90b60d0b88194",
+                        "source":  "tests/11-E32-stage-run-concurrency/08-fix-lock-order.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  8634,
+                        "sha256":  "dffb53617cf56f270daf3e7c2140bd1933d93978c9c107ef13f90b60d0b88194"
+                    },
+                    {
+                        "evidence_id":  "sha256:34b249f5a7a2fbe45b7a4be24dbba4671bd4c650b35a91181e43ac7b311573a6",
+                        "source":  "tests/11-E32-stage-run-concurrency/08-fix-lock-order.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2978,
+                        "sha256":  "34b249f5a7a2fbe45b7a4be24dbba4671bd4c650b35a91181e43ac7b311573a6"
+                    },
+                    {
+                        "evidence_id":  "sha256:290eb4655e1470ae066a65b0f09c9e2540b45d58d29ff6265673d8628ef93fbf",
+                        "source":  "tests/11-E32-stage-run-concurrency/09-fix-source-verification.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3479,
+                        "sha256":  "290eb4655e1470ae066a65b0f09c9e2540b45d58d29ff6265673d8628ef93fbf"
+                    },
+                    {
+                        "evidence_id":  "sha256:a9e1b3c18cba8301d5365c1cdd79e5ffabb17515fef6bc50e34950b71b0c3ac4",
+                        "source":  "tests/11-E32-stage-run-concurrency/09-fix-source-verification.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4080,
+                        "sha256":  "a9e1b3c18cba8301d5365c1cdd79e5ffabb17515fef6bc50e34950b71b0c3ac4"
+                    },
+                    {
+                        "evidence_id":  "sha256:a9048f1bbcfa8473dbe33808a8303dcf1c7fcb1a6b55f4cf819427a7e790c766",
+                        "source":  "tests/11-E32-stage-run-concurrency/10-concurrency-retest-setup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1377,
+                        "sha256":  "a9048f1bbcfa8473dbe33808a8303dcf1c7fcb1a6b55f4cf819427a7e790c766"
+                    },
+                    {
+                        "evidence_id":  "sha256:a7ceed262c39d52786d7323b6214d4b0ea3b4172307918e13f70ce7e19ed1dea",
+                        "source":  "tests/11-E32-stage-run-concurrency/10-concurrency-retest-setup.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1134,
+                        "sha256":  "a7ceed262c39d52786d7323b6214d4b0ea3b4172307918e13f70ce7e19ed1dea"
+                    },
+                    {
+                        "evidence_id":  "sha256:0c2b475ed072b96fb740a11af75d88ffabc4d062af0bcde04298b701524207fc",
+                        "source":  "tests/11-E32-stage-run-concurrency/11-concurrency-worker.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  378,
+                        "sha256":  "0c2b475ed072b96fb740a11af75d88ffabc4d062af0bcde04298b701524207fc"
+                    },
+                    {
+                        "evidence_id":  "sha256:9ea10989fbfcac77e68bb01bbe066e0273c437acb704babbf3c94497241b2147",
+                        "source":  "tests/11-E32-stage-run-concurrency/11-worker-run.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1080,
+                        "sha256":  "9ea10989fbfcac77e68bb01bbe066e0273c437acb704babbf3c94497241b2147"
+                    },
+                    {
+                        "evidence_id":  "sha256:127a847237e3385ab90abc09c8fc5502f1dfff97aa0d838f57db99f081d16342",
+                        "source":  "tests/11-E32-stage-run-concurrency/11-worker-stage.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1080,
+                        "sha256":  "127a847237e3385ab90abc09c8fc5502f1dfff97aa0d838f57db99f081d16342"
+                    },
+                    {
+                        "evidence_id":  "sha256:49e518830175aa7ee536094a736405d52baa5d224db689fde674eafb800961a4",
+                        "source":  "tests/11-E32-stage-run-concurrency/12-concurrency-retest-verify.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2227,
+                        "sha256":  "49e518830175aa7ee536094a736405d52baa5d224db689fde674eafb800961a4"
+                    },
+                    {
+                        "evidence_id":  "sha256:fe18fc9938549ff2549d22abbc66ede7eaafd41503e3b9dc3e0514aa071aa0a4",
+                        "source":  "tests/11-E32-stage-run-concurrency/12-concurrency-retest-verify.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4600,
+                        "sha256":  "fe18fc9938549ff2549d22abbc66ede7eaafd41503e3b9dc3e0514aa071aa0a4"
+                    },
+                    {
+                        "evidence_id":  "sha256:d24c9a90a3443a84f5be4ef6393d1925f684f19807231b90fa115b39caf39585",
+                        "source":  "tests/11-E32-stage-run-concurrency/13-concurrency-retest-cleanup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  787,
+                        "sha256":  "d24c9a90a3443a84f5be4ef6393d1925f684f19807231b90fa115b39caf39585"
+                    },
+                    {
+                        "evidence_id":  "sha256:8425f2a366923866043679c482849e7b272cc05e23ddae2da3d3088d995feb53",
+                        "source":  "tests/11-E32-stage-run-concurrency/13-concurrency-retest-cleanup.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  954,
+                        "sha256":  "8425f2a366923866043679c482849e7b272cc05e23ddae2da3d3088d995feb53"
+                    },
+                    {
+                        "evidence_id":  "sha256:c23cdbb03bc328f6b4eddc69447cfd574dec9101f07b60c15fd8892419062c93",
+                        "source":  "tests/11-E32-stage-run-concurrency/14-worker-stage.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  412,
+                        "sha256":  "c23cdbb03bc328f6b4eddc69447cfd574dec9101f07b60c15fd8892419062c93"
+                    },
+                    {
+                        "evidence_id":  "sha256:681ab81fe32fb2f6d975636b146bfcb4d7455dd53d692a0a7634d0367b9b4f1b",
+                        "source":  "tests/11-E32-stage-run-concurrency/14-worker-stage.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1296,
+                        "sha256":  "681ab81fe32fb2f6d975636b146bfcb4d7455dd53d692a0a7634d0367b9b4f1b"
+                    },
+                    {
+                        "evidence_id":  "sha256:71369a247e7b4bf465c1efe198ab2ae9c0b5d8ad58898dfb6b654332f27c91a7",
+                        "source":  "tests/11-E32-stage-run-concurrency/15-worker-run.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  387,
+                        "sha256":  "71369a247e7b4bf465c1efe198ab2ae9c0b5d8ad58898dfb6b654332f27c91a7"
+                    },
+                    {
+                        "evidence_id":  "sha256:3cc135b36d88f6cd9b26279eaf0767009eddecddae90687af0fed4e307d14e2a",
+                        "source":  "tests/11-E32-stage-run-concurrency/15-worker-run.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1080,
+                        "sha256":  "3cc135b36d88f6cd9b26279eaf0767009eddecddae90687af0fed4e307d14e2a"
+                    },
+                    {
+                        "evidence_id":  "sha256:dfd8c54b4c44097e758d2a85ef170a795ba0e6334d7acb58ef8e49548ec57150",
+                        "source":  "tests/11-E32-stage-run-concurrency/16-retest-v2-verify.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5574,
+                        "sha256":  "dfd8c54b4c44097e758d2a85ef170a795ba0e6334d7acb58ef8e49548ec57150"
+                    },
+                    {
+                        "evidence_id":  "sha256:8b97e96b201bd78c8ac4955b7732bd5c82582beca9391c31944856dd364c7862",
+                        "source":  "tests/11-E32-stage-run-concurrency/16-retest-v2-verify.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  6170,
+                        "sha256":  "8b97e96b201bd78c8ac4955b7732bd5c82582beca9391c31944856dd364c7862"
+                    },
+                    {
+                        "evidence_id":  "sha256:dc0275f2503ca718ad8b60e1b71e05bc6c4e4a9898286d0577959e14e0b09f40",
+                        "source":  "tests/11-E32-stage-run-concurrency/17-retest-v2-cleanup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1538,
+                        "sha256":  "dc0275f2503ca718ad8b60e1b71e05bc6c4e4a9898286d0577959e14e0b09f40"
+                    },
+                    {
+                        "evidence_id":  "sha256:5768838bf8817d6f7e7a37d075f2d1c816c946872beb5dca80e7bbd8822ea2db",
+                        "source":  "tests/11-E32-stage-run-concurrency/17-retest-v2-cleanup.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  714,
+                        "sha256":  "5768838bf8817d6f7e7a37d075f2d1c816c946872beb5dca80e7bbd8822ea2db"
+                    },
+                    {
+                        "evidence_id":  "sha256:60c246dc419d38b1f8532c891d50730825323497f0ce96b8be86fc6bcac54e40",
+                        "source":  "tests/11-E32-stage-run-concurrency/18-stage-first-escalation.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4548,
+                        "sha256":  "60c246dc419d38b1f8532c891d50730825323497f0ce96b8be86fc6bcac54e40"
+                    },
+                    {
+                        "evidence_id":  "sha256:a4607dccec5b5b9fe621363f8ace159752150a02e1226423f1d2eaaab0c50405",
+                        "source":  "tests/11-E32-stage-run-concurrency/18-stage-first-escalation.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  9096,
+                        "sha256":  "a4607dccec5b5b9fe621363f8ace159752150a02e1226423f1d2eaaab0c50405"
+                    },
+                    {
+                        "evidence_id":  "sha256:9c22396720f1ffbb2cef397cead3de00da15e623baaf8f0f9710aa648934e446",
+                        "source":  "tests/11-E32-stage-run-concurrency/19-escalation-policy-forensics.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3857,
+                        "sha256":  "9c22396720f1ffbb2cef397cead3de00da15e623baaf8f0f9710aa648934e446"
+                    },
+                    {
+                        "evidence_id":  "sha256:747cf9ede650b5b3c486dae576dec5a36c45c634d1ed192d03aeac67a7635115",
+                        "source":  "tests/11-E32-stage-run-concurrency/19-escalation-policy-forensics.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  7714,
+                        "sha256":  "747cf9ede650b5b3c486dae576dec5a36c45c634d1ed192d03aeac67a7635115"
+                    },
+                    {
+                        "evidence_id":  "sha256:c95010dfb0532e92fb66d3512ab5534cab571c3ed4ad7232b5a6f78335ebf6e6",
+                        "source":  "tests/11-E32-stage-run-concurrency/20-contract-consumer-forensics.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3836,
+                        "sha256":  "c95010dfb0532e92fb66d3512ab5534cab571c3ed4ad7232b5a6f78335ebf6e6"
+                    },
+                    {
+                        "evidence_id":  "sha256:78475d7d7f5ba00aa3e2fc9d9a9166f3382aa9de59a4a94971b47b6fd47fa5b0",
+                        "source":  "tests/11-E32-stage-run-concurrency/20-contract-consumer-forensics.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  7672,
+                        "sha256":  "78475d7d7f5ba00aa3e2fc9d9a9166f3382aa9de59a4a94971b47b6fd47fa5b0"
+                    },
+                    {
+                        "evidence_id":  "sha256:29315d146abbd54db4e2310391cab694b9805580a0ce355387b5a8b874879eaf",
+                        "source":  "tests/11-E32-stage-run-concurrency/21-contract-consumer-forensics.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4385,
+                        "sha256":  "29315d146abbd54db4e2310391cab694b9805580a0ce355387b5a8b874879eaf"
+                    },
+                    {
+                        "evidence_id":  "sha256:2f858fb8147b075879d755bc0dccabf03ddbd20474caedc8963f7688356027b7",
+                        "source":  "tests/11-E32-stage-run-concurrency/21-contract-consumer-forensics.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  8770,
+                        "sha256":  "2f858fb8147b075879d755bc0dccabf03ddbd20474caedc8963f7688356027b7"
+                    },
+                    {
+                        "evidence_id":  "sha256:781e06225ca438a7e95367d5035e4744e236a96f8a3eb900eaf58f58792330d7",
+                        "source":  "tests/11-E32-stage-run-concurrency/22-orchestration-retry-forensics.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  7716,
+                        "sha256":  "781e06225ca438a7e95367d5035e4744e236a96f8a3eb900eaf58f58792330d7"
+                    },
+                    {
+                        "evidence_id":  "sha256:ab94b4c89c99830e4fa5e1a0caf2156ac7372a9ae32b6031b5f7a7c672d4d0b3",
+                        "source":  "tests/11-E32-stage-run-concurrency/22-orchestration-retry-forensics.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  15440,
+                        "sha256":  "ab94b4c89c99830e4fa5e1a0caf2156ac7372a9ae32b6031b5f7a7c672d4d0b3"
+                    },
+                    {
+                        "evidence_id":  "sha256:3d4b48501ea5c1458f46af01259e940b09217e8395295e190d3bef4c468abeca",
+                        "source":  "tests/11-E32-stage-run-concurrency/23-fix-consistency-retryable-error.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  13932,
+                        "sha256":  "3d4b48501ea5c1458f46af01259e940b09217e8395295e190d3bef4c468abeca"
+                    },
+                    {
+                        "evidence_id":  "sha256:f0f82e9aa9f23aa92e25e19c9a66237bf8bb8eb3d7e1b49b8cd85bc48d1e999e",
+                        "source":  "tests/11-E32-stage-run-concurrency/23-fix-consistency-retryable-error.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  27860,
+                        "sha256":  "f0f82e9aa9f23aa92e25e19c9a66237bf8bb8eb3d7e1b49b8cd85bc48d1e999e"
+                    },
+                    {
+                        "evidence_id":  "sha256:4f7dfa80f7a9019d8f5da9d35ea47179198562ba1d1f5c9c7d9840d6dc7ad0fc",
+                        "source":  "tests/11-E32-stage-run-concurrency/24-integrated-retry-escalation.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  12157,
+                        "sha256":  "4f7dfa80f7a9019d8f5da9d35ea47179198562ba1d1f5c9c7d9840d6dc7ad0fc"
+                    },
+                    {
+                        "evidence_id":  "sha256:416c2fd4645fbbcba601f7445385cabc3346fb19028711068d81c1841c66a814",
+                        "source":  "tests/11-E32-stage-run-concurrency/24-integrated-retry-escalation.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  24302,
+                        "sha256":  "416c2fd4645fbbcba601f7445385cabc3346fb19028711068d81c1841c66a814"
+                    },
+                    {
+                        "evidence_id":  "sha256:0108336b0670d3b7254dcd83a9bd3eb7e955f3039ae97764b871d2e5f67dd6b3",
+                        "source":  "tests/11-E32-stage-run-concurrency/25-concurrent-post-fix.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2514,
+                        "sha256":  "0108336b0670d3b7254dcd83a9bd3eb7e955f3039ae97764b871d2e5f67dd6b3"
+                    },
+                    {
+                        "evidence_id":  "sha256:a61716403890b6a4918906871ee164725671a6044a2c71b182730e787e696baf",
+                        "source":  "tests/11-E32-stage-run-concurrency/25-concurrent-post-fix.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  9944,
+                        "sha256":  "a61716403890b6a4918906871ee164725671a6044a2c71b182730e787e696baf"
+                    },
+                    {
+                        "evidence_id":  "sha256:6259c359703f7ba0b46b176f22e6c5c0c8af12403a5f134f180f92021cad2ccd",
+                        "source":  "tests/11-E32-stage-run-concurrency/25-worker-run.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  357,
+                        "sha256":  "6259c359703f7ba0b46b176f22e6c5c0c8af12403a5f134f180f92021cad2ccd"
+                    },
+                    {
+                        "evidence_id":  "sha256:84e7e8a260b66b5938ff02709af590734a363d9f4cb04a63eff91257ef53dc0e",
+                        "source":  "tests/11-E32-stage-run-concurrency/25-worker-stage.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  379,
+                        "sha256":  "84e7e8a260b66b5938ff02709af590734a363d9f4cb04a63eff91257ef53dc0e"
+                    },
+                    {
+                        "evidence_id":  "sha256:3fd35a160f4bbc3653590fe066e3390250ff715cb6e26b69e07e817a2fcaaed2",
+                        "source":  "tests/11-E32-stage-run-concurrency/FREEZE-11-E.32.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3152,
+                        "sha256":  "3fd35a160f4bbc3653590fe066e3390250ff715cb6e26b69e07e817a2fcaaed2"
+                    },
+                    {
+                        "evidence_id":  "sha256:4c8d5259f3df7edeeff656ef5ff881ac8067f23a5ab1609f1b202b496a7e4baf",
+                        "source":  "tests/11-E5-evidence/01-routines.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  316,
+                        "sha256":  "4c8d5259f3df7edeeff656ef5ff881ac8067f23a5ab1609f1b202b496a7e4baf"
+                    },
+                    {
+                        "evidence_id":  "sha256:47ceb14d4e639d4ba35c29c62471508aa062617b7062678e3dda24b67d2ead21",
+                        "source":  "tests/11-E5-evidence/01-routines.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  37150,
+                        "sha256":  "47ceb14d4e639d4ba35c29c62471508aa062617b7062678e3dda24b67d2ead21"
+                    },
+                    {
+                        "evidence_id":  "sha256:0ad4c7b44a270850fd02a87393be6a0d076437e23a9d657ef63a45eba3a2ae30",
+                        "source":  "tests/11-E5-evidence/02-engine-functions.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  536,
+                        "sha256":  "0ad4c7b44a270850fd02a87393be6a0d076437e23a9d657ef63a45eba3a2ae30"
+                    },
+                    {
+                        "evidence_id":  "sha256:b97e48085097602cba2f8953dad2e348afe50f7713a15ed10b36c835408d8610",
+                        "source":  "tests/11-E5-evidence/02-engine-functions.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3351397,
+                        "sha256":  "b97e48085097602cba2f8953dad2e348afe50f7713a15ed10b36c835408d8610"
+                    },
+                    {
+                        "evidence_id":  "sha256:fef6e5fcbd1a89368d9e6bfa57f6b5fbd2d4ea9a88e6ec2c2b0a93be09205bdf",
+                        "source":  "tests/11-E5-evidence/04-groq-implementation-search.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  270,
+                        "sha256":  "fef6e5fcbd1a89368d9e6bfa57f6b5fbd2d4ea9a88e6ec2c2b0a93be09205bdf"
+                    },
+                    {
+                        "evidence_id":  "sha256:36d4d944041ce60949a1370967ed191ebe8db8a7a4ab1ea2adf93409a8c713c5",
+                        "source":  "tests/11-E5-evidence/05-execution-event-search.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  7819,
+                        "sha256":  "36d4d944041ce60949a1370967ed191ebe8db8a7a4ab1ea2adf93409a8c713c5"
+                    },
+                    {
+                        "evidence_id":  "sha256:a995974871866724ce398f15663d7b00c355ce87d626022ed1a863f587f75a7a",
+                        "source":  "tests/11-E5-evidence/06-targeted-engine-analysis.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  112090,
+                        "sha256":  "a995974871866724ce398f15663d7b00c355ce87d626022ed1a863f587f75a7a"
+                    },
+                    {
+                        "evidence_id":  "sha256:378a9b616155fbdf5d484bd2e6ccf82598787baa053c6d346fda6dbaae6e2a7e",
+                        "source":  "tests/11-E5-evidence/create_script_stage.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  684,
+                        "sha256":  "378a9b616155fbdf5d484bd2e6ccf82598787baa053c6d346fda6dbaae6e2a7e"
+                    },
+                    {
+                        "evidence_id":  "sha256:22dba542d2c2fa9a3cf535b34956cb5642aa2e493998f4c9f61b0cc6a9852c41",
+                        "source":  "tests/11-E5-evidence/create_stage_script_groq.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1419,
+                        "sha256":  "22dba542d2c2fa9a3cf535b34956cb5642aa2e493998f4c9f61b0cc6a9852c41"
+                    },
+                    {
+                        "evidence_id":  "sha256:5082079c331056b3d5fcc3dfce6497173ab9e0fe450f842c3afc5b559c14055b",
+                        "source":  "tests/11-E5-evidence/db-init-003_stage_engine.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4226,
+                        "sha256":  "5082079c331056b3d5fcc3dfce6497173ab9e0fe450f842c3afc5b559c14055b"
+                    },
+                    {
+                        "evidence_id":  "sha256:48db18f48cbea676bdea54cd28977d3869fd86a92c663f171f72bf54939b66fa",
+                        "source":  "tests/11-E5-evidence/db-init-006_concurrent_execution_guard.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3469,
+                        "sha256":  "48db18f48cbea676bdea54cd28977d3869fd86a92c663f171f72bf54939b66fa"
+                    },
+                    {
+                        "evidence_id":  "sha256:4d06e356970fec0b03e5886eeccf960bf32ddbbe64aa758b6cd35730a07f6f02",
+                        "source":  "tests/11-E5-evidence/db-init-008_run_stage_consistency_guard.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  7955,
+                        "sha256":  "4d06e356970fec0b03e5886eeccf960bf32ddbbe64aa758b6cd35730a07f6f02"
+                    },
+                    {
+                        "evidence_id":  "sha256:fd4064c802e402d9fcb3f1c286ba50bd0ab2400c98282cac054fa5efe8fb652e",
+                        "source":  "tests/11-E5-evidence/db-init-010_state_transition_engine.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  7302,
+                        "sha256":  "fd4064c802e402d9fcb3f1c286ba50bd0ab2400c98282cac054fa5efe8fb652e"
+                    },
+                    {
+                        "evidence_id":  "sha256:31ab99e7a9d77637c3a70b20967678b14370b89b6d946290d9fbed7b4ba8a8bd",
+                        "source":  "tests/11-E5-evidence/db-init-011_stage_contract.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  8186,
+                        "sha256":  "31ab99e7a9d77637c3a70b20967678b14370b89b6d946290d9fbed7b4ba8a8bd"
+                    },
+                    {
+                        "evidence_id":  "sha256:3e75fb915adb858d012d6d8d35de98b9e33b80eeb7eb095c6e9feaada762b21d",
+                        "source":  "tests/11-E5-evidence/db-init-012_execution_trace_diagnostic.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5477,
+                        "sha256":  "3e75fb915adb858d012d6d8d35de98b9e33b80eeb7eb095c6e9feaada762b21d"
+                    },
+                    {
+                        "evidence_id":  "sha256:fc5abafd71f6e971e406e861e556d385340174e4665bce064475c1fb58fb71ed",
+                        "source":  "tests/11-E6-engine-functions/01-engine-forensics.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5652,
+                        "sha256":  "fc5abafd71f6e971e406e861e556d385340174e4665bce064475c1fb58fb71ed"
+                    },
+                    {
+                        "evidence_id":  "sha256:8e7dfea77b41494f2815bb9d6df3be5a4b5c4c4c635f858d89724be86c445b47",
+                        "source":  "tests/11-E6-engine-functions/01-engine-forensics.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  118300,
+                        "sha256":  "8e7dfea77b41494f2815bb9d6df3be5a4b5c4c4c635f858d89724be86c445b47"
+                    },
+                    {
+                        "evidence_id":  "sha256:a28d2d655723153a487aee762207c986ffec50d01f7f6c3fcf243797ff12d3d3",
+                        "source":  "tests/11-E7-engine-primitives/01-primitives.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2139,
+                        "sha256":  "a28d2d655723153a487aee762207c986ffec50d01f7f6c3fcf243797ff12d3d3"
+                    },
+                    {
+                        "evidence_id":  "sha256:c9eeacce1ea472be433c1a9004d01d76024323bcbb3cb2bd4113e9d0c90a590c",
+                        "source":  "tests/11-E7-engine-primitives/01-primitives.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  22282,
+                        "sha256":  "c9eeacce1ea472be433c1a9004d01d76024323bcbb3cb2bd4113e9d0c90a590c"
+                    },
+                    {
+                        "evidence_id":  "sha256:b728f64ce5ff541d5db5278cadbeabc980708bc655cf91f9096b74e335f481cd",
+                        "source":  "tests/11-E8-engine-primitives/01-targeted-primitives.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1332,
+                        "sha256":  "b728f64ce5ff541d5db5278cadbeabc980708bc655cf91f9096b74e335f481cd"
+                    },
+                    {
+                        "evidence_id":  "sha256:18dd9c33b2421a2211bc980c243a0e854109f8acac95bede1e9fe8e26fd81395",
+                        "source":  "tests/11-E8-engine-primitives/01-targeted-primitives.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  71752,
+                        "sha256":  "18dd9c33b2421a2211bc980c243a0e854109f8acac95bede1e9fe8e26fd81395"
+                    },
+                    {
+                        "evidence_id":  "sha256:35decd198c5f0cc07d4d9f7cfb9255e1efff80db0d5aa960f784c05833a54de8",
+                        "source":  "tests/11-E9-artifact-engine/01-artifact-engine.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1671,
+                        "sha256":  "35decd198c5f0cc07d4d9f7cfb9255e1efff80db0d5aa960f784c05833a54de8"
+                    },
+                    {
+                        "evidence_id":  "sha256:48e55d5b616ad4a6f13b6a0ce60f627a162d7feb6c193f7c9533bb6a643618aa",
+                        "source":  "tests/11-E9-artifact-engine/01-artifact-engine.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  208,
+                        "sha256":  "48e55d5b616ad4a6f13b6a0ce60f627a162d7feb6c193f7c9533bb6a643618aa"
+                    },
+                    {
+                        "evidence_id":  "sha256:89584d1b68d3d3424d573cac844ce00561c578c2b96e45db72abafa886a3f3b5",
+                        "source":  "tests/11-E9-artifact-engine/02-artifact-engine-corrected.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2805,
+                        "sha256":  "89584d1b68d3d3424d573cac844ce00561c578c2b96e45db72abafa886a3f3b5"
+                    },
+                    {
+                        "evidence_id":  "sha256:954c7861c825b05f1e4a6a91cf9afa75136036f0d13b9a910b7f42795bfadbb7",
+                        "source":  "tests/11-E9-artifact-engine/02-artifact-engine-corrected.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  89720,
+                        "sha256":  "954c7861c825b05f1e4a6a91cf9afa75136036f0d13b9a910b7f42795bfadbb7"
+                    },
+                    {
+                        "evidence_id":  "sha256:d1e4a087857ae13d144de9c508e9b005b8b0adfd3f78c31fd53dfc9472c9880d",
+                        "source":  "tests/11-E9-artifact-engine/03-artifact-creation-forensics.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3514,
+                        "sha256":  "d1e4a087857ae13d144de9c508e9b005b8b0adfd3f78c31fd53dfc9472c9880d"
+                    },
+                    {
+                        "evidence_id":  "sha256:f24cf1aa664c42b3451d6d34c8df5b590f8fcb609bf6b54beccfb287d412558f",
+                        "source":  "tests/11-E9-artifact-engine/03-artifact-creation-forensics.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  486,
+                        "sha256":  "f24cf1aa664c42b3451d6d34c8df5b590f8fcb609bf6b54beccfb287d412558f"
+                    },
+                    {
+                        "evidence_id":  "sha256:ba5ab587e0ca1135a501557ff132b37d0a85c8a6445a777bb6cd634688976066",
+                        "source":  "tests/11-E9-artifact-engine/04-repo-artifact-insert-search.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  638,
+                        "sha256":  "ba5ab587e0ca1135a501557ff132b37d0a85c8a6445a777bb6cd634688976066"
+                    },
+                    {
+                        "evidence_id":  "sha256:016f66cd8d365777b6f5728110481c05c019547f726fb0e424f3842d5ce83f66",
+                        "source":  "tests/11-E9-artifact-engine/05-storage-adapter.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  10842,
+                        "sha256":  "016f66cd8d365777b6f5728110481c05c019547f726fb0e424f3842d5ce83f66"
+                    },
+                    {
+                        "evidence_id":  "sha256:1df81bb8259589feaffbc4316f424fc6af21a7f05d2d30fb943eb9e959d5807c",
+                        "source":  "tests/11-E9-artifact-engine/06-artifact-engine-name-inventory.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1770,
+                        "sha256":  "1df81bb8259589feaffbc4316f424fc6af21a7f05d2d30fb943eb9e959d5807c"
+                    },
+                    {
+                        "evidence_id":  "sha256:8707f2a603de11651a2e89b33d3e2b4ec9b5135ce3e9ba56c3986aa7a4c49eed",
+                        "source":  "tests/11-E9-artifact-engine/06-artifact-engine-name-inventory.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  11342,
+                        "sha256":  "8707f2a603de11651a2e89b33d3e2b4ec9b5135ce3e9ba56c3986aa7a4c49eed"
+                    },
+                    {
+                        "evidence_id":  "sha256:5fca0c51ee498db03977de1b463264fa485425b4b33a610e112d496e614d7493",
+                        "source":  "tests/11-E9-artifact-engine/07-orphan-recovery-insert-context.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1920,
+                        "sha256":  "5fca0c51ee498db03977de1b463264fa485425b4b33a610e112d496e614d7493"
+                    },
+                    {
+                        "evidence_id":  "sha256:bbc4d8aa235462dbc322d202e6ca8f22b071499dcba28813e22613c26044acc5",
+                        "source":  "tests/11-E9-artifact-engine/08-storage-operation-inventory.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5314,
+                        "sha256":  "bbc4d8aa235462dbc322d202e6ca8f22b071499dcba28813e22613c26044acc5"
+                    },
+                    {
+                        "evidence_id":  "sha256:70495de36bd90dad2240508fe60a5dc66d00bf1f4da63f9a8411c21573738f28",
+                        "source":  "tests/11-F-orchestration/01-orchestration-forensics.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  16243,
+                        "sha256":  "70495de36bd90dad2240508fe60a5dc66d00bf1f4da63f9a8411c21573738f28"
+                    },
+                    {
+                        "evidence_id":  "sha256:f12ec80c25b54052d86995de6e9fd254f69537b6c7ded81bfe545cc07b34ab3a",
+                        "source":  "tests/11-F-orchestration/01-orchestration-forensics.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  795280,
+                        "sha256":  "f12ec80c25b54052d86995de6e9fd254f69537b6c7ded81bfe545cc07b34ab3a"
+                    },
+                    {
+                        "evidence_id":  "sha256:a1b19bdde0d20fe45076cbd2a84e439b02fb020750fa40d49a98d498d123d039",
+                        "source":  "tests/11-F-orchestration/02-orchestrator-contract-test.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  11700,
+                        "sha256":  "a1b19bdde0d20fe45076cbd2a84e439b02fb020750fa40d49a98d498d123d039"
+                    },
+                    {
+                        "evidence_id":  "sha256:52f4a6971e0764fa78ce404ac612f70259f7d0da4484421baad7bd08a402f441",
+                        "source":  "tests/11-F-orchestration/02-orchestrator-contract-test.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5187,
+                        "sha256":  "52f4a6971e0764fa78ce404ac612f70259f7d0da4484421baad7bd08a402f441"
+                    },
+                    {
+                        "evidence_id":  "sha256:653c40dad5c7fd12d0343aa5a790dafbd24097f76e4206630c18884c6a820478",
+                        "source":  "tests/11-F-orchestration/03-lock-concurrency-forensics.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  12999,
+                        "sha256":  "653c40dad5c7fd12d0343aa5a790dafbd24097f76e4206630c18884c6a820478"
+                    },
+                    {
+                        "evidence_id":  "sha256:63e9a1545e8d45e1c961d82142b4afd1f6c9ec98a18da737fc9fbdbd17207e30",
+                        "source":  "tests/11-F-orchestration/03-lock-concurrency-forensics.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  356046,
+                        "sha256":  "63e9a1545e8d45e1c961d82142b4afd1f6c9ec98a18da737fc9fbdbd17207e30"
+                    },
+                    {
+                        "evidence_id":  "sha256:e98621c46bef98aaab54c07960f61a8771b75c4a4409781968265bf498cc23eb",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/00-cleanup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  528,
+                        "sha256":  "e98621c46bef98aaab54c07960f61a8771b75c4a4409781968265bf498cc23eb"
+                    },
+                    {
+                        "evidence_id":  "sha256:4bb2fe6d906dd9f902273b3c228ee61130f6d577dd0373bc174947fa613a38eb",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/01-concurrency-matrix.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2605,
+                        "sha256":  "4bb2fe6d906dd9f902273b3c228ee61130f6d577dd0373bc174947fa613a38eb"
+                    },
+                    {
+                        "evidence_id":  "sha256:e21b3d22424e4c1a43fa1c927d83ae956aecb2418145acf101a49139442a2b7b",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/01-concurrency-matrix.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1337,
+                        "sha256":  "e21b3d22424e4c1a43fa1c927d83ae956aecb2418145acf101a49139442a2b7b"
+                    },
+                    {
+                        "evidence_id":  "sha256:d4cbed95b1854221685836fcf79877f2f283ff45b29a6a74d2405638d20eacf1",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/01-setup-A.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  520,
+                        "sha256":  "d4cbed95b1854221685836fcf79877f2f283ff45b29a6a74d2405638d20eacf1"
+                    },
+                    {
+                        "evidence_id":  "sha256:58d1bdf808490afd4fed597e5dd2a76c22d09586c237357665a6e28893f2d82e",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/02-worker-A-claim.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  114,
+                        "sha256":  "58d1bdf808490afd4fed597e5dd2a76c22d09586c237357665a6e28893f2d82e"
+                    },
+                    {
+                        "evidence_id":  "sha256:33686f027ff9da7777895729d30817bd512918ef6c6bd26d908396133cf3df7b",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/03-worker-B-fail-stage.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  310,
+                        "sha256":  "33686f027ff9da7777895729d30817bd512918ef6c6bd26d908396133cf3df7b"
+                    },
+                    {
+                        "evidence_id":  "sha256:21d1152d30e897a5daa78735d039f0905f2e1ddd4927252ac65a76070e7635e5",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/04-setup-B.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  519,
+                        "sha256":  "21d1152d30e897a5daa78735d039f0905f2e1ddd4927252ac65a76070e7635e5"
+                    },
+                    {
+                        "evidence_id":  "sha256:c15c10afbe8bcc7a1eb0dc7b9e1bb6abab6cf27d85674076772325008200feec",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/04-setup-real-matrix-v2.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5795,
+                        "sha256":  "c15c10afbe8bcc7a1eb0dc7b9e1bb6abab6cf27d85674076772325008200feec"
+                    },
+                    {
+                        "evidence_id":  "sha256:8314d61fac9f77447824d4208df058b63fb84ac456fe1f8b35667334142cb800",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/04-setup-real-matrix-v2.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1358,
+                        "sha256":  "8314d61fac9f77447824d4208df058b63fb84ac456fe1f8b35667334142cb800"
+                    },
+                    {
+                        "evidence_id":  "sha256:9e0b35016bea3e569b36fbc233e2aa8c0e37592d88457fe00b2cc6b8696287e2",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/05-A-claim.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  486,
+                        "sha256":  "9e0b35016bea3e569b36fbc233e2aa8c0e37592d88457fe00b2cc6b8696287e2"
+                    },
+                    {
+                        "evidence_id":  "sha256:5fcdfb7c7360596a4589697c3dcf92f7c1445a35f2572d3df3ff75959cdd3da9",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/05-worker-A-claim.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  114,
+                        "sha256":  "5fcdfb7c7360596a4589697c3dcf92f7c1445a35f2572d3df3ff75959cdd3da9"
+                    },
+                    {
+                        "evidence_id":  "sha256:193919cc53843c62190b2083df146937b6232eb963840b2ef5a0d85f860f9de4",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/06-A-fail-stage.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  416,
+                        "sha256":  "193919cc53843c62190b2083df146937b6232eb963840b2ef5a0d85f860f9de4"
+                    },
+                    {
+                        "evidence_id":  "sha256:2035570dbd25423b1866a360d0b57b04986b282cb72a1b93b0592003d586d82e",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/06-worker-B-fail-run.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  292,
+                        "sha256":  "2035570dbd25423b1866a360d0b57b04986b282cb72a1b93b0592003d586d82e"
+                    },
+                    {
+                        "evidence_id":  "sha256:3a9e9c4ba64ff9a0c3551d9d58082f525fc765666c7c59e529fa9f99912f8610",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/07-B-claim.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  480,
+                        "sha256":  "3a9e9c4ba64ff9a0c3551d9d58082f525fc765666c7c59e529fa9f99912f8610"
+                    },
+                    {
+                        "evidence_id":  "sha256:7ff4099696f568906ff3a410e2800e7d51b73f24d711c21ec1b97d73c7b07ef1",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/07-setup-C.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  847,
+                        "sha256":  "7ff4099696f568906ff3a410e2800e7d51b73f24d711c21ec1b97d73c7b07ef1"
+                    },
+                    {
+                        "evidence_id":  "sha256:914cb41696e1bdddf4e45ea4cdc9f50494f151ed5f603a0b038dbf385767c600",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/08-B-fail-run.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  348,
+                        "sha256":  "914cb41696e1bdddf4e45ea4cdc9f50494f151ed5f603a0b038dbf385767c600"
+                    },
+                    {
+                        "evidence_id":  "sha256:2ec114c749407f2ea882d68169a3a1ad61950ae2ad2666716ea028e9e8adfcbb",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/08-worker-A-claim-complete.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  232,
+                        "sha256":  "2ec114c749407f2ea882d68169a3a1ad61950ae2ad2666716ea028e9e8adfcbb"
+                    },
+                    {
+                        "evidence_id":  "sha256:ba13908af71d15d2e3d2281d3f83367a80281aafa6ded0c12e3a6846d8dc9486",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/09-C-claim.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  480,
+                        "sha256":  "ba13908af71d15d2e3d2281d3f83367a80281aafa6ded0c12e3a6846d8dc9486"
+                    },
+                    {
+                        "evidence_id":  "sha256:4f0aa74173afd7260b9b07f883ed6a98e2ec4357bc38a37e209d1a9564a4b5b7",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/09-worker-B-complete.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  179,
+                        "sha256":  "4f0aa74173afd7260b9b07f883ed6a98e2ec4357bc38a37e209d1a9564a4b5b7"
+                    },
+                    {
+                        "evidence_id":  "sha256:20de4972481a1d9cc13638fa426af7922b171914359e98e381555bc1787d071c",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/10-C-complete.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  380,
+                        "sha256":  "20de4972481a1d9cc13638fa426af7922b171914359e98e381555bc1787d071c"
+                    },
+                    {
+                        "evidence_id":  "sha256:e185f8643789dd4d653bd6df089c64601f8faf9eafc7a496fd0b097ae38e6d3e",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/10-setup-D.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  847,
+                        "sha256":  "e185f8643789dd4d653bd6df089c64601f8faf9eafc7a496fd0b097ae38e6d3e"
+                    },
+                    {
+                        "evidence_id":  "sha256:b21c8e7c98365951790423e027d4c7f2d506f6cef8b737f027ee15fca83256b8",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/11-D-complete.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  380,
+                        "sha256":  "b21c8e7c98365951790423e027d4c7f2d506f6cef8b737f027ee15fca83256b8"
+                    },
+                    {
+                        "evidence_id":  "sha256:71ffb48b6da61465060456767cbe942ad4383c7b81187d0857814028baced7a9",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/11-worker-A-complete.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  163,
+                        "sha256":  "71ffb48b6da61465060456767cbe942ad4383c7b81187d0857814028baced7a9"
+                    },
+                    {
+                        "evidence_id":  "sha256:c2c8280b221d04d210a418c83c6e548a680e51625b23c42d9123884201cb5f71",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/12-D-fail-stage.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  652,
+                        "sha256":  "c2c8280b221d04d210a418c83c6e548a680e51625b23c42d9123884201cb5f71"
+                    },
+                    {
+                        "evidence_id":  "sha256:dda7a0191fd4f9ff6c29322a3d280fd119bb462ca6628fe5c97844422d4b6973",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/12-worker-B-fail-stage.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  218,
+                        "sha256":  "dda7a0191fd4f9ff6c29322a3d280fd119bb462ca6628fe5c97844422d4b6973"
+                    },
+                    {
+                        "evidence_id":  "sha256:433058773293b92606cff51bf8ed310a6cddfac1e175f8ec4475e40a6ddb47b3",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/13-E-complete.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  380,
+                        "sha256":  "433058773293b92606cff51bf8ed310a6cddfac1e175f8ec4475e40a6ddb47b3"
+                    },
+                    {
+                        "evidence_id":  "sha256:35b2ad1c9050c110e636d39f96b9dda4c9a36ff6dd057919aac3306ad5d71c84",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/13-setup-E.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  847,
+                        "sha256":  "35b2ad1c9050c110e636d39f96b9dda4c9a36ff6dd057919aac3306ad5d71c84"
+                    },
+                    {
+                        "evidence_id":  "sha256:f71e39ee46be420f375f3a29e186affc8f720b0365399dae3c5003fc1657e20f",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/14-E-fail-run.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  354,
+                        "sha256":  "f71e39ee46be420f375f3a29e186affc8f720b0365399dae3c5003fc1657e20f"
+                    },
+                    {
+                        "evidence_id":  "sha256:7ab7df1ae36f6d07800d6703e74e6b84100504f78ce264dbc5038c0d7fcc165f",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/14-worker-A-complete.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  163,
+                        "sha256":  "7ab7df1ae36f6d07800d6703e74e6b84100504f78ce264dbc5038c0d7fcc165f"
+                    },
+                    {
+                        "evidence_id":  "sha256:264f2133f8798a5d0e9e80bd99a21fba0b63f2fb366ee72e101b76a91a269ea6",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/15-final-observation.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1245,
+                        "sha256":  "264f2133f8798a5d0e9e80bd99a21fba0b63f2fb366ee72e101b76a91a269ea6"
+                    },
+                    {
+                        "evidence_id":  "sha256:9332c99d5d635094864cf9bc6c38467363ac1e95a5860635cdbbb1705d58e623",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/15-final-observation.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1423,
+                        "sha256":  "9332c99d5d635094864cf9bc6c38467363ac1e95a5860635cdbbb1705d58e623"
+                    },
+                    {
+                        "evidence_id":  "sha256:e23d1edf7e9987d3d3b35275556f6d14f04712ab29a3c741a94c94cff4e7835b",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/15-worker-B-fail-run.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  200,
+                        "sha256":  "e23d1edf7e9987d3d3b35275556f6d14f04712ab29a3c741a94c94cff4e7835b"
+                    },
+                    {
+                        "evidence_id":  "sha256:355ba0021307dd88785625fe2c455be2e8e0ac7dff094df242f1a8368609b9d7",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/16-final-observation.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1217,
+                        "sha256":  "355ba0021307dd88785625fe2c455be2e8e0ac7dff094df242f1a8368609b9d7"
+                    },
+                    {
+                        "evidence_id":  "sha256:f03879ff7d8bdddaf811cc9d41945aac0dadc5b10b4f03afe5cb407ccee2f125",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/17-D-deadlock-forensics.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  7303,
+                        "sha256":  "f03879ff7d8bdddaf811cc9d41945aac0dadc5b10b4f03afe5cb407ccee2f125"
+                    },
+                    {
+                        "evidence_id":  "sha256:956ebf7ec6b339081f86ba1b080bea0c0c71898a426fc46ed40435d0af41fc3f",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/17-D-deadlock-forensics.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  102026,
+                        "sha256":  "956ebf7ec6b339081f86ba1b080bea0c0c71898a426fc46ed40435d0af41fc3f"
+                    },
+                    {
+                        "evidence_id":  "sha256:7e900b5ca713e5562619d84035efddf7c859d620c9ddd6d51003315a4bf6e897",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/17-final-cleanup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  611,
+                        "sha256":  "7e900b5ca713e5562619d84035efddf7c859d620c9ddd6d51003315a4bf6e897"
+                    },
+                    {
+                        "evidence_id":  "sha256:129edd4956010b454bd42742d7201cedaace15344d2beb34ac59f4378f7945d2",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/18-fk-lock-proof.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1375,
+                        "sha256":  "129edd4956010b454bd42742d7201cedaace15344d2beb34ac59f4378f7945d2"
+                    },
+                    {
+                        "evidence_id":  "sha256:2f0842df36caa12a7c6f47fa0d7acd8ec11eb507f4852eae5749cfbcb2bd11ca",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/18-fk-lock-proof.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2696,
+                        "sha256":  "2f0842df36caa12a7c6f47fa0d7acd8ec11eb507f4852eae5749cfbcb2bd11ca"
+                    },
+                    {
+                        "evidence_id":  "sha256:2fe2a950fdc8ee57581dd6f4ee2e8ed421e68d0d302b5c81da5387b49ae2f50a",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/18-post-clean-verification.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  601,
+                        "sha256":  "2fe2a950fdc8ee57581dd6f4ee2e8ed421e68d0d302b5c81da5387b49ae2f50a"
+                    },
+                    {
+                        "evidence_id":  "sha256:d90000284c03e0da6e845ac8ce959e2626e28fef61d52a8a0c3defe5e03d6ba5",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/19-fk-lock-proof-setup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1009,
+                        "sha256":  "d90000284c03e0da6e845ac8ce959e2626e28fef61d52a8a0c3defe5e03d6ba5"
+                    },
+                    {
+                        "evidence_id":  "sha256:d820df922770de391a3961a4be0b2fa3463e209fbaf7e885523abb653050d54f",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/19-fk-lock-proof-setup.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  315,
+                        "sha256":  "d820df922770de391a3961a4be0b2fa3463e209fbaf7e885523abb653050d54f"
+                    },
+                    {
+                        "evidence_id":  "sha256:bf05605044273e0be923c0573e2a9cf09c6e9d2d0a965980ca354f765f23ca0a",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/20-worker-A.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  247,
+                        "sha256":  "bf05605044273e0be923c0573e2a9cf09c6e9d2d0a965980ca354f765f23ca0a"
+                    },
+                    {
+                        "evidence_id":  "sha256:81aa90f2f18d05edb4c30698f68017b04309c42cc3fded5d1d80d60dcbcc01d4",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/21-worker-B.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  539,
+                        "sha256":  "81aa90f2f18d05edb4c30698f68017b04309c42cc3fded5d1d80d60dcbcc01d4"
+                    },
+                    {
+                        "evidence_id":  "sha256:fcc5adbdb287ba7f9f5641ac2c17773fda0a2723266419e672514d9cd335428a",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/22-fk-lock-proof-cleanup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  586,
+                        "sha256":  "fcc5adbdb287ba7f9f5641ac2c17773fda0a2723266419e672514d9cd335428a"
+                    },
+                    {
+                        "evidence_id":  "sha256:963e37999dc7501a65d27a9263c574d9db59a6f9649d5a7ad1168edfc089ae46",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/22-fk-lock-proof-cleanup.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  329,
+                        "sha256":  "963e37999dc7501a65d27a9263c574d9db59a6f9649d5a7ad1168edfc089ae46"
+                    },
+                    {
+                        "evidence_id":  "sha256:df4630c16605c58122aea9a60361d44d539eda54a082178203b8609d4aea9960",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/23-fix-complete-lock-order.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  6347,
+                        "sha256":  "df4630c16605c58122aea9a60361d44d539eda54a082178203b8609d4aea9960"
+                    },
+                    {
+                        "evidence_id":  "sha256:4b92500f460bab310916bc993a506eefd1e8e1e3bff3825f00328ea1db747a19",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/23-fix-complete-lock-order.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  57,
+                        "sha256":  "4b92500f460bab310916bc993a506eefd1e8e1e3bff3825f00328ea1db747a19"
+                    },
+                    {
+                        "evidence_id":  "sha256:6cb46d1f5ab9e5e53862194eb39a3874c6077ee56e0ff6d2e82cea4c1ffb3676",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/24-verify-complete-lock-order.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1742,
+                        "sha256":  "6cb46d1f5ab9e5e53862194eb39a3874c6077ee56e0ff6d2e82cea4c1ffb3676"
+                    },
+                    {
+                        "evidence_id":  "sha256:20c707bd90453879a1b72186820986b03347e1b3f2803267356462222cca0083",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/24-verify-complete-lock-order.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  933,
+                        "sha256":  "20c707bd90453879a1b72186820986b03347e1b3f2803267356462222cca0083"
+                    },
+                    {
+                        "evidence_id":  "sha256:b7969e2827dcacea68ace43e54cf12a7192ca71540dcf221172ba27d30ddb45e",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/25-targeted-D-setup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1263,
+                        "sha256":  "b7969e2827dcacea68ace43e54cf12a7192ca71540dcf221172ba27d30ddb45e"
+                    },
+                    {
+                        "evidence_id":  "sha256:8c150a77261708764b91ba8caf83d68dbf099d1b60766829150604013d486e7b",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/25-targeted-D-setup.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  110,
+                        "sha256":  "8c150a77261708764b91ba8caf83d68dbf099d1b60766829150604013d486e7b"
+                    },
+                    {
+                        "evidence_id":  "sha256:30bbe22bb1b45647f58bfd689b0e6c2c93dbaa9f2f89a3af472e8a4f119daf13",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/26-D-fix-complete.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  377,
+                        "sha256":  "30bbe22bb1b45647f58bfd689b0e6c2c93dbaa9f2f89a3af472e8a4f119daf13"
+                    },
+                    {
+                        "evidence_id":  "sha256:b2efa10c9271ae491e4d96506b85a4ccb790db9847c13b1d332125635cd17679",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/27-D-fix-fail-stage.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  432,
+                        "sha256":  "b2efa10c9271ae491e4d96506b85a4ccb790db9847c13b1d332125635cd17679"
+                    },
+                    {
+                        "evidence_id":  "sha256:301c154b05b3b842a3151cfea29cb84f781a1c17b7c99650d28df563bf3d83e1",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/28-D-fix-cleanup.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1064,
+                        "sha256":  "301c154b05b3b842a3151cfea29cb84f781a1c17b7c99650d28df563bf3d83e1"
+                    },
+                    {
+                        "evidence_id":  "sha256:026e3e295d9c93c2cbc4375ba943204f540ed5926da0603d84b374c026fbb8ec",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/28-D-fix-cleanup.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  738,
+                        "sha256":  "026e3e295d9c93c2cbc4375ba943204f540ed5926da0603d84b374c026fbb8ec"
+                    },
+                    {
+                        "evidence_id":  "sha256:3c87844b23299623c7cd27dfe0d00e7127a62892b881e1be63dc30c190a30408",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/29-verify-complete-lock-order-semantic.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4797,
+                        "sha256":  "3c87844b23299623c7cd27dfe0d00e7127a62892b881e1be63dc30c190a30408"
+                    },
+                    {
+                        "evidence_id":  "sha256:bf96c1e07acced74fbd81ac580aedfaeaa451322178c0f8b5e7427ab20188921",
+                        "source":  "tests/11-F-orchestration/11-F.3-B/29-verify-complete-lock-order-semantic.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  120,
+                        "sha256":  "bf96c1e07acced74fbd81ac580aedfaeaa451322178c0f8b5e7427ab20188921"
+                    },
+                    {
+                        "evidence_id":  "sha256:f80fe4f56ab4af3bcbe36302ee4a7e73a3bc96bf71ccb767ff3d285debe5c3ec",
+                        "source":  "tests/artifact-registry/0e62-valid.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  5,
+                        "sha256":  "f80fe4f56ab4af3bcbe36302ee4a7e73a3bc96bf71ccb767ff3d285debe5c3ec"
+                    },
+                    {
+                        "evidence_id":  "sha256:8c962a107dee76a7f217dfe824009f51a2882221448ecfccf3dbd17af734b498",
+                        "source":  "tests/artifact-registry/artifact-contract-test.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  47,
+                        "sha256":  "8c962a107dee76a7f217dfe824009f51a2882221448ecfccf3dbd17af734b498"
+                    },
+                    {
+                        "evidence_id":  "sha256:8c962a107dee76a7f217dfe824009f51a2882221448ecfccf3dbd17af734b498",
+                        "source":  "tests/artifact-registry/download/artifact-contract-test.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  47,
+                        "sha256":  "8c962a107dee76a7f217dfe824009f51a2882221448ecfccf3dbd17af734b498"
+                    },
+                    {
+                        "evidence_id":  "sha256:8c962a107dee76a7f217dfe824009f51a2882221448ecfccf3dbd17af734b498",
+                        "source":  "tests/artifact-registry/mismatch-test/artifact-contract-test.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  47,
+                        "sha256":  "8c962a107dee76a7f217dfe824009f51a2882221448ecfccf3dbd17af734b498"
+                    },
+                    {
+                        "evidence_id":  "sha256:e9daf94c0c9ba3821af2a948bf7515caae5e6792665693a941b656a2858cd20f",
+                        "source":  "tests/media-production/media-production-contract-integration.ps1",
+                        "category":  "test",
+                        "format":  "powershell",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1793,
+                        "sha256":  "e9daf94c0c9ba3821af2a948bf7515caae5e6792665693a941b656a2858cd20f"
+                    },
+                    {
+                        "evidence_id":  "sha256:0f609424f4cc179f038cfa022767baead0fcd59af8f987a0a9cf12ccb8486386",
+                        "source":  "tests/p2.2/kokoro-models.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  249,
+                        "sha256":  "0f609424f4cc179f038cfa022767baead0fcd59af8f987a0a9cf12ccb8486386"
+                    },
+                    {
+                        "evidence_id":  "sha256:73e9291698ff4693d7c8d4bb161bc378415ebd508f351eecd0bacee11df25799",
+                        "source":  "tests/p2.2/kokoro-openapi.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  15141,
+                        "sha256":  "73e9291698ff4693d7c8d4bb161bc378415ebd508f351eecd0bacee11df25799"
+                    },
+                    {
+                        "evidence_id":  "sha256:852e894444225a42a8d479d699656e838737ecd3ce30996c0a62822bd4c962b0",
+                        "source":  "tests/p2.2/scene-plan-quality-validator.ps1",
+                        "category":  "test",
+                        "format":  "powershell",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  6898,
+                        "sha256":  "852e894444225a42a8d479d699656e838737ecd3ce30996c0a62822bd4c962b0"
+                    },
+                    {
+                        "evidence_id":  "sha256:5e6a7f1b9d855c43a9a693066280644e3bcef5aab59c851fcc4cdb217812efac",
+                        "source":  "tests/p2.2-kokoro-ffmpeg-decode.log",
+                        "category":  "test",
+                        "format":  "log",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1214,
+                        "sha256":  "5e6a7f1b9d855c43a9a693066280644e3bcef5aab59c851fcc4cdb217812efac"
+                    },
+                    {
+                        "evidence_id":  "sha256:992faef529aa7bc906d5324fb40d18d3a665a164cca85fbb847aa6773e4338fd",
+                        "source":  "tests/p2.2-kokoro-normalize-r3.log",
+                        "category":  "test",
+                        "format":  "log",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  1198,
+                        "sha256":  "992faef529aa7bc906d5324fb40d18d3a665a164cca85fbb847aa6773e4338fd"
+                    },
+                    {
+                        "evidence_id":  "sha256:829008f53f4cebaaf07111012ead54b70e25612473880537230ca12f41b8353e",
+                        "source":  "tests/p2.2-kokoro-openapi.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  15146,
+                        "sha256":  "829008f53f4cebaaf07111012ead54b70e25612473880537230ca12f41b8353e"
+                    },
+                    {
+                        "evidence_id":  "sha256:83224f4ee5ee18d62fc1ef7b40091a37db415943836bdb9bb15ab52709c5052b",
+                        "source":  "tests/p2.2-kokoro-probe.wav",
+                        "category":  "test",
+                        "format":  "wav",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  103380,
+                        "sha256":  "83224f4ee5ee18d62fc1ef7b40091a37db415943836bdb9bb15ab52709c5052b"
+                    },
+                    {
+                        "evidence_id":  "sha256:827c3b6cf61fea9d89f62b612498944eb76abd09b32f3a7ab68c1f29a83cb396",
+                        "source":  "tests/p2.2-kokoro-probe-r2.wav",
+                        "category":  "test",
+                        "format":  "wav",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  103382,
+                        "sha256":  "827c3b6cf61fea9d89f62b612498944eb76abd09b32f3a7ab68c1f29a83cb396"
+                    },
+                    {
+                        "evidence_id":  "sha256:b8b428137a784a485637d664bd4882e810794d6853744ab60f1d7327b58f76c1",
+                        "source":  "tests/p2.2-kokoro-probe-r3.wav",
+                        "category":  "test",
+                        "format":  "wav",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  103352,
+                        "sha256":  "b8b428137a784a485637d664bd4882e810794d6853744ab60f1d7327b58f76c1"
+                    },
+                    {
+                        "evidence_id":  "sha256:6212677911270db42ce55055c2963c8acb2c65aff127a3cf34aa4c23f7bbafe3",
+                        "source":  "tests/p2.2-kokoro-probe-r3-normalized.wav",
+                        "category":  "test",
+                        "format":  "wav",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  103352,
+                        "sha256":  "6212677911270db42ce55055c2963c8acb2c65aff127a3cf34aa4c23f7bbafe3"
+                    },
+                    {
+                        "evidence_id":  "sha256:4ca39d07ef55032306929aba8e8d84d564c107dfe105281548cc9339d4ac3801",
+                        "source":  "tests/p2.2-kokoro-voices.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2224,
+                        "sha256":  "4ca39d07ef55032306929aba8e8d84d564c107dfe105281548cc9339d4ac3801"
+                    },
+                    {
+                        "evidence_id":  "sha256:244ce47bc001f1a3ea406c58d8dfa250404c1175ff79761d3ebdea96e449f663",
+                        "source":  "tests/phase-0e-6-3-orphan-recovery.ps1",
+                        "category":  "test",
+                        "format":  "powershell",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  21760,
+                        "sha256":  "244ce47bc001f1a3ea406c58d8dfa250404c1175ff79761d3ebdea96e449f663"
+                    },
+                    {
+                        "evidence_id":  "sha256:832b304256f3eddf0e376ca298867789680af13cd917f398e7d5c195f5d47d93",
+                        "source":  "tests/phase-0e-6-4-stale-stage-recovery.ps1",
+                        "category":  "test",
+                        "format":  "powershell",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  15897,
+                        "sha256":  "832b304256f3eddf0e376ca298867789680af13cd917f398e7d5c195f5d47d93"
+                    },
+                    {
+                        "evidence_id":  "sha256:da6bc9a270441f47944358a5ba93e2507462b6432e323b44b3cb74982032fb5c",
+                        "source":  "tests/scene-plan-audit/scene_plan.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  6720,
+                        "sha256":  "da6bc9a270441f47944358a5ba93e2507462b6432e323b44b3cb74982032fb5c"
+                    },
+                    {
+                        "evidence_id":  "sha256:1cc0c7974d86bbbe621c2b28d8d057fd09d3beff4429ddfa8b2bd0f8fb08c2de",
+                        "source":  "tests/scene-plan-compiler/negative/01-invalid-json.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  33,
+                        "sha256":  "1cc0c7974d86bbbe621c2b28d8d057fd09d3beff4429ddfa8b2bd0f8fb08c2de"
+                    },
+                    {
+                        "evidence_id":  "sha256:47521a767aaafcf94b242ae917dee9ef033eda733279b4a1c368cec15ea3cc9e",
+                        "source":  "tests/scene-plan-compiler/negative/02-six-scenes.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2328,
+                        "sha256":  "47521a767aaafcf94b242ae917dee9ef033eda733279b4a1c368cec15ea3cc9e"
+                    },
+                    {
+                        "evidence_id":  "sha256:7c638593560436bbc4461a523ff97a83a33be7b2c07a6ce55b6085da8f4b5426",
+                        "source":  "tests/scene-plan-compiler/negative/03-thirteen-scenes.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  4957,
+                        "sha256":  "7c638593560436bbc4461a523ff97a83a33be7b2c07a6ce55b6085da8f4b5426"
+                    },
+                    {
+                        "evidence_id":  "sha256:bb38491d2e190d0d0084ed9891597d597d02ba30121ea0098287cef6442ad846",
+                        "source":  "tests/scene-plan-compiler/negative/04-too-few-words.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3012,
+                        "sha256":  "bb38491d2e190d0d0084ed9891597d597d02ba30121ea0098287cef6442ad846"
+                    },
+                    {
+                        "evidence_id":  "sha256:9fc986333ccd738dfaa97d1e617eb7780e106fbd2026443ff19c3743eda60fef",
+                        "source":  "tests/scene-plan-compiler/negative/05-too-many-words.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3177,
+                        "sha256":  "9fc986333ccd738dfaa97d1e617eb7780e106fbd2026443ff19c3743eda60fef"
+                    },
+                    {
+                        "evidence_id":  "sha256:b9b91a579b8e6f45399749c9be88a4604c16dd9b8d90f011b787d0e80e725f23",
+                        "source":  "tests/scene-plan-compiler/negative/06-empty-voice-over.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3001,
+                        "sha256":  "b9b91a579b8e6f45399749c9be88a4604c16dd9b8d90f011b787d0e80e725f23"
+                    },
+                    {
+                        "evidence_id":  "sha256:c00229f933ad84224d28aa116728930a867515bd96105e312562e11f7cf52bb1",
+                        "source":  "tests/scene-plan-compiler/negative/07-empty-visual-description.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3010,
+                        "sha256":  "c00229f933ad84224d28aa116728930a867515bd96105e312562e11f7cf52bb1"
+                    },
+                    {
+                        "evidence_id":  "sha256:73641496b02edfc11d7318c790803c5972169133afcaebbf733ceb56636bd406",
+                        "source":  "tests/scene-plan-compiler/negative/08-immutability-output.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3759,
+                        "sha256":  "73641496b02edfc11d7318c790803c5972169133afcaebbf733ceb56636bd406"
+                    },
+                    {
+                        "evidence_id":  "sha256:73641496b02edfc11d7318c790803c5972169133afcaebbf733ceb56636bd406",
+                        "source":  "tests/scene-plan-compiler/scene-plan-run-1.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3759,
+                        "sha256":  "73641496b02edfc11d7318c790803c5972169133afcaebbf733ceb56636bd406"
+                    },
+                    {
+                        "evidence_id":  "sha256:73641496b02edfc11d7318c790803c5972169133afcaebbf733ceb56636bd406",
+                        "source":  "tests/scene-plan-compiler/scene-plan-run-2.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3759,
+                        "sha256":  "73641496b02edfc11d7318c790803c5972169133afcaebbf733ceb56636bd406"
+                    },
+                    {
+                        "evidence_id":  "sha256:3ada3e7f9c866cb40d0e00cf726343c75854e40666f759917b7b582902dcf5c9",
+                        "source":  "tests/scene-plan-provenance.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  543,
+                        "sha256":  "3ada3e7f9c866cb40d0e00cf726343c75854e40666f759917b7b582902dcf5c9"
+                    },
+                    {
+                        "evidence_id":  "sha256:da6bc9a270441f47944358a5ba93e2507462b6432e323b44b3cb74982032fb5c",
+                        "source":  "tests/scene-plan-provenance/scene-plan-v3.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  6720,
+                        "sha256":  "da6bc9a270441f47944358a5ba93e2507462b6432e323b44b3cb74982032fb5c"
+                    },
+                    {
+                        "evidence_id":  "sha256:5766f0aa7bbb3ac0b669a4dc362e90ded24199e05f277e146648aaba809ef984",
+                        "source":  "tests/scene-plan-provenance/script-v3.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  3057,
+                        "sha256":  "5766f0aa7bbb3ac0b669a4dc362e90ded24199e05f277e146648aaba809ef984"
+                    },
+                    {
+                        "evidence_id":  "sha256:96de0a7404eafb12cdec38f944af90e0d9295de46b6ef03f1ea59afd02d7f9e5",
+                        "source":  "tests/storage-adapter/storage-adapter-integration.ps1",
+                        "category":  "test",
+                        "format":  "powershell",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  2283,
+                        "sha256":  "96de0a7404eafb12cdec38f944af90e0d9295de46b6ef03f1ea59afd02d7f9e5"
+                    },
+                    {
+                        "evidence_id":  "sha256:1bd09d854b47015c56c13823a48cac982bd3a4c240e2848536f687f534677c8a",
+                        "source":  "tests/test-09-encoding/TEST-09-20260921-120710-report.json",
+                        "category":  "test",
+                        "format":  "json",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  21453,
+                        "sha256":  "1bd09d854b47015c56c13823a48cac982bd3a4c240e2848536f687f534677c8a"
+                    },
+                    {
+                        "evidence_id":  "sha256:389f52872f921e32c0c4edf93ba132bbd44eb895c9c72a2973655d5f3b928369",
+                        "source":  "tests/verify_scene_plan_claim.sql",
+                        "category":  "test",
+                        "format":  "sql",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  989,
+                        "sha256":  "389f52872f921e32c0c4edf93ba132bbd44eb895c9c72a2973655d5f3b928369"
+                    },
+                    {
+                        "evidence_id":  "sha256:14d5814812057ebda48b401a63778332b6eec5a3db343068bec04e0df30c5344",
+                        "source":  "tests/workspace-0e68-v3/recovery-artifact.txt",
+                        "category":  "test",
+                        "format":  "text",
+                        "status":  "observed",
+                        "reproducible":  false,
+                        "size_bytes":  32,
+                        "sha256":  "14d5814812057ebda48b401a63778332b6eec5a3db343068bec04e0df30c5344"
+                    }
+                ]
+}

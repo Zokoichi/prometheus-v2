@@ -1,0 +1,1986 @@
+{
+    "schema_version":  "1.0",
+    "project":  "prometheus-v2",
+    "generated_at":  "2026-09-24T20:24:40.1285581Z",
+    "purpose":  "Extraction factuelle des realisations potentiellement demonstrables.",
+    "rule":  "Aucune competence ou reussite n\u0027est declaree automatiquement. Toute realisation reste soumise a revue humaine.",
+    "source_count":  275,
+    "priority_source_count":  103,
+    "inspected_source_count":  103,
+    "priority_patterns":  [
+                              "scene-plan",
+                              "groq",
+                              "test-09",
+                              "kokoro",
+                              "media-production",
+                              "storage-adapter",
+                              "orchestration"
+                          ],
+    "factual_summary":  {
+                            "pass_signal_sources":  17,
+                            "fail_signal_sources":  15,
+                            "validated_marker_sources":  12,
+                            "proof_sources":  2,
+                            "result_sources":  13,
+                            "reproducible_sources":  1
+                        },
+    "realizations":  [
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/18-fk-lock-proof.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  1,
+                             "proof_count":  1,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/storage-adapter/storage-adapter-integration.ps1",
+                             "nature":  "STORAGE_ADAPTER",
+                             "factual_status":  "PASS_SIGNAL_PRESENT",
+                             "pass_count":  1,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  1,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  4,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "scripts/scene-plan-compiler.ps1",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "PASS_SIGNAL_PRESENT",
+                             "pass_count":  1,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  3,
+                             "measurements":  [
+                                                  "8 bytes"
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "docs/storage-adapter-contract-v1.md",
+                             "nature":  "STORAGE_ADAPTER",
+                             "factual_status":  "VALIDATED_MARKER_PRESENT",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  2,
+                             "result_count":  4,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  2,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/18-fk-lock-proof.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  1,
+                             "proof_count":  1,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/17-D-deadlock-forensics.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "VALIDATED_MARKER_PRESENT",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  2,
+                             "result_count":  1,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/25-targeted-D-setup.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "VALIDATED_MARKER_PRESENT",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  1,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  1,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/10-setup-D.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "VALIDATED_MARKER_PRESENT",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  1,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  1,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/07-setup-C.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "VALIDATED_MARKER_PRESENT",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  1,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  1,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/13-setup-E.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "VALIDATED_MARKER_PRESENT",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  1,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  1,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/04-setup-real-matrix-v2.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "VALIDATED_MARKER_PRESENT",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  3,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  3,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/01-orchestration-forensics.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "MIXED",
+                             "pass_count":  1,
+                             "fail_count":  2,
+                             "validated_count":  20,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  2,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/02-orchestrator-contract-test.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "PASS_SIGNAL_PRESENT",
+                             "pass_count":  8,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/01-concurrency-matrix.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "PASS_SIGNAL_PRESENT",
+                             "pass_count":  1,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/04-setup-real-matrix-v2.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "VALIDATED_MARKER_PRESENT",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  3,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/03-lock-concurrency-forensics.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "MIXED",
+                             "pass_count":  2,
+                             "fail_count":  2,
+                             "validated_count":  5,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/01-concurrency-matrix.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "PASS_SIGNAL_PRESENT",
+                             "pass_count":  1,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/media-production/media-production-contract-integration.ps1",
+                             "nature":  "MEDIA_PRODUCTION_CONTRACT",
+                             "factual_status":  "PASS_SIGNAL_PRESENT",
+                             "pass_count":  3,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/23-fix-complete-lock-order.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "VALIDATED_MARKER_PRESENT",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  2,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-audit/scene_plan.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "PASS_SIGNAL_PRESENT",
+                             "pass_count":  3,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-provenance/scene-plan-v3.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "PASS_SIGNAL_PRESENT",
+                             "pass_count":  3,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/02-orchestrator-contract-test.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "MIXED",
+                             "pass_count":  8,
+                             "fail_count":  4,
+                             "validated_count":  4,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "docs/media-production-contract-v1.md",
+                             "nature":  "MEDIA_PRODUCTION_CONTRACT",
+                             "factual_status":  "PASS_SIGNAL_PRESENT",
+                             "pass_count":  2,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  1,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/08-worker-A-claim-complete.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+                                                  "5000ms"
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "scripts/media-production-validator.ps1",
+                             "nature":  "MEDIA_PRODUCTION_CONTRACT",
+                             "factual_status":  "MIXED",
+                             "pass_count":  33,
+                             "fail_count":  32,
+                             "validated_count":  0,
+                             "result_count":  1,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/09-worker-B-complete.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+                                                  "5000ms"
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/11-worker-A-complete.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+                                                  "5000ms"
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/12-worker-B-fail-stage.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+                                                  "5000ms"
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/17-D-deadlock-forensics.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  1,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/29-verify-complete-lock-order-semantic.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "MIXED",
+                             "pass_count":  1,
+                             "fail_count":  3,
+                             "validated_count":  0,
+                             "result_count":  1,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/19-fk-lock-proof-setup.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  1,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/19-fk-lock-proof-setup.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  1,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/15-final-observation.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  1,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/14-worker-A-complete.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+                                                  "5000ms"
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/15-worker-B-fail-run.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+                                                  "5000ms"
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/15-final-observation.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  3,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/02-worker-A-claim.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+                                                  "5000ms"
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/06-worker-B-fail-run.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+                                                  "5000ms"
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/05-worker-A-claim.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+                                                  "5000ms"
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/03-worker-B-fail-stage.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+                                                  "5000ms"
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-E9-artifact-engine/05-storage-adapter.txt",
+                             "nature":  "STORAGE_ADAPTER",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  4,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "scripts/storage-adapter.ps1",
+                             "nature":  "STORAGE_ADAPTER",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  4,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/p2.2-kokoro-probe.wav",
+                             "nature":  "KOKORO_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-compiler/scene-plan-run-1.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-compiler/negative/02-six-scenes.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-compiler/negative/01-invalid-json.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-compiler/scene-plan-run-2.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/28-D-fix-cleanup.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-provenance.sql",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/26-D-fix-complete.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/28-D-fix-cleanup.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/p2.2/kokoro-openapi.json",
+                             "nature":  "KOKORO_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/p2.2/scene-plan-quality-validator.ps1",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "MIXED",
+                             "pass_count":  19,
+                             "fail_count":  19,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/p2.2-kokoro-voices.json",
+                             "nature":  "KOKORO_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/p2.2/kokoro-models.json",
+                             "nature":  "KOKORO_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-compiler/negative/03-thirteen-scenes.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "contracts/media/tts-kokoro-raw-v1.json",
+                             "nature":  "KOKORO_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/test-09-encoding/TEST-09-20260921-120710-report.json",
+                             "nature":  "TEST_RESULT_OR_VALIDATION",
+                             "factual_status":  "MIXED",
+                             "pass_count":  5,
+                             "fail_count":  1,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/p2.2-kokoro-probe-r3-normalized.wav",
+                             "nature":  "KOKORO_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/p2.2-kokoro-probe-r2.wav",
+                             "nature":  "KOKORO_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/p2.2-kokoro-normalize-r3.log",
+                             "nature":  "KOKORO_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "config/media-production.json",
+                             "nature":  "MEDIA_PRODUCTION_CONTRACT",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/p2.2-kokoro-openapi.json",
+                             "nature":  "KOKORO_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-compiler/negative/06-empty-voice-over.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-compiler/negative/05-too-many-words.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-compiler/negative/04-too-few-words.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-compiler/negative/07-empty-visual-description.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-provenance/script-v3.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/p2.2-kokoro-probe-r3.wav",
+                             "nature":  "KOKORO_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/scene-plan-compiler/negative/08-immutability-output.json",
+                             "nature":  "SCENE_PLAN_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/25-targeted-D-setup.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/16-final-observation.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/01-setup-A.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/04-setup-B.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/17-final-cleanup.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/03-lock-concurrency-forensics.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "MIXED",
+                             "pass_count":  1,
+                             "fail_count":  2,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/00-cleanup.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/05-A-claim.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/07-B-claim.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/09-C-claim.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-E32-stage-run-concurrency/22-orchestration-retry-forensics.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/13-E-complete.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/11-D-complete.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/10-C-complete.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/18-post-clean-verification.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/p2.2-kokoro-ffmpeg-decode.log",
+                             "nature":  "KOKORO_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/22-fk-lock-proof-cleanup.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/24-verify-complete-lock-order.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/24-verify-complete-lock-order.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/23-fix-complete-lock-order.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/22-fk-lock-proof-cleanup.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-E32-stage-run-concurrency/22-orchestration-retry-forensics.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-E5-evidence/04-groq-implementation-search.txt",
+                             "nature":  "GROQ_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-E5-evidence/create_stage_script_groq.txt",
+                             "nature":  "GROQ_ARTIFACT_OR_VALIDATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/21-worker-B.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/20-worker-A.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "OBSERVED_ONLY",
+                             "pass_count":  0,
+                             "fail_count":  0,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/29-verify-complete-lock-order-semantic.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "FAILURE_EVIDENCE",
+                             "pass_count":  0,
+                             "fail_count":  1,
+                             "validated_count":  0,
+                             "result_count":  1,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  true,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/08-B-fail-run.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "FAILURE_EVIDENCE",
+                             "pass_count":  0,
+                             "fail_count":  1,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/27-D-fix-fail-stage.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "FAILURE_EVIDENCE",
+                             "pass_count":  0,
+                             "fail_count":  1,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/01-orchestration-forensics.sql",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "FAILURE_EVIDENCE",
+                             "pass_count":  0,
+                             "fail_count":  3,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/14-E-fail-run.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "FAILURE_EVIDENCE",
+                             "pass_count":  0,
+                             "fail_count":  1,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/06-A-fail-stage.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "FAILURE_EVIDENCE",
+                             "pass_count":  0,
+                             "fail_count":  1,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         },
+                         {
+                             "source":  "tests/11-F-orchestration/11-F.3-B/12-D-fail-stage.txt",
+                             "nature":  "ORCHESTRATION",
+                             "factual_status":  "FAILURE_EVIDENCE",
+                             "pass_count":  0,
+                             "fail_count":  1,
+                             "validated_count":  0,
+                             "result_count":  0,
+                             "proof_count":  0,
+                             "reproducible_count":  0,
+                             "sha256_count":  0,
+                             "measurements":  [
+
+                                              ],
+                             "candidate_for_portfolio_review":  false,
+                             "human_review_required":  true,
+                             "skill_declared":  false,
+                             "achievement_declared":  false
+                         }
+                     ]
+}

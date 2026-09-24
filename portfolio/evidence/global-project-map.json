@@ -1,0 +1,62 @@
+{
+    "schema_version":  "1.0",
+    "generated_at":  "2026-09-24T20:33:03.2021390Z",
+    "roots":  [
+                  "C:\\Projects",
+                  "C:\\AI-Lab"
+              ],
+    "project_count":  3,
+    "projects":  [
+                     {
+                         "name":  "genesis-stack",
+                         "path":  "C:\\Projects\\genesis-stack",
+                         "interesting_files":  17,
+                         "total_bytes":  64390,
+                         "git":  "NO_GIT",
+                         "readme":  false
+                     },
+                     {
+                         "name":  "prometheus-v2",
+                         "path":  "C:\\Projects\\prometheus-v2",
+                         "interesting_files":  312,
+                         "total_bytes":  10000031,
+                         "git":  "MODIFIED",
+                         "readme":  true
+                     },
+                     {
+                         "name":  "mcp",
+                         "path":  "C:\\AI-Lab\\mcp",
+                         "interesting_files":  9,
+                         "total_bytes":  92735,
+                         "git":  "NO_GIT",
+                         "readme":  true
+                     }
+                 ],
+    "exclusions":  {
+                       "secret_environment_files":  [
+                                                        "*.env",
+                                                        ".env",
+                                                        ".env.local",
+                                                        ".env.production",
+                                                        ".env.development",
+                                                        "*CopieOriginale.env"
+                                                    ],
+                       "runtime_directories":  [
+                                                   ".git",
+                                                   "node_modules",
+                                                   "n8n_data",
+                                                   "data",
+                                                   "backup",
+                                                   "backups",
+                                                   "archive",
+                                                   "archives",
+                                                   "_archive",
+                                                   "dist",
+                                                   "build",
+                                                   "venv",
+                                                   ".venv",
+                                                   "cache",
+                                                   "__pycache__"
+                                               ]
+                   }
+}
