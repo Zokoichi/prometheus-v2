@@ -1,0 +1,129 @@
+﻿{
+    "schema_version":  "atlas-realizations-v1",
+    "generated_at_utc":  "2026-09-24T22:40:20.6809460Z",
+    "sources":  {
+                    "semantic_evidence":  {
+                                              "path":  "C:\\Projects\\prometheus-v2\\portfolio\\evidence\\atlas\\atlas-semantic-evidence-v1.json",
+                                              "sha256":  "AE054F95C5DA1E94198DA3C01F530F865E75AAC27344425D5670B3DEEAC03157"
+                                          },
+                    "proof_strength":  {
+                                           "path":  "C:\\Projects\\prometheus-v2\\portfolio\\evidence\\atlas\\atlas-proof-strength-v2.txt",
+                                           "sha256":  "9C5D23841B77BFCCBC73B47E0BFC42701B42707BDA041DAC29975D0E4A4C672B"
+                                       }
+                },
+    "corpus":  {
+                   "priority_records":  15,
+                   "semantic_mechanisms":  99,
+                   "strong_families":  6,
+                   "observed_families":  1,
+                   "insufficient_families":  1
+               },
+    "realizations":  [
+                         {
+                             "id":  "atlas-api-integration",
+                             "status":  "strong",
+                             "family":  "API_INTEGRATION",
+                             "mechanisms":  [
+                                                "HTTP_REQUEST",
+                                                "AUTH_HEADERS",
+                                                "ENV_CONFIG"
+                                            ],
+                             "title":  "Integration d\u0027API et services externes",
+                             "evidence":  "14 nodes affectes ; 70 snippets ; 3 mecanismes observes.",
+                             "claim":  "Le code ATLAS demontre l\u0027utilisation d\u0027appels HTTP, de parametres d\u0027authentification et de configuration.",
+                             "limitation":  "Ne pas extrapoler a une expertise generale de toutes les API."
+                         },
+                         {
+                             "id":  "atlas-data-processing",
+                             "status":  "strong",
+                             "family":  "DATA_ENGINEERING",
+                             "mechanisms":  [
+                                                "N8N_INPUT",
+                                                "DATA_MAPPING",
+                                                "REGEX_PROCESSING"
+                                            ],
+                             "title":  "Transformation et traitement de donnees",
+                             "evidence":  "12 nodes affectes ; 76 snippets ; 3 mecanismes observes.",
+                             "claim":  "Le code ATLAS demontre des transformations, mappings et traitements de donnees.",
+                             "limitation":  "Ne constitue pas a lui seul une preuve d\u0027expertise generale en data engineering."
+                         },
+                         {
+                             "id":  "atlas-business-logic",
+                             "status":  "strong",
+                             "family":  "BUSINESS_LOGIC",
+                             "mechanisms":  [
+                                                "CONDITIONAL_LOGIC",
+                                                "SCORING",
+                                                "DATE_TIME"
+                                            ],
+                             "title":  "Implementation de logique metier",
+                             "evidence":  "13 nodes affectes ; 68 snippets ; 3 mecanismes observes.",
+                             "claim":  "Le code ATLAS demontre des conditions, du scoring et des traitements temporels.",
+                             "limitation":  "Les mecanismes observes sont lies aux workflows ATLAS."
+                         },
+                         {
+                             "id":  "atlas-reliability",
+                             "status":  "strong",
+                             "family":  "RELIABILITY",
+                             "mechanisms":  [
+                                                "ERROR_HANDLING"
+                                            ],
+                             "title":  "Gestion explicite des erreurs",
+                             "evidence":  "15 nodes affectes ; 50 snippets.",
+                             "claim":  "Le code ATLAS contient des mecanismes explicites de gestion des erreurs.",
+                             "limitation":  "Ne permet pas de conclure a une haute disponibilite ou a une resilience industrielle."
+                         },
+                         {
+                             "id":  "atlas-communication",
+                             "status":  "strong",
+                             "family":  "COMMUNICATION",
+                             "mechanisms":  [
+                                                "EMAIL",
+                                                "WEBHOOK"
+                                            ],
+                             "title":  "Automatisation de communications",
+                             "evidence":  "4 nodes affectes ; 18 snippets ; 2 mecanismes observes.",
+                             "claim":  "Le corpus demontre l\u0027automatisation de communications par email et webhook.",
+                             "limitation":  "Aucun resultat commercial ou taux de delivrabilite n\u0027est deduit."
+                         },
+                         {
+                             "id":  "atlas-persistence",
+                             "status":  "strong",
+                             "family":  "PERSISTENCE",
+                             "mechanisms":  [
+                                                "NOCODB"
+                                            ],
+                             "title":  "Persistance et journalisation NocoDB",
+                             "evidence":  "5 nodes affectes ; 14 snippets.",
+                             "claim":  "Le corpus demontre l\u0027utilisation de NocoDB pour la persistance et la journalisation.",
+                             "limitation":  "Ne permet pas de conclure sur la scalabilite ou la disponibilite."
+                         },
+                         {
+                             "id":  "atlas-cloud-storage",
+                             "status":  "observed",
+                             "family":  "CLOUD_STORAGE",
+                             "mechanisms":  [
+                                                "AWS_S3"
+                                            ],
+                             "title":  "Integration de stockage cloud AWS/S3",
+                             "evidence":  "2 nodes affectes ; 4 snippets.",
+                             "claim":  "Des mecanismes AWS/S3 sont observes dans le code ATLAS.",
+                             "limitation":  "Preuve limitee ; ne pas presenter cela comme une expertise AWS/S3."
+                         }
+                     ],
+    "excluded":  [
+                     {
+                         "id":  "atlas-stripe",
+                         "status":  "insufficient",
+                         "family":  "PAYMENT",
+                         "mechanisms":  [
+                                            "STRIPE"
+                                        ],
+                         "title":  "Integration Stripe",
+                         "evidence":  "Aucune preuve suffisante dans les 15 blocs prioritaires analyses.",
+                         "claim":  "Aucune realisation Stripe n\u0027est retenue dans ce manifeste.",
+                         "limitation":  "Ne pas revendiquer Stripe sur cette base."
+                     }
+                 ],
+    "rule":  "Only evidence-backed realizations are retained. Commercial outcomes require separate proof."
+}

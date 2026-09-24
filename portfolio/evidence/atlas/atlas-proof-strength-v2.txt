@@ -1,0 +1,78 @@
+﻿============================================================
+ATLAS — PROOF STRENGTH AUDIT V2
+============================================================
+
+Generated UTC : 2026-09-24T22:38:39.2013032Z
+Source : C:\Projects\prometheus-v2\portfolio\evidence\atlas\atlas-semantic-evidence-v1.json
+
+STATUS :
+  STRONG       = evidence distributed across multiple records
+  OBSERVED     = concrete evidence present but narrower
+  INSUFFICIENT = no sufficient evidence detected
+
+This is evidence-strength qualification, not a skill score.
+
+============================================================
+FAMILY RESULTS
+============================================================
+
+API_INTEGRATION        | mechanisms= 3 | strong= 2 | nodes=14 | evidence=70 | STRONG
+DATA_ENGINEERING       | mechanisms= 3 | strong= 2 | nodes=12 | evidence=76 | STRONG
+BUSINESS_LOGIC         | mechanisms= 3 | strong= 3 | nodes=13 | evidence=68 | STRONG
+RELIABILITY            | mechanisms= 1 | strong= 1 | nodes=15 | evidence=50 | STRONG
+COMMUNICATION          | mechanisms= 2 | strong= 1 | nodes= 4 | evidence=18 | STRONG
+PERSISTENCE            | mechanisms= 1 | strong= 1 | nodes= 5 | evidence=14 | STRONG
+CLOUD_STORAGE          | mechanisms= 1 | strong= 0 | nodes= 2 | evidence= 4 | OBSERVED
+PAYMENT                | mechanisms= 0 | strong= 0 | nodes= 0 | evidence= 0 | INSUFFICIENT
+
+============================================================
+MECHANISM RESULTS
+============================================================
+
+[API_INTEGRATION]
+  HTTP_REQUEST           | records=12 | hits=30 | evidence=30 | STRONG
+  AUTH_HEADERS           | records=14 | hits=35 | evidence=35 | STRONG
+  ENV_CONFIG             | records= 2 | hits= 5 | evidence= 5 | OBSERVED
+
+[DATA_ENGINEERING]
+  N8N_INPUT              | records= 2 | hits= 4 | evidence= 4 | OBSERVED
+  DATA_MAPPING           | records= 7 | hits=24 | evidence=24 | STRONG
+  JSON_PROCESSING        | records= 0 | hits=   | evidence=   | INSUFFICIENT
+  REGEX_PROCESSING       | records=12 | hits=48 | evidence=48 | STRONG
+  DEDUPLICATION          | records= 0 | hits=   | evidence=   | INSUFFICIENT
+
+[BUSINESS_LOGIC]
+  CONDITIONAL_LOGIC      | records=12 | hits=41 | evidence=41 | STRONG
+  SCORING                | records= 6 | hits=13 | evidence=13 | STRONG
+  VALIDATION             | records= 0 | hits=   | evidence=   | INSUFFICIENT
+  DATE_TIME              | records= 5 | hits=14 | evidence=14 | STRONG
+
+[RELIABILITY]
+  ERROR_HANDLING         | records=15 | hits=50 | evidence=50 | STRONG
+
+[COMMUNICATION]
+  EMAIL                  | records= 4 | hits=16 | evidence=16 | STRONG
+  WEBHOOK                | records= 1 | hits= 2 | evidence= 2 | OBSERVED
+
+[PERSISTENCE]
+  NOCODB                 | records= 5 | hits=14 | evidence=14 | STRONG
+
+[CLOUD_STORAGE]
+  AWS_S3                 | records= 2 | hits= 4 | evidence= 4 | OBSERVED
+
+[PAYMENT]
+  STRIPE                 | records= 0 | hits=   | evidence=   | INSUFFICIENT
+
+============================================================
+GLOBAL
+============================================================
+
+Input records : 15
+Families : 8
+Strong families : 6
+Observed families : 1
+Insufficient families : 1
+
+============================================================
+END
+============================================================
