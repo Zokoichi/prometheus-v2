@@ -1,0 +1,31 @@
+﻿PSQL EXIT CODE: 0
+
+Pager usage is off.
+         section         |       label        | pos  
+-------------------------+--------------------+------
+ COMPLETE_SOURCE_MARKERS | STAGE_LOCK         |  778
+ COMPLETE_SOURCE_MARKERS | STAGE_FOR_UPDATE   |  814
+ COMPLETE_SOURCE_MARKERS | RUN_LOCK           | 1409
+ COMPLETE_SOURCE_MARKERS | RUN_FOR_UPDATE     | 1443
+ COMPLETE_SOURCE_MARKERS | RELATION_GUARD     | 2649
+ COMPLETE_SOURCE_MARKERS | ARTIFACT_FOR_SHARE | 3834
+ COMPLETE_SOURCE_MARKERS | STAGE_EVENT        | 5568
+(7 rows)
+
+       section       |            source_md5            
+---------------------+----------------------------------
+ COMPLETE_SOURCE_MD5 | 46b8bcceba0f9b2e24ee82e7fc2484e7
+(1 row)
+
+    section     | count 
+----------------+-------
+ FUNCTION_COUNT |     1
+(1 row)
+
+   section   | error_runs | error_stages 
+-------------+------------+--------------
+ ERROR_STATE |          0 |            1
+(1 row)
+
+
+

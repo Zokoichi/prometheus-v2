@@ -1,0 +1,52 @@
+﻿{
+  "schema_version": "1.0",
+  "profile_id": "PROM-V2-SHORT-V1",
+  "description": "Canonical production profile for vertical short-form video.",
+  "delivery": {
+    "width": 1080,
+    "height": 1920,
+    "orientation": "VERTICAL",
+    "pixel_format": "yuv420p",
+    "video_codec": "H264",
+    "audio_codec": "AAC",
+    "audio_sample_rate_hz": 48000,
+    "audio_channels": 2,
+    "container": "MP4",
+    "default_fps": 30,
+    "duration_min_seconds": 15,
+    "duration_max_seconds": 180
+  },
+  "audio_master": {
+    "loudness_standard": "EBU_R128",
+    "target_integrated_lufs": -14.0,
+    "max_true_peak_dbtp": -1.0,
+    "target_lra_lu": 11.0,
+    "voice_priority": true,
+    "music_ducking_db": 8.0,
+    "sfx_ducking_db": 3.0
+  },
+  "timeline": {
+    "timebase": "SECONDS",
+    "minimum_segment_duration_seconds": 0.10,
+    "minimum_visual_duration_seconds": 0.20,
+    "minimum_caption_duration_seconds": 0.20,
+    "maximum_caption_line_count": 2
+  },
+  "quality": {
+    "require_video_stream": true,
+    "require_audio_stream": true,
+    "require_valid_mp4": true,
+    "require_a_v_duration_tolerance_seconds": 0.10,
+    "require_no_clipping": true,
+    "require_caption_safe_area": true,
+    "require_artifact_registry": true,
+    "require_sha256": true
+  },
+  "render": {
+    "engine": "FFMPEG",
+    "audio_normalization_filter": "loudnorm",
+    "normalization_mode": "TWO_PASS",
+    "hardware_acceleration": "NONE",
+    "deterministic_render": true
+  }
+}

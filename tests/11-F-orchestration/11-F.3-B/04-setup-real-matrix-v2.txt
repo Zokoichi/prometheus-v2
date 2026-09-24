@@ -1,0 +1,41 @@
+﻿PSQL EXIT CODE: 0
+
+BEGIN
+DELETE 0
+DELETE 0
+DELETE 0
+DELETE 0
+DELETE 0
+DELETE 0
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+COMMIT
+  test   |   run_id    | run_status |  stage_id   | stage_status | attempt | retryable |          idempotency_key          
+---------+-------------+------------+-------------+--------------+---------+-----------+-----------------------------------
+ FIXTURE | RUN-11F3B-A | CREATED    | STG-11F3B-A | PENDING      |       1 | f         | RUN-11F3B-A:CLAIM_FAIL_STAGE:1
+ FIXTURE | RUN-11F3B-B | CREATED    | STG-11F3B-B | PENDING      |       1 | f         | RUN-11F3B-B:CLAIM_FAIL_RUN:1
+ FIXTURE | RUN-11F3B-C | CREATED    | STG-11F3B-C | PENDING      |       1 | f         | RUN-11F3B-C:CLAIM_COMPLETE:1
+ FIXTURE | RUN-11F3B-D | CREATED    | STG-11F3B-D | RUNNING      |       1 | f         | RUN-11F3B-D:COMPLETE_FAIL_STAGE:1
+ FIXTURE | RUN-11F3B-E | CREATED    | STG-11F3B-E | RUNNING      |       1 | f         | RUN-11F3B-E:COMPLETE_FAIL_RUN:1
+(5 rows)
+
+   test   | artifact_id |   run_id    |  status   
+----------+-------------+-------------+-----------
+ ARTIFACT | ART-11F3B-C | RUN-11F3B-C | VALIDATED
+ ARTIFACT | ART-11F3B-D | RUN-11F3B-D | VALIDATED
+ ARTIFACT | ART-11F3B-E | RUN-11F3B-E | VALIDATED
+(3 rows)
+
+
+

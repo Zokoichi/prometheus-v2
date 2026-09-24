@@ -1,0 +1,132 @@
+CREATE OR REPLACE FUNCTION claim_stage_for_execution(
+    p_stage_id VARCHAR(128)
+)
+RETURNS TABLE (
+    claimed BOOLEAN,
+    stage_id VARCHAR(128),
+    run_id VARCHAR(64),
+    stage_name VARCHAR(64),
+    attempt INTEGER,
+    status VARCHAR(32),
+    message TEXT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+
+    RETURN QUERY
+    WITH claimed_stage AS (
+        UPDATE production_stage
+        SET
+            status = 'RUNNING',
+
+            attempt = CASE
+                WHEN production_stage.status = 'ERROR'
+                     AND production_stage.retryable = TRUE
+                    THEN production_stage.attempt + 1
+                ELSE production_stage.attempt
+            END,
+
+            started_at = NOW(),
+            completed_at = NULL,
+            error_code = NULL,
+            error_message = NULL,
+            retryable = FALSE,
+            updated_at = NOW(),
+
+            idempotency_key = CASE
+                WHEN production_stage.status = 'ERROR'
+                     AND production_stage.retryable = TRUE
+                    THEN split_part(
+                             production_stage.idempotency_key,
+                             ':',
+                             1
+                         )
+                         || ':'
+                         ||
+                         split_part(
+                             production_stage.idempotency_key,
+                             ':',
+                             2
+                         )
+                         || ':'
+                         ||
+                         (
+                             production_stage.attempt + 1
+                         )::TEXT
+                ELSE production_stage.idempotency_key
+            END
+
+        WHERE production_stage.stage_id = p_stage_id
+
+          AND (
+                production_stage.status = 'PENDING'
+
+                OR (
+                    production_stage.status = 'ERROR'
+                    AND production_stage.retryable = TRUE
+                )
+              )
+
+        RETURNING
+            production_stage.stage_id,
+            production_stage.run_id,
+            production_stage.stage_name,
+            production_stage.attempt,
+            production_stage.status
+    )
+
+    SELECT
+        TRUE,
+        cs.stage_id,
+        cs.run_id,
+        cs.stage_name,
+        cs.attempt,
+        cs.status,
+        'Stage réclamé avec succès par cet exécuteur.'::TEXT
+    FROM claimed_stage cs;
+
+    IF NOT FOUND THEN
+
+        RETURN QUERY
+
+        SELECT
+            FALSE,
+            ps.stage_id,
+            ps.run_id,
+            ps.stage_name,
+            ps.attempt,
+            ps.status,
+            (
+                'Stage non réclamable. Etat actuel : '
+                || ps.status
+                || ', attempt '
+                || ps.attempt
+                || '.'
+            )::TEXT
+        FROM production_stage ps
+        WHERE ps.stage_id = p_stage_id;
+
+        IF NOT FOUND THEN
+
+            RETURN QUERY
+
+            SELECT
+                FALSE,
+                p_stage_id,
+                NULL::VARCHAR(64),
+                NULL::VARCHAR(64),
+                NULL::INTEGER,
+                NULL::VARCHAR(32),
+                'Stage inexistant.'::TEXT;
+
+        END IF;
+
+    END IF;
+
+END;
+$$;
+
+COMMENT ON FUNCTION claim_stage_for_execution(VARCHAR)
+IS
+'Claim atomique d''un stage Prometheus V2. Un seul exécuteur peut faire passer simultanément un stage PENDING ou ERROR retryable vers RUNNING.';

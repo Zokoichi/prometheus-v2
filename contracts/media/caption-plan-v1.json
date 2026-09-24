@@ -1,0 +1,88 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "prometheus://contracts/caption-plan/v1",
+  "title": "PROMETHEUS V2 Caption Plan",
+  "type": "object",
+  "required": [
+    "version",
+    "language",
+    "segments"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string",
+      "minLength": 2
+    },
+    "style": {
+      "type": "object",
+      "properties": {
+        "font_family": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string",
+          "enum": ["TOP", "CENTER", "BOTTOM"]
+        },
+        "max_lines": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2
+        }
+      }
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "segment_id",
+          "start_seconds",
+          "end_seconds",
+          "text"
+        ],
+        "properties": {
+          "segment_id": {
+            "type": "string"
+          },
+          "start_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "end_seconds": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "emphasis_words": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "animation": {
+            "type": "string",
+            "enum": [
+              "NONE",
+              "FADE",
+              "POP",
+              "SLIDE",
+              "WORD_HIGHLIGHT"
+            ]
+          },
+          "position": {
+            "type": "string",
+            "enum": ["TOP", "CENTER", "BOTTOM"]
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

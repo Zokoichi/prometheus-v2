@@ -1,0 +1,20 @@
+{
+    "identities":  [
+                       {
+                           "actions":  [
+                                           "Admin",
+                                           "Read",
+                                           "Write",
+                                           "List",
+                                           "Tagging"
+                                       ],
+                           "name":  "prometheus-v2",
+                           "credentials":  [
+                                               {
+                                                   "secretKey":  "R8lb4o7+AUPLBS0O/nJSu6Svormgoyqy6ANsKlHwOt/xv5c7huekaGetgGnVbSEc",
+                                                   "accessKey":  "prometheus-v2"
+                                               }
+                                           ]
+                       }
+                   ]
+}

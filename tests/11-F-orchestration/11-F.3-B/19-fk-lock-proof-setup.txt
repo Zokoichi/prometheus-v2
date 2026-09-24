@@ -1,0 +1,16 @@
+﻿PSQL EXIT CODE: 0
+
+BEGIN
+DELETE 0
+DELETE 0
+DELETE 0
+INSERT 0 1
+INSERT 0 1
+COMMIT
+    result     |    run_id    |   stage_id   | run_status | stage_status 
+---------------+--------------+--------------+------------+--------------
+ FIXTURE_READY | RUN-11F3B-FK | STG-11F3B-FK | CREATED    | RUNNING
+(1 row)
+
+
+

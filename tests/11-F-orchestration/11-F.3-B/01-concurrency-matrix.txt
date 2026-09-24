@@ -1,0 +1,26 @@
+Timing is off.
+DO
+   test   | run_status | stage_status | attempt | retryable 
+----------+------------+--------------+---------+-----------
+ BASELINE | CREATED    | PENDING      |       1 | f
+(1 row)
+
+   test    |          proname          |                                                  signature                                                   
+-----------+---------------------------+--------------------------------------------------------------------------------------------------------------
+ FUNCTIONS | claim_stage_for_execution | p_stage_id character varying
+ FUNCTIONS | complete_stage_atomically | p_stage_id character varying, p_event_data jsonb
+ FUNCTIONS | fail_run_atomically       | p_run_id character varying, p_stage_id character varying, p_event_type character varying, p_event_data jsonb
+ FUNCTIONS | fail_stage_atomically     | p_stage_id character varying, p_error_code character varying, p_error_message text, p_event_data jsonb
+(4 rows)
+
+DO
+ROLLBACK
+NOTICE:  SETUP PASS
+NOTICE:  MATRIX FIXTURE READY
+NOTICE:  TEST A: CLAIM <-> FAIL_STAGE
+NOTICE:  TEST B: CLAIM <-> FAIL_RUN
+NOTICE:  TEST C: CLAIM <-> COMPLETE
+NOTICE:  TEST D: COMPLETE <-> FAIL_STAGE
+NOTICE:  TEST E: COMPLETE <-> FAIL_RUN
+NOTICE:  IMPORTANT: worker races will use separate PostgreSQL sessions.
+WARNING:  there is no transaction in progress

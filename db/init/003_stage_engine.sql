@@ -1,0 +1,166 @@
+﻿CREATE TABLE IF NOT EXISTS production_stage (
+    id BIGSERIAL PRIMARY KEY,
+
+    stage_id VARCHAR(128) NOT NULL UNIQUE,
+
+    run_id VARCHAR(64) NOT NULL,
+
+    stage_name VARCHAR(64) NOT NULL,
+
+    stage_order INTEGER NOT NULL,
+
+    status VARCHAR(32) NOT NULL DEFAULT 'PENDING',
+
+    attempt INTEGER NOT NULL DEFAULT 1,
+
+    idempotency_key VARCHAR(255) NOT NULL UNIQUE,
+
+    input_artifact_ids JSONB NOT NULL DEFAULT '[]'::jsonb,
+
+    output_artifact_ids JSONB NOT NULL DEFAULT '[]'::jsonb,
+
+    input_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+
+    output_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+
+    error_code VARCHAR(128),
+
+    error_message TEXT,
+
+    retryable BOOLEAN NOT NULL DEFAULT FALSE,
+
+    started_at TIMESTAMPTZ,
+
+    completed_at TIMESTAMPTZ,
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+    CONSTRAINT production_stage_run_fk
+        FOREIGN KEY (run_id)
+        REFERENCES production_run(run_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT production_stage_order_check
+        CHECK (stage_order >= 1),
+
+    CONSTRAINT production_stage_attempt_check
+        CHECK (attempt >= 1),
+
+    CONSTRAINT production_stage_status_check
+        CHECK (
+            status IN (
+                'PENDING',
+                'RUNNING',
+                'SUCCEEDED',
+                'ERROR',
+                'CANCELLED',
+                'SKIPPED'
+            )
+        )
+);
+
+
+CREATE INDEX IF NOT EXISTS idx_production_stage_run_id
+    ON production_stage(run_id);
+
+CREATE INDEX IF NOT EXISTS idx_production_stage_run_order
+    ON production_stage(run_id, stage_order);
+
+CREATE INDEX IF NOT EXISTS idx_production_stage_status
+    ON production_stage(status);
+
+CREATE INDEX IF NOT EXISTS idx_production_stage_name
+    ON production_stage(stage_name);
+
+CREATE INDEX IF NOT EXISTS idx_production_stage_created_at
+    ON production_stage(created_at DESC);
+
+
+CREATE TABLE IF NOT EXISTS production_stage_event (
+    id BIGSERIAL PRIMARY KEY,
+
+    stage_id VARCHAR(128) NOT NULL,
+
+    run_id VARCHAR(64) NOT NULL,
+
+    event_type VARCHAR(64) NOT NULL,
+
+    from_status VARCHAR(32),
+
+    to_status VARCHAR(32),
+
+    stage_name VARCHAR(64) NOT NULL,
+
+    attempt INTEGER NOT NULL,
+
+    event_data JSONB NOT NULL DEFAULT '{}'::jsonb,
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+    CONSTRAINT production_stage_event_stage_fk
+        FOREIGN KEY (stage_id)
+        REFERENCES production_stage(stage_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT production_stage_event_run_fk
+        FOREIGN KEY (run_id)
+        REFERENCES production_run(run_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT production_stage_event_attempt_check
+        CHECK (attempt >= 1)
+);
+
+
+CREATE INDEX IF NOT EXISTS idx_production_stage_event_stage_id
+    ON production_stage_event(stage_id);
+
+CREATE INDEX IF NOT EXISTS idx_production_stage_event_run_id
+    ON production_stage_event(run_id);
+
+CREATE INDEX IF NOT EXISTS idx_production_stage_event_created_at
+    ON production_stage_event(created_at DESC);
+
+
+CREATE OR REPLACE FUNCTION update_production_stage_updated_at()
+RETURNS TRIGGER
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$;
+
+
+DROP TRIGGER IF EXISTS trg_production_stage_updated_at
+ON production_stage;
+
+CREATE TRIGGER trg_production_stage_updated_at
+BEFORE UPDATE ON production_stage
+FOR EACH ROW
+EXECUTE FUNCTION update_production_stage_updated_at();
+
+
+COMMENT ON TABLE production_stage IS
+'Execution state of each individual production stage belonging to a Prometheus V2 run.';
+
+COMMENT ON TABLE production_stage_event IS
+'Immutable execution history of Prometheus V2 stages.';
+
+COMMENT ON COLUMN production_stage.idempotency_key IS
+'Unique key preventing duplicate logical stage creation.';
+
+COMMENT ON COLUMN production_stage.input_artifact_ids IS
+'JSON array containing artifact IDs consumed by this stage.';
+
+COMMENT ON COLUMN production_stage.output_artifact_ids IS
+'JSON array containing artifact IDs produced by this stage.';
+
+COMMENT ON COLUMN production_stage.retryable IS
+'Indicates whether the recorded stage error can be retried.';
+
+COMMENT ON COLUMN production_stage.attempt IS
+'Current execution attempt of the logical stage.';

@@ -1,0 +1,126 @@
+Timing is off.
+============================================================
+PROMETHEUS V2 - 11-F.2 ORCHESTRATOR CONTRACT TEST
+READ-ONLY
+============================================================
+BEGIN
+
+============================================================
+01. REQUIRED FUNCTIONS
+============================================================
+NOTICE:  PASS: all 7 orchestration primitives exist
+DO
+
+============================================================
+02. REQUIRED TABLES
+============================================================
+NOTICE:  PASS: all required orchestration tables exist
+DO
+
+============================================================
+03. STAGE CLAIM CONTRACT
+============================================================
+NOTICE:  PASS: Stage claim exposes required transactional guards
+DO
+
+============================================================
+04. STAGE COMPLETION CONTRACT
+============================================================
+DO
+
+============================================================
+05. STAGE FAILURE CONTRACT
+NOTICE:  PASS: Stage completion contract present
+============================================================
+NOTICE:  PASS: Stage failure/retry contract present
+DO
+
+============================================================
+06. RUN ESCALATION CONTRACT
+============================================================
+DO
+NOTICE:  PASS: Run escalation contract present
+
+============================================================
+07. EXECUTION EVENT CONTRACT
+============================================================
+NOTICE:  PASS: Execution event idempotence contract present
+DO
+
+============================================================
+08. ARTIFACT VALIDATION CONTRACT
+============================================================
+NOTICE:  PASS: Artifact validation contract present
+DO
+
+============================================================
+09. EXECUTOR TYPES
+============================================================
+     executor_type     | definitions 
+-----------------------+-------------
+ A5_LEGACY_EXECUTOR    |           2
+ A5_LEGACY_EXECUTOR_V3 |           1
+ E2E                   |           2
+ E2E_TEST              |           2
+ GROQ_LLM              |           2
+ NODE_COMPILER         |           1
+ SYSTEM                |           2
+(7 rows)
+
+
+============================================================
+10. ENABLED DEFINITIONS
+============================================================
+          stage_name          | version |     executor_type     | timeout_seconds | max_attempts | enabled 
+------------------------------+---------+-----------------------+-----------------+--------------+---------
+ A5_LEGACY_STAGE              |       3 | A5_LEGACY_EXECUTOR_V3 |             120 |            3 | t
+ E2E_RESEARCH                 |       1 | E2E                   |             300 |            2 | t
+ E2E_RESEARCH_20260910-132505 |       1 | E2E_TEST              |             300 |            2 | t
+ E2E_RESEARCH_V4              |       1 | SYSTEM                |             300 |            2 | t
+ E2E_SCRIPT                   |       1 | E2E                   |             300 |            2 | t
+ E2E_SCRIPT_20260910-132505   |       1 | E2E_TEST              |             300 |            2 | t
+ E2E_SCRIPT_V4                |       1 | SYSTEM                |             300 |            2 | t
+ SCENE_PLAN                   |       1 | NODE_COMPILER         |              60 |            3 | t
+ SCRIPT_GROQ                  |       2 | GROQ_LLM              |              90 |            3 | t
+(9 rows)
+
+
+============================================================
+11. ACTIVE CONTRACTS
+============================================================
+   contract_name   | version |  producer   |          consumers           | enabled 
+-------------------+---------+-------------+------------------------------+---------
+ SCENE_PLAN_OUTPUT |       1 | SCENE_PLAN  | ["TTS_KOKORO", "ASSET_PLAN"] | t
+ SCRIPT_OUTPUT     |       1 | SCRIPT_GROQ | ["SCENE_PLAN"]               | t
+(2 rows)
+
+
+============================================================
+12. ORCHESTRATOR GAP CHECK
+============================================================
+NOTICE:  INFO: orchestrator functions found = 0, executor functions found = 0
+DO
+
+============================================================
+13. CURRENT ERROR STATE
+============================================================
+ error_runs | error_stages 
+------------+--------------
+          0 |            0
+(1 row)
+
+
+============================================================
+14. FINAL DATABASE COUNTS
+============================================================
+ runs | stages | dependencies | run_events | stage_events | execution_events | artifacts 
+------+--------+--------------+------------+--------------+------------------+-----------
+   10 |     19 |            9 |         10 |           41 |                1 |         8
+(1 row)
+
+ROLLBACK
+
+============================================================
+11-F.2 CONTRACT TEST COMPLETE
+NO DATABASE MUTATION
+============================================================

@@ -1,0 +1,24 @@
+﻿PSQL EXIT CODE: 0
+
+BEGIN
+DELETE 1
+DELETE 1
+DELETE 1
+COMMIT
+     metric     | count 
+----------------+-------
+ RUNS_REMAINING |     0
+(1 row)
+
+      metric      | count 
+------------------+-------
+ STAGES_REMAINING |     0
+(1 row)
+
+      metric      | count 
+------------------+-------
+ EVENTS_REMAINING |     0
+(1 row)
+
+
+

@@ -1,0 +1,67 @@
+﻿{
+  "contract_name": "TTS_AUDIO_WAV",
+  "version": 1,
+  "description": "Canonical Prometheus speech artifact contract. This is the only TTS audio representation allowed downstream.",
+  "status": "ACTIVE",
+  "producer": "TTS_CANONICALIZER",
+  "consumers": [
+    "AUDIO_QA",
+    "ARTIFACT_REGISTRY",
+    "ASSEMBLY"
+  ],
+  "artifact": {
+    "artifact_type": "TTS_AUDIO_WAV",
+    "container": "WAVE",
+    "extension": ".wav",
+    "content_type": "audio/wav"
+  },
+  "audio_format": {
+    "codec": "pcm_s16le",
+    "sample_rate_hz": 24000,
+    "channels": 1,
+    "bits_per_sample": 16,
+    "channel_layout": "mono"
+  },
+  "container_requirements": {
+    "riff_header_finalized": true,
+    "data_chunk_size_finalized": true,
+    "riff_size_must_equal_file_size_minus_8": true,
+    "data_chunk_must_fit_file": true,
+    "pcm_data_must_be_sample_aligned": true
+  },
+  "content_requirements": {
+    "duration_seconds": {
+      "minimum_exclusive": 0
+    },
+    "decodable_by_ffmpeg": true,
+    "independently_probeable": true
+  },
+  "quality_metadata": {
+    "sha256_required": true,
+    "duration_seconds_required": true,
+    "sample_rate_hz_required": true,
+    "channels_required": true,
+    "bits_per_sample_required": true,
+    "voice_required": true,
+    "provider_required": true,
+    "engine_version_required": true,
+    "text_sha256_required": true,
+    "request_hash_required": true
+  },
+  "qa": {
+    "container_integrity": "required",
+    "codec_integrity": "required",
+    "duration_coherence": "required",
+    "pcm_alignment": "required",
+    "decode_test": "required",
+    "clipping_check": "required",
+    "leading_silence_measurement": "required",
+    "trailing_silence_measurement": "required"
+  },
+  "downstream_policy": {
+    "raw_provider_wav_allowed": false,
+    "canonical_wav_required": true,
+    "failed_qa_must_not_be_published": true,
+    "failed_qa_must_not_enter_final_assembly": true
+  }
+}

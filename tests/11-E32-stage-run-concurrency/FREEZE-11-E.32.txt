@@ -1,0 +1,133 @@
+﻿============================================================
+PROMETHEUS V2
+FREEZE — 11-E.32
+STAGE FAILURE / RETRY / TERMINAL ESCALATION / CONCURRENCY
+============================================================
+
+FREEZE_TIMESTAMP_UTC: 2026-09-22T19:22:09.927Z
+
+STATUS
+------
+11-E.32 = FUNCTIONALLY PROVEN
+
+SCOPE
+-----
+This freeze covers the transactional Stage/Run failure model,
+retry policy integration, terminal escalation and the tested
+concurrent interaction between Stage failure and Run escalation.
+
+PRIMITIVES
+----------
+fail_stage_atomically()
+- Atomic Stage failure
+- Error classification through classify_error()
+- retryable persisted from policy
+- STAGE_ERROR audit event
+- Run -> Stage lock ordering installed
+- RUNNING guard
+- concurrent safety verified
+
+fail_run_atomically()
+- Atomic Run escalation
+- Run -> Stage lock ordering
+- requires Stage ERROR
+- refuses retryable Stage escalation
+- propagates Stage error_code/error_message
+- RUN_ERROR audit event
+- idempotent when Run already ERROR
+
+validate_run_stage_consistency()
+- CREATED + retryable Stage ERROR = coherent
+- CREATED + terminal Stage ERROR = incoherent
+- ERROR + terminal Stage ERROR = coherent
+- ERROR + retryable-only Stage ERROR = incoherent
+
+RETRY / TERMINAL PROOF
+----------------------
+Attempt 1:
+RUNNING -> ERROR
+NETWORK_ERROR
+retryable = true
+next_backoff_seconds = 5
+
+Attempt 2:
+RUNNING -> ERROR
+NETWORK_ERROR
+retryable = true
+next_backoff_seconds = 10
+
+Attempt 3:
+RUNNING -> ERROR
+NETWORK_ERROR
+retryable = false
+next_backoff_seconds = 0
+
+Terminal Stage:
+- subsequent claim refused
+
+Run escalation:
+- terminal Stage -> Run ERROR
+- source error propagated
+- second escalation returns RUN_ALREADY_ERROR
+- no duplicate RUN_ERROR event
+
+CONCURRENCY PROOF
+-----------------
+Test:
+25-concurrent-post-fix.sql
+
+Observed:
+- Worker Stage completed
+- Worker Run completed
+- no PostgreSQL deadlock observed
+- no timeout observed
+- Stage reached ERROR / retryable=true
+- Run remained CREATED
+- consistency returned PASS
+- STAGE_ERROR event count = 1
+- RUN_ERROR event count = 0 for the observed race
+- cleanup fixture_runs = 0
+- cleanup fixture_stages = 0
+
+IMPORTANT
+---------
+The concurrent test proves the tested Stage/Run failure race
+after FIX-1. It does not constitute a proof of every possible
+orchestrator concurrency interaction.
+
+NON-CLAIMS
+----------
+This freeze does NOT claim:
+- global orchestrator completion
+- E2E production execution
+- SCENE_PLAN producer integration
+- TTS execution
+- audio alignment
+- master timeline
+- visual production
+- assembly
+- rendering E2E
+- global quality gate
+
+ARTIFACTS / EVIDENCE
+--------------------
+08-fix-lock-order.sql
+09-fix-source-verification.sql
+19-escalation-policy-forensics.sql
+23-fix-consistency-retryable-error.sql
+24-integrated-retry-escalation.sql
+25-concurrent-post-fix.sql
+24-integrated-retry-escalation.txt
+25-concurrent-post-fix.txt
+
+DECISION
+--------
+11-E.32 may be treated as frozen functional foundation.
+
+NEXT STAGE
+----------
+11-F — ORCHESTRATION CORE
+
+============================================================
+END FREEZE — 11-E.32
+============================================================

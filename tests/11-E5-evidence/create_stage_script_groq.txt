@@ -1,0 +1,73 @@
+﻿\echo '=== PROMETHEUS V2 - CREATE STAGE SCRIPT_GROQ_V1 ==='
+
+SELECT register_stage_definition(
+    'SCRIPT_GROQ',
+    1,
+    'Generation de script documentaire premium via fournisseur LLM Groq avec validation contractuelle.',
+    
+    '{
+      "required":["topic","niche"],
+      "properties":{
+        "topic":{"type":"string"},
+        "niche":{"type":"string"},
+        "pattern":{"type":"string"},
+        "scenes_min":{"type":"integer","default":7},
+        "scenes_max":{"type":"integer","default":12}
+      }
+    }'::jsonb,
+
+    '{
+      "required":["scenes","scene_count"],
+      "properties":{
+        "scene_count":{
+          "type":"integer",
+          "minimum":7,
+          "maximum":12
+        },
+        "scenes":{
+          "type":"array"
+        }
+      }
+    }'::jsonb,
+
+    '{
+      "requires":[],
+      "provides":["SCRIPT_JSON"]
+    }'::jsonb,
+
+    120,
+    3,
+
+    '{
+      "strategy":"exponential",
+      "base_delay_seconds":5,
+      "retryable_errors":[
+        "NETWORK_ERROR",
+        "TIMEOUT",
+        "RATE_LIMIT",
+        "MODEL_UNAVAILABLE"
+      ]
+    }'::jsonb,
+
+    '{
+      "key":"{run_id}:SCRIPT_GROQ"
+    }'::jsonb,
+
+    'GROQ_LLM',
+
+    '{
+      "type":"JSON_SCHEMA",
+      "minimum_valid_scenes":7,
+      "maximum_invalid_attempts":3
+    }'::jsonb,
+
+    '{
+      "on_failure":"RETRY_THEN_FAIL"
+    }'::jsonb,
+
+    true
+);
+
+\echo '=== FIN CREATE STAGE SCRIPT_GROQ_V1 ==='
+
+

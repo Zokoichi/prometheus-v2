@@ -1,0 +1,83 @@
+﻿{
+    "title":  "Test SCENE PLAN",
+    "scenes":  [
+                   {
+                       "scene_number":  1,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  2,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  3,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  4,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  5,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  6,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  7,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  8,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  9,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  10,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  11,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  12,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   },
+                   {
+                       "scene_number":  13,
+                       "role":  "development",
+                       "voice_over":  "Cette phrase contient suffisamment de mots pour respecter le contrat minimal.",
+                       "visual_description":  "Une représentation visuelle claire et cohérente avec la narration."
+                   }
+               ]
+}

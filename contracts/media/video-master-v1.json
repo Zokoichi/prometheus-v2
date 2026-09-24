@@ -1,0 +1,110 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "prometheus://contracts/video-master/v1",
+  "title": "PROMETHEUS V2 Video Master",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "content_type",
+    "width",
+    "height",
+    "duration_seconds",
+    "fps",
+    "video_codec",
+    "audio_codec",
+    "audio_sample_rate_hz",
+    "qa"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "content_type": {
+      "type": "string",
+      "enum": ["video/mp4"]
+    },
+    "width": {
+      "type": "integer",
+      "const": 1080
+    },
+    "height": {
+      "type": "integer",
+      "const": 1920
+    },
+    "duration_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "fps": {
+      "type": "number",
+      "minimum": 1
+    },
+    "video_codec": {
+      "type": "string",
+      "enum": ["H264"]
+    },
+    "audio_codec": {
+      "type": "string",
+      "enum": ["AAC"]
+    },
+    "audio_sample_rate_hz": {
+      "type": "integer",
+      "const": 48000
+    },
+    "audio_channels": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2
+    },
+    "audio": {
+      "type": "object",
+      "properties": {
+        "integrated_lufs": {
+          "type": ["number", "null"]
+        },
+        "lra_lu": {
+          "type": ["number", "null"]
+        },
+        "true_peak_dbtp": {
+          "type": ["number", "null"]
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "required": [
+        "status",
+        "checks"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["PASS", "FAIL"]
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "check",
+              "status"
+            ],
+            "properties": {
+              "check": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["PASS", "FAIL", "WARN"]
+              },
+              "details": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

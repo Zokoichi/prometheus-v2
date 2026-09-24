@@ -1,0 +1,19 @@
+﻿WORKER: E-FAIL-RUN
+EXIT CODE: 0
+
+BEGIN
+SET
+SET
+ pg_sleep 
+----------
+ 
+(1 row)
+
+ allowed |   error_code    |            error_message             | resulting_status 
+---------+-----------------+--------------------------------------+------------------
+ f       | STAGE_NOT_ERROR | Stage non terminal ERROR : SUCCEEDED | CREATED
+(1 row)
+
+COMMIT
+
+

@@ -1,0 +1,29 @@
+﻿PSQL EXIT CODE: 3
+
+   run_id    | run_status |    current_stage    |  stage_id   | stage_status | attempt | retryable |  error_code   |           error_message            
+-------------+------------+---------------------+-------------+--------------+---------+-----------+---------------+------------------------------------
+ RUN-11F3B-A | CREATED    | CLAIM_FAIL_STAGE    | STG-11F3B-A | ERROR        |       1 | t         | NETWORK_ERROR | 11-F.3-B TEST A concurrent failure
+ RUN-11F3B-B | CREATED    | CLAIM_FAIL_RUN      | STG-11F3B-B | RUNNING      |       1 | f         |               | 
+ RUN-11F3B-C | CREATED    | CLAIM_COMPLETE      | STG-11F3B-C | SUCCEEDED    |       1 | f         |               | 
+ RUN-11F3B-D | CREATED    | COMPLETE_FAIL_STAGE | STG-11F3B-D | SUCCEEDED    |       1 | f         |               | 
+ RUN-11F3B-E | CREATED    | COMPLETE_FAIL_RUN   | STG-11F3B-E | SUCCEEDED    |       1 | f         |               | 
+(5 rows)
+
+       metric       | count 
+--------------------+-------
+ STAGE_ERROR_EVENTS |     1
+(1 row)
+
+      metric      | count 
+------------------+-------
+ RUN_ERROR_EVENTS |     0
+(1 row)
+
+
+ERROR:  column "result" does not exist
+LINE 1: SELECT result, message
+               ^
+QUERY:  SELECT result, message
+                             FROM public.validate_run_stage_consistency(r.run_id)
+CONTEXT:  PL/pgSQL function inline_code_block line 13 at SQL statement
+

@@ -1,0 +1,19 @@
+﻿WORKER: D-FIX-FAIL-STAGE
+EXIT CODE: 0
+
+BEGIN
+SET
+SET
+ pg_sleep 
+----------
+ 
+(1 row)
+
+ allowed |         message         |    stage_id     | stage_status | attempt | retryable |  error_code   
+---------+-------------------------+-----------------+--------------+---------+-----------+---------------
+ t       | STAGE_FAILED_ATOMICALLY | STG-11F3B-D-FIX | ERROR        |       1 | t         | NETWORK_ERROR
+(1 row)
+
+COMMIT
+
+

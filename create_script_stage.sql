@@ -1,0 +1,56 @@
+﻿\echo '=== CREATE TEST RUN SCRIPT_GROQ ==='
+
+INSERT INTO production_run
+(
+ run_id,
+ status,
+ created_at,
+ updated_at
+)
+VALUES
+(
+ 'RUN-SCRIPT-GROQ-V1',
+ 'RUNNING',
+ now(),
+ now()
+)
+ON CONFLICT DO NOTHING;
+
+
+INSERT INTO production_stage
+(
+ stage_id,
+ run_id,
+ stage_name,
+ status,
+ attempt,
+ idempotency_key,
+ created_at,
+ updated_at
+)
+VALUES
+(
+ 'STAGE-SCRIPT-GROQ-V1',
+ 'RUN-SCRIPT-GROQ-V1',
+ 'SCRIPT_GROQ',
+ 'PENDING',
+ 1,
+ 'RUN-SCRIPT-GROQ-V1:SCRIPT_GROQ',
+ now(),
+ now()
+)
+ON CONFLICT DO NOTHING;
+
+
+SELECT
+ stage_id,
+ run_id,
+ stage_name,
+ status,
+ attempt,
+ idempotency_key
+FROM production_stage
+WHERE stage_id='STAGE-SCRIPT-GROQ-V1';
+
+
+\echo '=== FIN CREATE TEST STAGE ==='

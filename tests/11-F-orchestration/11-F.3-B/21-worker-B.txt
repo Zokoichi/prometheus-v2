@@ -1,0 +1,24 @@
+﻿WORKER: FK-B-RUN-THEN-STAGE
+EXIT CODE: 0
+
+BEGIN
+SET
+SET
+    step    |    run_id    | status  
+------------+--------------+---------
+ B_RUN_LOCK | RUN-11F3B-FK | CREATED
+(1 row)
+
+ pg_sleep 
+----------
+ 
+(1 row)
+
+ROLLBACK
+
+ERROR:  deadlock detected
+DETAIL:  Process 460945 waits for ShareLock on transaction 2426; blocked by process 460946.
+Process 460946 waits for ShareLock on transaction 2425; blocked by process 460945.
+HINT:  See server log for query details.
+CONTEXT:  while locking tuple (0,1) in relation "production_stage"
+

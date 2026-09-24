@@ -1,0 +1,119 @@
+﻿
+
+Path       : C:\Projects\prometheus-v2\test_immutability.sql
+LineNumber : 23
+Line       : SELECT event_id, duration_ms, event_data FROM production_execution_event WHERE event_id = 'TEST-IMMUT-001';
+
+Path       : C:\Projects\prometheus-v2\test_immutability.sql
+LineNumber : 26
+Line       : DELETE FROM production_execution_event WHERE event_id = 'TEST-IMMUT-001';
+
+Path       : C:\Projects\prometheus-v2\test_immutability_v2.sql
+LineNumber : 26
+Line       : SELECT event_id, duration_ms FROM production_execution_event WHERE event_id = 'TEST-IMMUT-002';
+
+Path       : C:\Projects\prometheus-v2\test_immutability_v2.sql
+LineNumber : 29
+Line       : DELETE FROM production_execution_event WHERE event_id = 'TEST-IMMUT-002';
+
+Path       : C:\Projects\prometheus-v2\db\init\012_execution_trace_diagnostic.sql
+LineNumber : 48
+Line       : FROM production_execution_event pee;
+
+Path       : C:\Projects\prometheus-v2\db\init\012_execution_trace_diagnostic.sql
+LineNumber : 155
+Line       :     FROM production_execution_event pee
+
+Path       : C:\Projects\prometheus-v2\db\init\012_execution_trace_diagnostic.sql
+LineNumber : 168
+Line       :     FROM production_execution_event pee2
+
+Path       : C:\Projects\prometheus-v2\db\init\012_execution_trace_diagnostic.sql
+LineNumber : 187
+Line       :         FROM production_execution_event pee3
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-cleanup.sql
+LineNumber : 1
+Line       : DELETE FROM production_execution_event
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-cleanup.sql
+LineNumber : 18
+Line       :         (SELECT COUNT(*) FROM production_execution_event
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-events.sql
+LineNumber : 61
+Line       :          FROM production_execution_event
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-v4-cleanup.sql
+LineNumber : 1
+Line       : DELETE FROM production_execution_event
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-v4-cleanup.sql
+LineNumber : 21
+Line       :          FROM production_execution_event
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-v4-events.sql
+LineNumber : 64
+Line       :          FROM production_execution_event
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-v4-final-cleanup.sql
+LineNumber : 1
+Line       : DELETE FROM production_execution_event
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-v4-final-cleanup.sql
+LineNumber : 21
+Line       :          FROM production_execution_event
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-v4-readonly.sql
+LineNumber : 9
+Line       : FROM production_execution_event
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-v4-readonly.sql
+LineNumber : 23
+Line       :          FROM production_execution_event
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-v4-verify.sql
+LineNumber : 2
+Line       :     WHEN to_regclass('public.production_execution_event') IS NOT NULL
+
+Path       : C:\Projects\prometheus-v2\tests\0f062-verify.sql
+LineNumber : 2
+Line       :     WHEN to_regclass('public.production_execution_event') IS NOT NULL
+
+Path       : C:\Projects\prometheus-v2\tests\11-E5-evidence\02-engine-functions.txt
+LineNumber : 713
+Line       :              |                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                           |     v_existing production_execution_event%ROWTYPE;                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                       +
+
+Path       : C:\Projects\prometheus-v2\tests\11-E5-evidence\02-engine-functions.txt
+LineNumber : 836
+Line       :              |                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                           |     FROM production_execution_event pee                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                       +
+
+Path       : C:\Projects\prometheus-v2\tests\11-E5-evidence\02-engine-functions.txt
+LineNumber : 910
+Line       :              |                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                           |     INSERT INTO production_execution_event (                                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                       +
+
+Path       : C:\Projects\prometheus-v2\tests\11-E5-evidence\db-init-012_execution_trace_diagnostic.txt
+LineNumber : 48
+Line       : FROM production_execution_event pee;
+
+Path       : C:\Projects\prometheus-v2\tests\11-E5-evidence\db-init-012_execution_trace_diagnostic.txt
+LineNumber : 155
+Line       :     FROM production_execution_event pee
+
+Path       : C:\Projects\prometheus-v2\tests\11-E5-evidence\db-init-012_execution_trace_diagnostic.txt
+LineNumber : 168
+Line       :     FROM production_execution_event pee2
+
+Path       : C:\Projects\prometheus-v2\tests\11-E5-evidence\db-init-012_execution_trace_diagnostic.txt
+LineNumber : 187
+Line       :         FROM production_execution_event pee3
+
+
+
+

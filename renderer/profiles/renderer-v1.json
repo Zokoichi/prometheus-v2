@@ -1,0 +1,17 @@
+﻿{
+  "schema_version": "1.0",
+  "renderer_id": "PROM-V2-RENDERER",
+  "renderer_version": "0.1.0",
+  "profile_id": "PROM-V2-SHORT-V1",
+  "engine": "FFMPEG",
+  "execution_mode": "CONTAINER",
+  "transport": "HTTP",
+  "endpoint_port": 8080,
+  "workspace": {
+    "input": "/workspace/input",
+    "output": "/workspace/output",
+    "tmp": "/workspace/tmp"
+  },
+  "deterministic_render": true,
+  "hardware_acceleration": false
+}

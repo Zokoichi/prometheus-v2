@@ -1,0 +1,87 @@
+{
+    "title":  "Le paradoxe du grand├ó┬Ç┬æp├â┬¿re expliqu├â┬® en 60 secondes",
+    "scenes":  [
+                   {
+                       "scene_number":  1,
+                       "camera_motion":  "ZOOM_IN",
+                       "voice_over":  "Si vous voyagez dans le pass├â┬® et tuez votre grand├ó┬Ç┬æp├â┬¿re, comment avez├ó┬Ç┬ævous pu exister ?",
+                       "estimated_duration_seconds":  6,
+                       "visual_description":  "Un scientifique dans un laboratoire tient un dispositif lumineux; coupe ├â┬á une rue des ann├â┬®es 1940 o├â┬╣ il pointe un pistolet vers un homme plus ├â┬óg├â┬®, le visage crisp├â┬®.",
+                       "shot_type":  "CLOSE_UP",
+                       "role":  "hook",
+                       "word_count":  15
+                   },
+                   {
+                       "scene_number":  2,
+                       "camera_motion":  "PAN_LEFT",
+                       "voice_over":  "La th├â┬®orie de la relativit├â┬® autorise les courbes ferm├â┬®es, mais la logique reste fragile.",
+                       "estimated_duration_seconds":  5.6,
+                       "visual_description":  "Plan sur un tableau blanc o├â┬╣ l├ó┬Ç┬Öon ├â┬®crit E=mc├é┬▓, on trace des arcs de cercle repr├â┬®sentant des trajectoires temporelles, puis on zoome sur une annotation ├é┬½ courbes ferm├â┬®es ├é┬╗.",
+                       "shot_type":  "WIDE",
+                       "role":  "context",
+                       "word_count":  14
+                   },
+                   {
+                       "scene_number":  3,
+                       "camera_motion":  "STATIC",
+                       "voice_over":  "En d├â┬®truisant l├ó┬Ç┬Öanc├â┬¬tre, vous annulez la cha├â┬«ne d\u0027├â┬®v├â┬®nements qui vous a permis de voyager.",
+                       "estimated_duration_seconds":  5.6,
+                       "visual_description":  "Une frise chronologique anim├â┬®e montre une ligne du temps, une fl├â┬¿che recule, puis un X rouge appara├â┬«t sur l├ó┬Ç┬Öimage du grand├ó┬Ç┬æp├â┬¿re.",
+                       "shot_type":  "MEDIUM",
+                       "role":  "development",
+                       "word_count":  14
+                   },
+                   {
+                       "scene_number":  4,
+                       "camera_motion":  "PAN_RIGHT",
+                       "voice_over":  "Certains physiciens proposent des univers parall├â┬¿les o├â┬╣ chaque action cr├â┬®e une branche s├â┬®par├â┬®e.",
+                       "estimated_duration_seconds":  5.2,
+                       "visual_description":  "├â┬ëcran partag├â┬® en deux; ├â┬á gauche le voyageur tue son grand├ó┬Ç┬æp├â┬¿re, ├â┬á droite le m├â┬¬me voyageur regarde un monde o├â┬╣ le grand├ó┬Ç┬æp├â┬¿re vit, chaque c├â┬┤t├â┬® ├â┬®clair├â┬® diff├â┬®remment.",
+                       "shot_type":  "CLOSE_UP",
+                       "role":  "development",
+                       "word_count":  13
+                   },
+                   {
+                       "scene_number":  5,
+                       "camera_motion":  "ZOOM_OUT",
+                       "voice_over":  "Dans cette vue, votre version tue le grand├ó┬Ç┬æp├â┬¿re, mais vous continuez d├ó┬Ç┬Öexister dans une autre r├â┬®alit├â┬®.",
+                       "estimated_duration_seconds":  6.4,
+                       "visual_description":  "Le voyageur appara├â┬«t dans une for├â┬¬t, deux versions de lui-m├â┬¬me se tiennent l├ó┬Ç┬Öune ├â┬á c├â┬┤t├â┬® de l├ó┬Ç┬Öautre├ó┬Ç┬»: l├ó┬Ç┬Öune arm├â┬®e, l├ó┬Ç┬Öautre observatrice, avec un effet de lumi├â┬¿re s├â┬®parant les r├â┬®alit├â┬®s.",
+                       "shot_type":  "WIDE",
+                       "role":  "revelation",
+                       "word_count":  16
+                   },
+                   {
+                       "scene_number":  6,
+                       "camera_motion":  "STATIC",
+                       "voice_over":  "La conjecture de Novikov impose que les ├â┬®v├â┬®nements du pass├â┬® se conforment d├â┬®j├â┬á ├â┬á votre futur.",
+                       "estimated_duration_seconds":  6.4,
+                       "visual_description":  "Un chercheur pointe du doigt un diagramme intitul├â┬® ├é┬½ Novikov self├ó┬Ç┬æconsistency ├é┬╗ affich├â┬® sur un ├â┬®cran, des ├â┬®quations et des fl├â┬¿ches boucl├â┬®es s├ó┬Ç┬Öaniment.",
+                       "shot_type":  "MEDIUM",
+                       "role":  "development",
+                       "word_count":  16
+                   },
+                   {
+                       "scene_number":  7,
+                       "camera_motion":  "ZOOM_IN",
+                       "voice_over":  "Ainsi, vous pourriez seulement influencer le pass├â┬® de fa├â┬ºon ├â┬á garantir votre naissance, jamais l├ó┬Ç┬Öinverser.",
+                       "estimated_duration_seconds":  6,
+                       "visual_description":  "Animation d├ó┬Ç┬Öune boucle : un b├â┬®b├â┬® na├â┬«t, grandit, entre dans une machine ├â┬á voyager, revient au point de naissance, cr├â┬®ant un cercle continu.",
+                       "shot_type":  "CLOSE_UP",
+                       "role":  "development",
+                       "word_count":  15
+                   },
+                   {
+                       "scene_number":  8,
+                       "camera_motion":  "STATIC",
+                       "voice_over":  "Le voyage temporel reste th├â┬®orique, mais il r├â┬®v├â┬¿le les limites de notre logique face aux boucles infinies.",
+                       "estimated_duration_seconds":  6.8,
+                       "visual_description":  "Le voyageur sort de la machine, regarde le ciel urbain, sourit pensivement; le cadre se fige et le texte ├é┬½ Paradoxe ? ├é┬╗ appara├â┬«t.",
+                       "shot_type":  "WIDE",
+                       "role":  "conclusion",
+                       "word_count":  17
+                   }
+               ],
+    "total_estimated_duration_seconds":  48,
+    "scene_count":  8
+}

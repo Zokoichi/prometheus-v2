@@ -1,0 +1,215 @@
+-- ============================================================
+-- PROMETHEUS V2
+-- PHASE 0F.6.2
+-- EXECUTION TRACE / DIAGNOSTIC ENGINE
+-- CORRECTION V3
+-- ============================================================
+
+-- ------------------------------------------------------------
+-- La vue existante doit être recréée car CREATE OR REPLACE VIEW
+-- ne permet pas de renommer/réordonner certaines colonnes.
+-- Cette vue ne contient aucune donnée propre.
+-- ------------------------------------------------------------
+
+DROP VIEW IF EXISTS execution_event_diagnostic;
+
+CREATE VIEW execution_event_diagnostic AS
+SELECT
+    pee.id,
+    pee.event_id,
+    pee.run_id,
+    pee.stage_id,
+    pee.stage_name,
+    pee.attempt,
+    pee.event_type,
+    pee.provider,
+    pee.executor_type,
+    pee.status,
+    pee.started_at,
+    pee.completed_at,
+    pee.duration_ms,
+    CASE
+        WHEN pee.duration_ms IS NOT NULL
+        THEN ROUND((pee.duration_ms::NUMERIC / 1000.0), 3)
+        ELSE NULL
+    END AS duration_seconds,
+    pee.error_code,
+    pee.error_message,
+    pee.input_artifact_ids,
+    pee.output_artifact_ids,
+    pee.event_data,
+    pee.created_at,
+    CASE
+        WHEN pee.status = 'ERROR'
+          OR pee.error_code IS NOT NULL
+        THEN TRUE
+        ELSE FALSE
+    END AS has_error
+FROM production_execution_event pee;
+
+COMMENT ON VIEW execution_event_diagnostic IS
+'Vue de diagnostic structurée des événements d execution Prometheus V2.';
+
+-- ------------------------------------------------------------
+-- DIAGNOSTIC RUN
+-- ------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION diagnose_run(
+    p_run_id VARCHAR(64)
+)
+RETURNS TABLE (
+    allowed BOOLEAN,
+    error_code VARCHAR(128),
+    error_message TEXT,
+    run_status VARCHAR(32),
+    current_stage VARCHAR(64),
+    total_events BIGINT,
+    error_events BIGINT,
+    successful_events BIGINT,
+    total_duration_ms BIGINT,
+    last_stage_name VARCHAR(64),
+    last_attempt INTEGER,
+    providers JSONB
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_run_status VARCHAR(32);
+    v_current_stage VARCHAR(64);
+
+    v_total_events BIGINT;
+    v_error_events BIGINT;
+    v_successful_events BIGINT;
+    v_total_duration_ms BIGINT;
+
+    v_last_stage_name VARCHAR(64);
+    v_last_attempt INTEGER;
+
+    v_providers JSONB;
+BEGIN
+
+    -- --------------------------------------------------------
+    -- RUN EXISTENCE
+    -- --------------------------------------------------------
+
+    SELECT
+        pr.status,
+        pr.current_stage
+    INTO
+        v_run_status,
+        v_current_stage
+    FROM production_run pr
+    WHERE pr.run_id = p_run_id;
+
+    IF NOT FOUND THEN
+        RETURN QUERY
+        SELECT
+            FALSE,
+            'RUN_NOT_FOUND'::VARCHAR(128),
+            ('Run inexistant : ' || p_run_id)::TEXT,
+            NULL::VARCHAR(32),
+            NULL::VARCHAR(64),
+            0::BIGINT,
+            0::BIGINT,
+            0::BIGINT,
+            0::BIGINT,
+            NULL::VARCHAR(64),
+            NULL::INTEGER,
+            '[]'::JSONB;
+        RETURN;
+    END IF;
+
+    -- --------------------------------------------------------
+    -- AGGREGATION EVENEMENTS
+    -- --------------------------------------------------------
+
+    SELECT
+        COUNT(*)::BIGINT,
+
+        COUNT(*)
+            FILTER (
+                WHERE
+                    pee.status = 'ERROR'
+                    OR pee.error_code IS NOT NULL
+            )::BIGINT,
+
+        COUNT(*)
+            FILTER (
+                WHERE pee.status = 'SUCCEEDED'
+            )::BIGINT,
+
+        COALESCE(
+            SUM(pee.duration_ms)
+                FILTER (
+                    WHERE pee.duration_ms IS NOT NULL
+                ),
+            0
+        )::BIGINT
+
+    INTO
+        v_total_events,
+        v_error_events,
+        v_successful_events,
+        v_total_duration_ms
+
+    FROM production_execution_event pee
+    WHERE pee.run_id = p_run_id;
+
+    -- --------------------------------------------------------
+    -- DERNIER EVENEMENT
+    -- --------------------------------------------------------
+
+    SELECT
+        pee2.stage_name,
+        pee2.attempt
+    INTO
+        v_last_stage_name,
+        v_last_attempt
+    FROM production_execution_event pee2
+    WHERE pee2.run_id = p_run_id
+    ORDER BY pee2.created_at DESC, pee2.id DESC
+    LIMIT 1;
+
+    -- --------------------------------------------------------
+    -- PROVIDERS UNIQUES
+    -- --------------------------------------------------------
+
+    SELECT
+        COALESCE(
+            jsonb_agg(provider ORDER BY provider),
+            '[]'::JSONB
+        )
+    INTO
+        v_providers
+    FROM (
+        SELECT DISTINCT
+            pee3.provider
+        FROM production_execution_event pee3
+        WHERE pee3.run_id = p_run_id
+          AND pee3.provider IS NOT NULL
+    ) provider_list(provider);
+
+    -- --------------------------------------------------------
+    -- RESULTAT
+    -- --------------------------------------------------------
+
+    RETURN QUERY
+    SELECT
+        TRUE,
+        NULL::VARCHAR(128),
+        'Diagnostic Run disponible.'::TEXT,
+        v_run_status,
+        v_current_stage,
+        v_total_events,
+        v_error_events,
+        v_successful_events,
+        v_total_duration_ms,
+        v_last_stage_name,
+        v_last_attempt,
+        v_providers;
+
+END;
+$$;
+
+COMMENT ON FUNCTION diagnose_run(VARCHAR) IS
+'Produit un diagnostic structure et en lecture seule d un Run Prometheus V2.';

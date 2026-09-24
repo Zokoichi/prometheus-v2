@@ -1,0 +1,27 @@
+﻿# Environment / secrets
+.env
+
+# Runtime data
+data/
+
+# n8n local data
+n8n/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary
+*.tmp
+*.temp
+# Backups / temporary project copies
+*.bak
+*.backup
+# Local test logs

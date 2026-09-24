@@ -1,0 +1,35 @@
+﻿PSQL EXIT CODE: 0
+
+     run_id      | run_status |    stage_id     | stage_status | attempt | retryable |  error_code   
+-----------------+------------+-----------------+--------------+---------+-----------+---------------
+ RUN-11F3B-D-FIX | CREATED    | STG-11F3B-D-FIX | ERROR        |       1 | t         | NETWORK_ERROR
+(1 row)
+
+    metric    | count 
+--------------+-------
+ STAGE_EVENTS |     1
+(1 row)
+
+BEGIN
+DELETE 1
+DELETE 1
+DELETE 1
+DELETE 1
+COMMIT
+     metric     | count 
+----------------+-------
+ RUNS_REMAINING |     0
+(1 row)
+
+      metric      | count 
+------------------+-------
+ STAGES_REMAINING |     0
+(1 row)
+
+       metric        | count 
+---------------------+-------
+ ARTIFACTS_REMAINING |     0
+(1 row)
+
+
+

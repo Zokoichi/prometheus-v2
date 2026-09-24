@@ -1,0 +1,624 @@
+﻿PSQL EXIT CODE: 0
+
+Pager usage is off.
+Output format is aligned.
+     section     |          proname          |                                               signature                                                
+-----------------+---------------------------+--------------------------------------------------------------------------------------------------------
+ FUNCTION_SOURCE | complete_stage_atomically | p_stage_id character varying, p_event_data jsonb
+ FUNCTION_SOURCE | fail_stage_atomically     | p_stage_id character varying, p_error_code character varying, p_error_message text, p_event_data jsonb
+(2 rows)
+
+     section     |                                                        pg_get_functiondef                                                         
+-----------------+-----------------------------------------------------------------------------------------------------------------------------------
+ COMPLETE_SOURCE | CREATE OR REPLACE FUNCTION public.complete_stage_atomically(p_stage_id character varying, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                 |  RETURNS TABLE(allowed boolean, error_code character varying, error_message text, resulting_status character varying)            +
+                 |  LANGUAGE plpgsql                                                                                                                +
+                 | AS $function$                                                                                                                    +
+                 | DECLARE                                                                                                                          +
+                 |     v_run_id VARCHAR(64);                                                                                                        +
+                 |     v_stage_status VARCHAR(32);                                                                                                  +
+                 |     v_artifact_id VARCHAR(128);                                                                                                  +
+                 |     v_artifact_status VARCHAR(32);                                                                                               +
+                 |     v_artifact_run_id VARCHAR(64);                                                                                               +
+                 | BEGIN                                                                                                                            +
+                 |                                                                                                                                  +
+                 |     SELECT                                                                                                                       +
+                 |         ps.run_id,                                                                                                               +
+                 |         ps.status,                                                                                                               +
+                 |         ps.output_artifact_ids ->> 0                                                                                             +
+                 |     INTO                                                                                                                         +
+                 |         v_run_id,                                                                                                                +
+                 |         v_stage_status,                                                                                                          +
+                 |         v_artifact_id                                                                                                            +
+                 |     FROM production_stage ps                                                                                                     +
+                 |     WHERE ps.stage_id = p_stage_id                                                                                               +
+                 |     FOR UPDATE;                                                                                                                  +
+                 |                                                                                                                                  +
+                 |     IF NOT FOUND THEN                                                                                                            +
+                 |         RETURN QUERY                                                                                                             +
+                 |         SELECT                                                                                                                   +
+                 |             FALSE,                                                                                                               +
+                 |             'STAGE_NOT_FOUND'::VARCHAR(128),                                                                                     +
+                 |             'Stage inexistant.'::TEXT,                                                                                           +
+                 |             NULL::VARCHAR(32);                                                                                                   +
+                 |         RETURN;                                                                                                                  +
+                 |     END IF;                                                                                                                      +
+                 |                                                                                                                                  +
+                 |     IF v_stage_status <> 'RUNNING' THEN                                                                                          +
+                 |         RETURN QUERY                                                                                                             +
+                 |         SELECT                                                                                                                   +
+                 |             FALSE,                                                                                                               +
+                 |             'STAGE_NOT_RUNNING'::VARCHAR(128),                                                                                   +
+                 |             ('Stage dans l''etat ' || v_stage_status ||                                                                          +
+                 |              ', RUNNING attendu.')::TEXT,                                                                                        +
+                 |             v_stage_status;                                                                                                      +
+                 |         RETURN;                                                                                                                  +
+                 |     END IF;                                                                                                                      +
+                 |                                                                                                                                  +
+                 |     IF v_artifact_id IS NULL OR v_artifact_id = '' THEN                                                                          +
+                 |         RETURN QUERY                                                                                                             +
+                 |         SELECT                                                                                                                   +
+                 |             FALSE,                                                                                                               +
+                 |             'OUTPUT_ARTIFACT_REQUIRED'::VARCHAR(128),                                                                            +
+                 |             'Aucun output artifact declare.'::TEXT,                                                                              +
+                 |             v_stage_status;                                                                                                      +
+                 |         RETURN;                                                                                                                  +
+                 |     END IF;                                                                                                                      +
+                 |                                                                                                                                  +
+                 |     SELECT                                                                                                                       +
+                 |         ar.run_id,                                                                                                               +
+                 |         ar.status                                                                                                                +
+                 |     INTO                                                                                                                         +
+                 |         v_artifact_run_id,                                                                                                       +
+                 |         v_artifact_status                                                                                                        +
+                 |     FROM artifact_registry ar                                                                                                    +
+                 |     WHERE ar.artifact_id = v_artifact_id                                                                                         +
+                 |     FOR SHARE;                                                                                                                   +
+                 |                                                                                                                                  +
+                 |     IF NOT FOUND THEN                                                                                                            +
+                 |         RETURN QUERY                                                                                                             +
+                 |         SELECT                                                                                                                   +
+                 |             FALSE,                                                                                                               +
+                 |             'OUTPUT_ARTIFACT_NOT_FOUND'::VARCHAR(128),                                                                           +
+                 |             ('Output artifact inexistant : ' || v_artifact_id)::TEXT,                                                            +
+                 |             v_stage_status;                                                                                                      +
+                 |         RETURN;                                                                                                                  +
+                 |     END IF;                                                                                                                      +
+                 |                                                                                                                                  +
+                 |     IF v_artifact_run_id <> v_run_id THEN                                                                                        +
+                 |         RETURN QUERY                                                                                                             +
+                 |         SELECT                                                                                                                   +
+                 |             FALSE,                                                                                                               +
+                 |             'OUTPUT_ARTIFACT_RUN_MISMATCH'::VARCHAR(128),                                                                        +
+                 |             'Output artifact appartenant a un autre run.'::TEXT,                                                                 +
+                 |             v_stage_status;                                                                                                      +
+                 |         RETURN;                                                                                                                  +
+                 |     END IF;                                                                                                                      +
+                 |                                                                                                                                  +
+                 |     IF v_artifact_status <> 'VALIDATED' THEN                                                                                     +
+                 |         RETURN QUERY                                                                                                             +
+                 |         SELECT                                                                                                                   +
+                 |             FALSE,                                                                                                               +
+                 |             'OUTPUT_ARTIFACT_NOT_VALIDATED'::VARCHAR(128),                                                                       +
+                 |             ('Output artifact dans le statut ' ||                                                                                +
+                 |              v_artifact_status ||                                                                                                +
+                 |              ', VALIDATED attendu.')::TEXT,                                                                                      +
+                 |             v_stage_status;                                                                                                      +
+                 |         RETURN;                                                                                                                  +
+                 |     END IF;                                                                                                                      +
+                 |                                                                                                                                  +
+                 |     UPDATE production_stage                                                                                                      +
+                 |     SET                                                                                                                          +
+                 |         status = 'SUCCEEDED',                                                                                                    +
+                 |         output_json =                                                                                                            +
+                 |             COALESCE(output_json, '{}'::jsonb)                                                                                   +
+                 |             || jsonb_build_object(                                                                                               +
+                 |                 'completed_atomically',                                                                                          +
+                 |                 true,                                                                                                            +
+                 |                 'completed_at',                                                                                                  +
+                 |                 NOW()                                                                                                            +
+                 |             ),                                                                                                                   +
+                 |         completed_at = NOW()                                                                                                     +
+                 |     WHERE stage_id = p_stage_id;                                                                                                 +
+                 |                                                                                                                                  +
+                 |     INSERT INTO production_stage_event (                                                                                         +
+                 |         stage_id,                                                                                                                +
+                 |         run_id,                                                                                                                  +
+                 |         event_type,                                                                                                              +
+                 |         from_status,                                                                                                             +
+                 |         to_status,                                                                                                               +
+                 |         stage_name,                                                                                                              +
+                 |         attempt,                                                                                                                 +
+                 |         event_data                                                                                                               +
+                 |     )                                                                                                                            +
+                 |     SELECT                                                                                                                       +
+                 |         ps.stage_id,                                                                                                             +
+                 |         ps.run_id,                                                                                                               +
+                 |         'STATE_CHANGE',                                                                                                          +
+                 |         'RUNNING',                                                                                                               +
+                 |         'SUCCEEDED',                                                                                                             +
+                 |         ps.stage_name,                                                                                                           +
+                 |         ps.attempt,                                                                                                              +
+                 |         COALESCE(p_event_data, '{}'::jsonb)                                                                                      +
+                 |     FROM production_stage ps                                                                                                     +
+                 |     WHERE ps.stage_id = p_stage_id;                                                                                              +
+                 |                                                                                                                                  +
+                 |     RETURN QUERY                                                                                                                 +
+                 |     SELECT                                                                                                                       +
+                 |         TRUE,                                                                                                                    +
+                 |         NULL::VARCHAR(128),                                                                                                      +
+                 |         'Stage complete atomiquement avec artifact valide.'::TEXT,                                                               +
+                 |         'SUCCEEDED'::VARCHAR(32);                                                                                                +
+                 |                                                                                                                                  +
+                 | EXCEPTION                                                                                                                        +
+                 |     WHEN OTHERS THEN                                                                                                             +
+                 |         RAISE;                                                                                                                   +
+                 | END;                                                                                                                             +
+                 | $function$                                                                                                                       +
+                 | 
+(1 row)
+
+      section      |                                                                                 pg_get_functiondef                                                                                  
+-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ FAIL_STAGE_SOURCE | CREATE OR REPLACE FUNCTION public.fail_stage_atomically(p_stage_id character varying, p_error_code character varying, p_error_message text, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                   |  RETURNS TABLE(allowed boolean, message text, stage_id character varying, stage_status character varying, attempt integer, retryable boolean, error_code character varying)        +
+                   |  LANGUAGE plpgsql                                                                                                                                                                  +
+                   | AS $function$                                                                                                                                                                      +
+                   | DECLARE                                                                                                                                                                            +
+                   |     v_run_id VARCHAR(64);                                                                                                                                                          +
+                   |     v_stage public.production_stage%ROWTYPE;                                                                                                                                       +
+                   |     v_classification RECORD;                                                                                                                                                       +
+                   |     v_event_data jsonb;                                                                                                                                                            +
+                   | BEGIN                                                                                                                                                                              +
+                   |                                                                                                                                                                                    +
+                   |     /*                                                                                                                                                                             +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      * 1. Resolve immutable stage -> run relationship WITHOUT                                                                                                                      +
+                   |      *    taking the stage lock.                                                                                                                                                   +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      */                                                                                                                                                                            +
+                   |     SELECT ps.run_id                                                                                                                                                               +
+                   |     INTO v_run_id                                                                                                                                                                  +
+                   |     FROM public.production_stage ps                                                                                                                                                +
+                   |     WHERE ps.stage_id = p_stage_id;                                                                                                                                                +
+                   |                                                                                                                                                                                    +
+                   |     IF NOT FOUND THEN                                                                                                                                                              +
+                   |         RETURN QUERY                                                                                                                                                               +
+                   |         SELECT                                                                                                                                                                     +
+                   |             false,                                                                                                                                                                 +
+                   |             'STAGE_NOT_FOUND'::text,                                                                                                                                               +
+                   |             p_stage_id,                                                                                                                                                            +
+                   |             NULL::varchar,                                                                                                                                                         +
+                   |             NULL::integer,                                                                                                                                                         +
+                   |             NULL::boolean,                                                                                                                                                         +
+                   |             NULL::varchar;                                                                                                                                                         +
+                   |         RETURN;                                                                                                                                                                    +
+                   |     END IF;                                                                                                                                                                        +
+                   |                                                                                                                                                                                    +
+                   |     /*                                                                                                                                                                             +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      * 2. LOCK RUN FIRST.                                                                                                                                                          +
+                   |      *                                                                                                                                                                             +
+                   |      *    This establishes the same lock order as fail_run_atomically:                                                                                                             +
+                   |      *                                                                                                                                                                             +
+                   |      *        RUN -> STAGE                                                                                                                                                         +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      */                                                                                                                                                                            +
+                   |     PERFORM 1                                                                                                                                                                      +
+                   |     FROM public.production_run pr                                                                                                                                                  +
+                   |     WHERE pr.run_id = v_run_id                                                                                                                                                     +
+                   |     FOR UPDATE;                                                                                                                                                                    +
+                   |                                                                                                                                                                                    +
+                   |     IF NOT FOUND THEN                                                                                                                                                              +
+                   |         RETURN QUERY                                                                                                                                                               +
+                   |         SELECT                                                                                                                                                                     +
+                   |             false,                                                                                                                                                                 +
+                   |             'RUN_NOT_FOUND'::text,                                                                                                                                                 +
+                   |             p_stage_id,                                                                                                                                                            +
+                   |             NULL::varchar,                                                                                                                                                         +
+                   |             NULL::integer,                                                                                                                                                         +
+                   |             NULL::boolean,                                                                                                                                                         +
+                   |             NULL::varchar;                                                                                                                                                         +
+                   |         RETURN;                                                                                                                                                                    +
+                   |     END IF;                                                                                                                                                                        +
+                   |                                                                                                                                                                                    +
+                   |     /*                                                                                                                                                                             +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      * 3. NOW LOCK STAGE.                                                                                                                                                          +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      */                                                                                                                                                                            +
+                   |     SELECT *                                                                                                                                                                       +
+                   |     INTO v_stage                                                                                                                                                                   +
+                   |     FROM public.production_stage ps                                                                                                                                                +
+                   |     WHERE ps.stage_id = p_stage_id                                                                                                                                                 +
+                   |     FOR UPDATE;                                                                                                                                                                    +
+                   |                                                                                                                                                                                    +
+                   |     IF NOT FOUND THEN                                                                                                                                                              +
+                   |         RETURN QUERY                                                                                                                                                               +
+                   |         SELECT                                                                                                                                                                     +
+                   |             false,                                                                                                                                                                 +
+                   |             'STAGE_NOT_FOUND'::text,                                                                                                                                               +
+                   |             p_stage_id,                                                                                                                                                            +
+                   |             NULL::varchar,                                                                                                                                                         +
+                   |             NULL::integer,                                                                                                                                                         +
+                   |             NULL::boolean,                                                                                                                                                         +
+                   |             NULL::varchar;                                                                                                                                                         +
+                   |         RETURN;                                                                                                                                                                    +
+                   |     END IF;                                                                                                                                                                        +
+                   |                                                                                                                                                                                    +
+                   |     /*                                                                                                                                                                             +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      * 4. Defensive relationship check.                                                                                                                                            +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      */                                                                                                                                                                            +
+                   |     IF v_stage.run_id <> v_run_id THEN                                                                                                                                             +
+                   |         RAISE EXCEPTION                                                                                                                                                            +
+                   |             'FAIL_STAGE_RUN_RELATION_CHANGED';                                                                                                                                     +
+                   |     END IF;                                                                                                                                                                        +
+                   |                                                                                                                                                                                    +
+                   |     IF v_stage.status <> 'RUNNING' THEN                                                                                                                                            +
+                   |         RETURN QUERY                                                                                                                                                               +
+                   |         SELECT                                                                                                                                                                     +
+                   |             false,                                                                                                                                                                 +
+                   |             ('STAGE_NOT_RUNNING: ' || v_stage.status)::text,                                                                                                                       +
+                   |             v_stage.stage_id,                                                                                                                                                      +
+                   |             v_stage.status,                                                                                                                                                        +
+                   |             v_stage.attempt,                                                                                                                                                       +
+                   |             v_stage.retryable,                                                                                                                                                     +
+                   |             v_stage.error_code;                                                                                                                                                    +
+                   |         RETURN;                                                                                                                                                                    +
+                   |     END IF;                                                                                                                                                                        +
+                   |                                                                                                                                                                                    +
+                   |     IF p_error_code IS NULL OR btrim(p_error_code) = '' THEN                                                                                                                       +
+                   |         RAISE EXCEPTION                                                                                                                                                            +
+                   |             'FAIL_STAGE_INVALID_ERROR_CODE';                                                                                                                                       +
+                   |     END IF;                                                                                                                                                                        +
+                   |                                                                                                                                                                                    +
+                   |     IF p_error_message IS NULL OR btrim(p_error_message) = '' THEN                                                                                                                 +
+                   |         RAISE EXCEPTION                                                                                                                                                            +
+                   |             'FAIL_STAGE_INVALID_ERROR_MESSAGE';                                                                                                                                    +
+                   |     END IF;                                                                                                                                                                        +
+                   |                                                                                                                                                                                    +
+                   |     /*                                                                                                                                                                             +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      * 5. Classify error.                                                                                                                                                          +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      */                                                                                                                                                                            +
+                   |     SELECT *                                                                                                                                                                       +
+                   |     INTO v_classification                                                                                                                                                          +
+                   |     FROM public.classify_error(                                                                                                                                                    +
+                   |         p_error_code,                                                                                                                                                              +
+                   |         v_stage.attempt                                                                                                                                                            +
+                   |     );                                                                                                                                                                             +
+                   |                                                                                                                                                                                    +
+                   |     v_event_data :=                                                                                                                                                                +
+                   |         COALESCE(p_event_data, '{}'::jsonb)                                                                                                                                        +
+                   |         ||                                                                                                                                                                         +
+                   |         jsonb_build_object(                                                                                                                                                        +
+                   |             'error_code', p_error_code,                                                                                                                                            +
+                   |             'retryable', v_classification.retry_allowed,                                                                                                                           +
+                   |             'policy_retryable', v_classification.retryable,                                                                                                                        +
+                   |             'retry_allowed', v_classification.retry_allowed,                                                                                                                       +
+                   |             'max_attempts', v_classification.max_attempts,                                                                                                                         +
+                   |             'next_backoff_seconds', v_classification.next_backoff_seconds,                                                                                                         +
+                   |             'category', v_classification.category,                                                                                                                                 +
+                   |             'known_error', v_classification.known                                                                                                                                  +
+                   |         );                                                                                                                                                                         +
+                   |                                                                                                                                                                                    +
+                   |     /*                                                                                                                                                                             +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      * 6. Atomic Stage transition.                                                                                                                                                 +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      */                                                                                                                                                                            +
+                   |     UPDATE public.production_stage                                                                                                                                                 +
+                   |     SET                                                                                                                                                                            +
+                   |         status = 'ERROR',                                                                                                                                                          +
+                   |         error_code = p_error_code,                                                                                                                                                 +
+                   |         error_message = p_error_message,                                                                                                                                           +
+                   |         retryable = v_classification.retry_allowed,                                                                                                                                +
+                   |         completed_at = NULL,                                                                                                                                                       +
+                   |         updated_at = NOW()                                                                                                                                                         +
+                   |     WHERE production_stage.stage_id = p_stage_id                                                                                                                                   +
+                   |       AND production_stage.status = 'RUNNING';                                                                                                                                     +
+                   |                                                                                                                                                                                    +
+                   |     IF NOT FOUND THEN                                                                                                                                                              +
+                   |         RAISE EXCEPTION                                                                                                                                                            +
+                   |             'FAIL_STAGE_CONCURRENT_STATE_CHANGE';                                                                                                                                  +
+                   |     END IF;                                                                                                                                                                        +
+                   |                                                                                                                                                                                    +
+                   |     /*                                                                                                                                                                             +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      * 7. Immutable stage error event.                                                                                                                                             +
+                   |      * ------------------------------------------------------------                                                                                                                +
+                   |      */                                                                                                                                                                            +
+                   |     INSERT INTO public.production_stage_event (                                                                                                                                    +
+                   |         stage_id,                                                                                                                                                                  +
+                   |         run_id,                                                                                                                                                                    +
+                   |         event_type,                                                                                                                                                                +
+                   |         from_status,                                                                                                                                                               +
+                   |         to_status,                                                                                                                                                                 +
+                   |         stage_name,                                                                                                                                                                +
+                   |         attempt,                                                                                                                                                                   +
+                   |         event_data                                                                                                                                                                 +
+                   |     )                                                                                                                                                                              +
+                   |     VALUES (                                                                                                                                                                       +
+                   |         v_stage.stage_id,                                                                                                                                                          +
+                   |         v_stage.run_id,                                                                                                                                                            +
+                   |         'STAGE_ERROR',                                                                                                                                                             +
+                   |         'RUNNING',                                                                                                                                                                 +
+                   |         'ERROR',                                                                                                                                                                   +
+                   |         v_stage.stage_name,                                                                                                                                                        +
+                   |         v_stage.attempt,                                                                                                                                                           +
+                   |         v_event_data                                                                                                                                                               +
+                   |     );                                                                                                                                                                             +
+                   |                                                                                                                                                                                    +
+                   |     RETURN QUERY                                                                                                                                                                   +
+                   |     SELECT                                                                                                                                                                         +
+                   |         true,                                                                                                                                                                      +
+                   |         'STAGE_FAILED_ATOMICALLY'::text,                                                                                                                                           +
+                   |         v_stage.stage_id,                                                                                                                                                          +
+                   |         'ERROR'::varchar,                                                                                                                                                          +
+                   |         v_stage.attempt,                                                                                                                                                           +
+                   |         v_classification.retry_allowed,                                                                                                                                            +
+                   |         p_error_code;                                                                                                                                                              +
+                   | END;                                                                                                                                                                               +
+                   | $function$                                                                                                                                                                         +
+                   | 
+(1 row)
+
+     marker      |          label           | pos  |                                                              context                                                              
+-----------------+--------------------------+------+-----------------------------------------------------------------------------------------------------------------------------------
+ COMPLETE_MARKER | STAGE_FOR_UPDATE         |    0 | CREATE OR REPLACE FUNCTION public.complete_stage_atomically(p_stage_id character varying, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                 |                          |      |  RETURNS TABLE(allowed boolean, error_code character varying, error_message text, resulting_status character varying)            +
+                 |                          |      |  LANGUAGE plpgsql                                                                                                                +
+                 |                          |      | AS $function$                                                                                                                    +
+                 |                          |      | DECLARE                                                                                                                          +
+                 |                          |      |     v_run_id VARCHAR(64);                                                                                                        +
+                 |                          |      |     v_stage_status VARCHAR(32);                                                                                                  +
+                 |                          |      |     v_artifact
+ COMPLETE_MARKER | STAGE_FOR_SHARE          |    0 | CREATE OR REPLACE FUNCTION public.complete_stage_atomically(p_stage_id character varying, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                 |                          |      |  RETURNS TABLE(allowed boolean, error_code character varying, error_message text, resulting_status character varying)            +
+                 |                          |      |  LANGUAGE plpgsql                                                                                                                +
+                 |                          |      | AS $function$                                                                                                                    +
+                 |                          |      | DECLARE                                                                                                                          +
+                 |                          |      |     v_run_id VARCHAR(64);                                                                                                        +
+                 |                          |      |     v_stage_status VARCHAR(32);                                                                                                  +
+                 |                          |      |     v_artifact
+ COMPLETE_MARKER | RECORD_EXECUTION_EVENT   |    0 | CREATE OR REPLACE FUNCTION public.complete_stage_atomically(p_stage_id character varying, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                 |                          |      |  RETURNS TABLE(allowed boolean, error_code character varying, error_message text, resulting_status character varying)            +
+                 |                          |      |  LANGUAGE plpgsql                                                                                                                +
+                 |                          |      | AS $function$                                                                                                                    +
+                 |                          |      | DECLARE                                                                                                                          +
+                 |                          |      |     v_run_id VARCHAR(64);                                                                                                        +
+                 |                          |      |     v_stage_status VARCHAR(32);                                                                                                  +
+                 |                          |      |     v_artifact
+ COMPLETE_MARKER | VALIDATE_STAGE_ARTIFACTS |    0 | CREATE OR REPLACE FUNCTION public.complete_stage_atomically(p_stage_id character varying, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                 |                          |      |  RETURNS TABLE(allowed boolean, error_code character varying, error_message text, resulting_status character varying)            +
+                 |                          |      |  LANGUAGE plpgsql                                                                                                                +
+                 |                          |      | AS $function$                                                                                                                    +
+                 |                          |      | DECLARE                                                                                                                          +
+                 |                          |      |     v_run_id VARCHAR(64);                                                                                                        +
+                 |                          |      |     v_stage_status VARCHAR(32);                                                                                                  +
+                 |                          |      |     v_artifact
+ COMPLETE_MARKER | PRODUCTION_RUN           |    0 | CREATE OR REPLACE FUNCTION public.complete_stage_atomically(p_stage_id character varying, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                 |                          |      |  RETURNS TABLE(allowed boolean, error_code character varying, error_message text, resulting_status character varying)            +
+                 |                          |      |  LANGUAGE plpgsql                                                                                                                +
+                 |                          |      | AS $function$                                                                                                                    +
+                 |                          |      | DECLARE                                                                                                                          +
+                 |                          |      |     v_run_id VARCHAR(64);                                                                                                        +
+                 |                          |      |     v_stage_status VARCHAR(32);                                                                                                  +
+                 |                          |      |     v_artifact
+ COMPLETE_MARKER | RUN_EVENT                |    0 | CREATE OR REPLACE FUNCTION public.complete_stage_atomically(p_stage_id character varying, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                 |                          |      |  RETURNS TABLE(allowed boolean, error_code character varying, error_message text, resulting_status character varying)            +
+                 |                          |      |  LANGUAGE plpgsql                                                                                                                +
+                 |                          |      | AS $function$                                                                                                                    +
+                 |                          |      | DECLARE                                                                                                                          +
+                 |                          |      |     v_run_id VARCHAR(64);                                                                                                        +
+                 |                          |      |     v_stage_status VARCHAR(32);                                                                                                  +
+                 |                          |      |     v_artifact
+ COMPLETE_MARKER | ARTIFACT_FOR_SHARE       | 1607 | XT,                                                                                                                              +
+                 |                          |      |             v_stage_status;                                                                                                      +
+                 |                          |      |         RETURN;                                                                                                                  +
+                 |                          |      |     END IF;                                                                                                                      +
+                 |                          |      |                                                                                                                                  +
+                 |                          |      |     SELECT                                                                                                                       +
+                 |                          |      |         ar.run_id,                                                                                                               +
+                 |                          |      |         ar.status                                                                                                                +
+                 |                          |      |     INTO                                                                                                                         +
+                 |                          |      |         v_artifact_run_id,                                                                                                       +
+                 |                          |      |         v_artifact_status                                                                                                        +
+                 |                          |      |     FROM artifact_registry ar                                                                                                    +
+                 |                          |      |     WHERE ar.artifact_id = v_artifact_id                                                                                         +
+                 |                          |      |     FOR SHARE;                                                                                                                   +
+                 |                          |      |                                                                                                                                  +
+                 |                          |      |     IF NOT FOUND THEN                                                                                                            +
+                 |                          |      |         RETURN QUERY                                                                                                             +
+                 |                          |      |         SELECT                                                                                                                   +
+                 |                          |      |             FALSE,                                                                                                               +
+                 |                          |      |             'OUTPUT_ARTIF
+ COMPLETE_MARKER | STAGE_EVENT              | 2945 | mically',                                                                                                                        +
+                 |                          |      |                 true,                                                                                                            +
+                 |                          |      |                 'completed_at',                                                                                                  +
+                 |                          |      |                 NOW()                                                                                                            +
+                 |                          |      |             ),                                                                                                                   +
+                 |                          |      |         completed_at = NOW()                                                                                                     +
+                 |                          |      |     WHERE stage_id = p_stage_id;                                                                                                 +
+                 |                          |      |                                                                                                                                  +
+                 |                          |      |     INSERT INTO production_stage_event (                                                                                         +
+                 |                          |      |         stage_id,                                                                                                                +
+                 |                          |      |         run_id,                                                                                                                  +
+                 |                          |      |         event_type,                                                                                                              +
+                 |                          |      |         from_status,                                                                                                             +
+                 |                          |      |         to_status,                                                                                                               +
+                 |                          |      |         stage_name,                                                                                                              +
+                 |                          |      |         attempt,                                                                                                                 +
+                 |                          |      |         event_data                                                                                                               +
+                 |                          |      |     )
+(8 rows)
+
+      marker       |         label          | pos  |                                                                                       context                                                                                       
+-------------------+------------------------+------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ FAIL_STAGE_MARKER | STAGE_FOR_UPDATE       |    0 | CREATE OR REPLACE FUNCTION public.fail_stage_atomically(p_stage_id character varying, p_error_code character varying, p_error_message text, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                   |                        |      |  RETURNS TABLE(allowed boolean, message text, stage_id character varying, stage_status character varying, attempt integer, retryable boolean, error_code character varying)        +
+                   |                        |      |  LANGUAG
+ FAIL_STAGE_MARKER | ARTIFACT_FOR_SHARE     |    0 | CREATE OR REPLACE FUNCTION public.fail_stage_atomically(p_stage_id character varying, p_error_code character varying, p_error_message text, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                   |                        |      |  RETURNS TABLE(allowed boolean, message text, stage_id character varying, stage_status character varying, attempt integer, retryable boolean, error_code character varying)        +
+                   |                        |      |  LANGUAG
+ FAIL_STAGE_MARKER | RUN_FOR_UPDATE         |    0 | CREATE OR REPLACE FUNCTION public.fail_stage_atomically(p_stage_id character varying, p_error_code character varying, p_error_message text, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                   |                        |      |  RETURNS TABLE(allowed boolean, message text, stage_id character varying, stage_status character varying, attempt integer, retryable boolean, error_code character varying)        +
+                   |                        |      |  LANGUAG
+ FAIL_STAGE_MARKER | RUN_EVENT              |    0 | CREATE OR REPLACE FUNCTION public.fail_stage_atomically(p_stage_id character varying, p_error_code character varying, p_error_message text, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                   |                        |      |  RETURNS TABLE(allowed boolean, message text, stage_id character varying, stage_status character varying, attempt integer, retryable boolean, error_code character varying)        +
+                   |                        |      |  LANGUAG
+ FAIL_STAGE_MARKER | RECORD_EXECUTION_EVENT |    0 | CREATE OR REPLACE FUNCTION public.fail_stage_atomically(p_stage_id character varying, p_error_code character varying, p_error_message text, p_event_data jsonb DEFAULT '{}'::jsonb)+
+                   |                        |      |  RETURNS TABLE(allowed boolean, message text, stage_id character varying, stage_status character varying, attempt integer, retryable boolean, error_code character varying)        +
+                   |                        |      |  LANGUAG
+ FAIL_STAGE_MARKER | CLASSIFY_ERROR         | 3561 | ----------------------                                                                                                                                                             +
+                   |                        |      |      * 5. Classify error.                                                                                                                                                          +
+                   |                        |      |      * ------------------------------------------------------------                                                                                                                +
+                   |                        |      |      */                                                                                                                                                                            +
+                   |                        |      |     SELECT *                                                                                                                                                                       +
+                   |                        |      |     INTO v_classification                                                                                                                                                          +
+                   |                        |      |     FROM public.classify_error(                                                                                                                                                    +
+                   |                        |      |         p_error_code,                                                                                                                                                              +
+                   |                        |      |         v_stage.attempt                                                                                                                                                            +
+                   |                        |      |     );                                                                                                                                                                             +
+                   |                        |      |                                                                                                                                                                                    +
+                   |                        |      |     v_event_data :=                                                                                                                                                                +
+                   |                        |      |         COALESCE(p_event_data, '{}'::jsonb)                                                                                                                                        +
+                   |                        |      |         ||                                                                                                                                                                         +
+                   |                        |      |         jsonb_build_object(                                                                                                                                                        +
+                   |                        |      |        
+ FAIL_STAGE_MARKER | STAGE_EVENT            | 5057 | -----------------------------------------                                                                                                                                          +
+                   |                        |      |      * 7. Immutable stage error event.                                                                                                                                             +
+                   |                        |      |      * ------------------------------------------------------------                                                                                                                +
+                   |                        |      |      */                                                                                                                                                                            +
+                   |                        |      |     INSERT INTO public.production_stage_event (                                                                                                                                    +
+                   |                        |      |         stage_id,                                                                                                                                                                  +
+                   |                        |      |         run_id,                                                                                                                                                                    +
+                   |                        |      |         event_type,                                                                                                                                                                +
+                   |                        |      |         from_status,                                                                                                                                                               +
+                   |                        |      |         to_status,                                                                                                                                                                 +
+                   |                        |      |         stage_name,                                                                                                                                                                +
+                   |                        |      |         attempt,                                                                                                                                                                   +
+                   |                        |      |         event_data                                                                                                                                                                 +
+                   |                        |      |     )
+(7 rows)
+
+          proname          |            token            
+---------------------------+-----------------------------
+ complete_stage_atomically | {COMPLETE_STAGE_ATOMICALLY}
+ complete_stage_atomically | {TABLE}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {COALESCE}
+ complete_stage_atomically | {JSONB_BUILD_OBJECT}
+ complete_stage_atomically | {NOW}
+ complete_stage_atomically | {NOW}
+ complete_stage_atomically | {PRODUCTION_STAGE_EVENT}
+ complete_stage_atomically | {COALESCE}
+ complete_stage_atomically | {VARCHAR}
+ complete_stage_atomically | {VARCHAR}
+ fail_stage_atomically     | {FAIL_STAGE_ATOMICALLY}
+ fail_stage_atomically     | {TABLE}
+ fail_stage_atomically     | {VARCHAR}
+ fail_stage_atomically     | {BTRIM}
+ fail_stage_atomically     | {BTRIM}
+ fail_stage_atomically     | {CLASSIFY_ERROR}
+ fail_stage_atomically     | {COALESCE}
+ fail_stage_atomically     | {JSONB_BUILD_OBJECT}
+ fail_stage_atomically     | {NOW}
+ fail_stage_atomically     | {PRODUCTION_STAGE_EVENT}
+ fail_stage_atomically     | {VALUES}
+(33 rows)
+
+    table_name     |           trigger_name           |                    action_statement                    
+-------------------+----------------------------------+--------------------------------------------------------
+ artifact_registry | trg_artifact_registry_updated_at | EXECUTE FUNCTION update_artifact_registry_updated_at()
+ production_run    | trg_production_run_updated_at    | EXECUTE FUNCTION update_production_run_updated_at()
+ production_stage  | trg_production_stage_updated_at  | EXECUTE FUNCTION update_production_stage_updated_at()
+(3 rows)
+
+           trigger_name           |    table_name     |            function_name            |                           pg_get_functiondef                            
+----------------------------------+-------------------+-------------------------------------+-------------------------------------------------------------------------
+ trg_artifact_registry_updated_at | artifact_registry | update_artifact_registry_updated_at | CREATE OR REPLACE FUNCTION public.update_artifact_registry_updated_at()+
+                                  |                   |                                     |  RETURNS trigger                                                       +
+                                  |                   |                                     |  LANGUAGE plpgsql                                                      +
+                                  |                   |                                     | AS $function$                                                          +
+                                  |                   |                                     | BEGIN                                                                  +
+                                  |                   |                                     |     NEW.updated_at = NOW();                                            +
+                                  |                   |                                     |     RETURN NEW;                                                        +
+                                  |                   |                                     | END;                                                                   +
+                                  |                   |                                     | $function$                                                             +
+                                  |                   |                                     | 
+ trg_production_run_updated_at    | production_run    | update_production_run_updated_at    | CREATE OR REPLACE FUNCTION public.update_production_run_updated_at()   +
+                                  |                   |                                     |  RETURNS trigger                                                       +
+                                  |                   |                                     |  LANGUAGE plpgsql                                                      +
+                                  |                   |                                     | AS $function$                                                          +
+                                  |                   |                                     | BEGIN                                                                  +
+                                  |                   |                                     |     NEW.updated_at = NOW();                                            +
+                                  |                   |                                     |     RETURN NEW;                                                        +
+                                  |                   |                                     | END;                                                                   +
+                                  |                   |                                     | $function$                                                             +
+                                  |                   |                                     | 
+ trg_production_stage_updated_at  | production_stage  | update_production_stage_updated_at  | CREATE OR REPLACE FUNCTION public.update_production_stage_updated_at() +
+                                  |                   |                                     |  RETURNS trigger                                                       +
+                                  |                   |                                     |  LANGUAGE plpgsql                                                      +
+                                  |                   |                                     | AS $function$                                                          +
+                                  |                   |                                     | BEGIN                                                                  +
+                                  |                   |                                     |     NEW.updated_at = NOW();                                            +
+                                  |                   |                                     |     RETURN NEW;                                                        +
+                                  |                   |                                     | END;                                                                   +
+                                  |                   |                                     | $function$                                                             +
+                                  |                   |                                     | 
+(3 rows)
+
+         table_name          |              constraint_name              |     column_name     | foreign_table_name | foreign_column_name 
+-----------------------------+-------------------------------------------+---------------------+--------------------+---------------------
+ artifact_registry           | artifact_registry_run_fk                  | run_id              | production_run     | run_id
+ production_execution_event  | production_execution_event_run_fk         | run_id              | production_run     | run_id
+ production_execution_event  | production_execution_event_stage_fk       | stage_id            | production_stage   | stage_id
+ production_run_event        | production_run_event_run_fk               | run_id              | production_run     | run_id
+ production_stage            | production_stage_run_fk                   | run_id              | production_run     | run_id
+ production_stage_dependency | production_stage_dependency_depends_on_fk | depends_on_stage_id | production_stage   | stage_id
+ production_stage_dependency | production_stage_dependency_stage_fk      | stage_id            | production_stage   | stage_id
+ production_stage_event      | production_stage_event_run_fk             | run_id              | production_run     | run_id
+ production_stage_event      | production_stage_event_stage_fk           | stage_id            | production_stage   | stage_id
+(9 rows)
+
+            proname             |                                                                                                                                                                                                                                                    signature                                                                                                                                                                                                                                                    |            source_md5            
+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------
+ complete_stage_atomically      | p_stage_id character varying, p_event_data jsonb                                                                                                                                                                                                                                                                                                                                                                                                                                                                | 36fb615c2f482d7340d972ac0b90326a
+ fail_stage_atomically          | p_stage_id character varying, p_error_code character varying, p_error_message text, p_event_data jsonb                                                                                                                                                                                                                                                                                                                                                                                                          | 83ee74333029bebe067b172886eb18a9
+ record_execution_event         | p_event_id character varying, p_run_id character varying, p_stage_id character varying, p_stage_name character varying, p_attempt integer, p_event_type character varying, p_provider character varying, p_executor_type character varying, p_status character varying, p_started_at timestamp with time zone, p_completed_at timestamp with time zone, p_duration_ms bigint, p_error_code character varying, p_error_message text, p_input_artifact_ids jsonb, p_output_artifact_ids jsonb, p_event_data jsonb | c4b81fb4b159684f75c7babad8d8d68c
+ validate_run_stage_consistency | p_run_id character varying                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | 8df32ef49383148c68d17e739e679fd2
+ validate_stage_artifacts       | p_stage_id character varying                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | 1c8d21c28a6b70e5d2e8c2df24c89529
+(5 rows)
+
+   metric   | count 
+------------+-------
+ ERROR_RUNS |     0
+(1 row)
+
+    metric    | count 
+--------------+-------
+ ERROR_STAGES |     1
+(1 row)
+
+       result        
+---------------------
+ 11-F.3-B-DIAGNOSTIC
+(1 row)
+
+
+

@@ -1,0 +1,19 @@
+﻿WORKER: D-FIX-COMPLETE
+EXIT CODE: 0
+
+BEGIN
+SET
+SET
+ pg_sleep 
+----------
+ 
+(1 row)
+
+ allowed |    error_code     |               error_message               | resulting_status 
+---------+-------------------+-------------------------------------------+------------------
+ f       | STAGE_NOT_RUNNING | Stage dans l'etat ERROR, RUNNING attendu. | ERROR
+(1 row)
+
+COMMIT
+
+

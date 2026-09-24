@@ -1,0 +1,59 @@
+﻿{
+  "contract_name": "TTS_KOKORO_RAW",
+  "version": 1,
+  "description": "Provider-facing contract for raw Kokoro OpenAI-compatible speech responses before canonicalization.",
+  "status": "ACTIVE",
+  "producer": "KOKORO",
+  "consumer": "TTS_CANONICALIZER",
+  "transport": {
+    "protocol": "HTTP",
+    "method": "POST",
+    "endpoint": "/v1/audio/speech",
+    "expected_status": 200,
+    "content_type": "audio/wav"
+  },
+  "request": {
+    "model": {
+      "type": "string",
+      "required": true
+    },
+    "input": {
+      "type": "string",
+      "required": true,
+      "min_length": 1
+    },
+    "voice": {
+      "type": "string",
+      "required": true
+    },
+    "response_format": {
+      "type": "string",
+      "required": true,
+      "allowed": [
+        "wav"
+      ]
+    }
+  },
+  "observed_runtime": {
+    "codec": "pcm_s16le",
+    "sample_rate_hz": 24000,
+    "channels": 1,
+    "bits_per_sample": 16,
+    "container": "WAVE",
+    "riff_size_may_be_unfinalized": true,
+    "data_size_may_be_unfinalized": true,
+    "unfinalized_size_sentinel": 4294967295,
+    "content_length_may_be_absent": true
+  },
+  "important_boundary": {
+    "raw_provider_audio_is_not_prometheus_canonical_audio": true,
+    "canonicalization_required": true,
+    "raw_audio_must_not_be_published_directly": true
+  },
+  "validation": {
+    "http_status": "required",
+    "content_type": "required",
+    "provider_response_readable": "required",
+    "pcm_stream_recoverable": "required"
+  }
+}

@@ -1,0 +1,239 @@
+﻿{
+    "test":  "TEST-09-FULL-ENCODING-RECONSTRUCTION",
+    "timestamp":  "2026-09-21T12:07:13.6175577-04:00",
+    "mode":  "READ_ONLY",
+    "artifacts":  {
+                      "script":  {
+                                     "object_key":  "run/RUN-SCRIPT-GROQ-V3/script/script.json",
+                                     "local_path":  "C:\\Projects\\prometheus-v2\\tests\\scene-plan-provenance\\script-v3.json",
+                                     "expected_sha256":  "5766F0AA7BBB3AC0B669A4DC362E90DED24199E05F277E146648AABA809EF984",
+                                     "actual_sha256":  "5766F0AA7BBB3AC0B669A4DC362E90DED24199E05F277E146648AABA809EF984",
+                                     "sha_match":  true,
+                                     "reconstructed_sha256":  "CD0372BC79C4AD9E359705014B8C5C192BC22A6F8944D07C0BEF44440EC685BE"
+                                 },
+                      "scene_plan":  {
+                                         "object_key":  "run/RUN-SCRIPT-GROQ-V3/scene_plan/scene_plan.json",
+                                         "local_path":  "C:\\Projects\\prometheus-v2\\tests\\scene-plan-audit\\scene_plan.json",
+                                         "expected_sha256":  "DA6BC9A270441F47944358A5BA93E2507462B6432E323B44B3CB74982032FB5C",
+                                         "actual_sha256":  "DA6BC9A270441F47944358A5BA93E2507462B6432E323B44B3CB74982032FB5C",
+                                         "sha_match":  true,
+                                         "reconstructed_sha256":  "5A5AD40BEF3955DE7EF763C91131859C38F18D732165433DFD85EC8665039B0C"
+                                     }
+                  },
+    "script_reconstruction":  {
+                                  "transformation":  "Latin1 -\u003e UTF8",
+                                  "original_json_valid":  true,
+                                  "reconstructed_json_valid":  true,
+                                  "french_score_before":  -415,
+                                  "french_score_after":  185,
+                                  "reconstructed_sha256":  "CD0372BC79C4AD9E359705014B8C5C192BC22A6F8944D07C0BEF44440EC685BE"
+                              },
+    "scene_reconstruction":  {
+                                 "transformation":  "CP850 -\u003e UTF8 -\u003e Latin1 -\u003e UTF8",
+                                 "original_json_valid":  true,
+                                 "reconstructed_json_valid":  true,
+                                 "french_score_before":  -966,
+                                 "french_score_after":  185,
+                                 "reconstructed_sha256":  "5A5AD40BEF3955DE7EF763C91131859C38F18D732165433DFD85EC8665039B0C"
+                             },
+    "structure":  {
+                      "comparison_count":  68,
+                      "failure_count":  17,
+                      "pass":  false,
+                      "failures":  [
+                                       {
+                                           "scope":  "top_level",
+                                           "field":  "title",
+                                           "before":  "Le paradoxe du grand├ó┬Ç┬æp├â┬¿re expliqu├â┬® en 60 secondes",
+                                           "after":  "Le paradoxe du grand‑père expliqué en 60 secondes",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[0]",
+                                           "field":  "voice_over",
+                                           "before":  "Si vous voyagez dans le pass├â┬® et tuez votre grand├ó┬Ç┬æp├â┬¿re, comment avez├ó┬Ç┬ævous pu exister ?",
+                                           "after":  "Si vous voyagez dans le passé et tuez votre grand‑père, comment avez‑vous pu exister ?",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[0]",
+                                           "field":  "visual_description",
+                                           "before":  "Un scientifique dans un laboratoire tient un dispositif lumineux; coupe ├â┬á une rue des ann├â┬®es 1940 o├â┬╣ il pointe un pistolet vers un homme plus ├â┬óg├â┬®, le visage crisp├â┬®.",
+                                           "after":  "Un scientifique dans un laboratoire tient un dispositif lumineux; coupe à une rue des années 1940 où il pointe un pistolet vers un homme plus âgé, le visage crispé.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[1]",
+                                           "field":  "voice_over",
+                                           "before":  "La th├â┬®orie de la relativit├â┬® autorise les courbes ferm├â┬®es, mais la logique reste fragile.",
+                                           "after":  "La théorie de la relativité autorise les courbes fermées, mais la logique reste fragile.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[1]",
+                                           "field":  "visual_description",
+                                           "before":  "Plan sur un tableau blanc o├â┬╣ l├ó┬Ç┬Öon ├â┬®crit E=mc├é┬▓, on trace des arcs de cercle repr├â┬®sentant des trajectoires temporelles, puis on zoome sur une annotation ├é┬½ courbes ferm├â┬®es ├é┬╗.",
+                                           "after":  "Plan sur un tableau blanc où l’on écrit E=mc², on trace des arcs de cercle représentant des trajectoires temporelles, puis on zoome sur une annotation « courbes fermées ».",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[2]",
+                                           "field":  "voice_over",
+                                           "before":  "En d├â┬®truisant l├ó┬Ç┬Öanc├â┬¬tre, vous annulez la cha├â┬«ne d\u0027├â┬®v├â┬®nements qui vous a permis de voyager.",
+                                           "after":  "En détruisant l’ancêtre, vous annulez la chaîne d\u0027événements qui vous a permis de voyager.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[2]",
+                                           "field":  "visual_description",
+                                           "before":  "Une frise chronologique anim├â┬®e montre une ligne du temps, une fl├â┬¿che recule, puis un X rouge appara├â┬«t sur l├ó┬Ç┬Öimage du grand├ó┬Ç┬æp├â┬¿re.",
+                                           "after":  "Une frise chronologique animée montre une ligne du temps, une flèche recule, puis un X rouge apparaît sur l’image du grand‑père.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[3]",
+                                           "field":  "voice_over",
+                                           "before":  "Certains physiciens proposent des univers parall├â┬¿les o├â┬╣ chaque action cr├â┬®e une branche s├â┬®par├â┬®e.",
+                                           "after":  "Certains physiciens proposent des univers parallèles où chaque action crée une branche séparée.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[3]",
+                                           "field":  "visual_description",
+                                           "before":  "├â┬ëcran partag├â┬® en deux; ├â┬á gauche le voyageur tue son grand├ó┬Ç┬æp├â┬¿re, ├â┬á droite le m├â┬¬me voyageur regarde un monde o├â┬╣ le grand├ó┬Ç┬æp├â┬¿re vit, chaque c├â┬┤t├â┬® ├â┬®clair├â┬® diff├â┬®remment.",
+                                           "after":  "Écran partagé en deux; à gauche le voyageur tue son grand‑père, à droite le même voyageur regarde un monde où le grand‑père vit, chaque côté éclairé différemment.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[4]",
+                                           "field":  "voice_over",
+                                           "before":  "Dans cette vue, votre version tue le grand├ó┬Ç┬æp├â┬¿re, mais vous continuez d├ó┬Ç┬Öexister dans une autre r├â┬®alit├â┬®.",
+                                           "after":  "Dans cette vue, votre version tue le grand‑père, mais vous continuez d’exister dans une autre réalité.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[4]",
+                                           "field":  "visual_description",
+                                           "before":  "Le voyageur appara├â┬«t dans une for├â┬¬t, deux versions de lui-m├â┬¬me se tiennent l├ó┬Ç┬Öune ├â┬á c├â┬┤t├â┬® de l├ó┬Ç┬Öautre├ó┬Ç┬»: l├ó┬Ç┬Öune arm├â┬®e, l├ó┬Ç┬Öautre observatrice, avec un effet de lumi├â┬¿re s├â┬®parant les r├â┬®alit├â┬®s.",
+                                           "after":  "Le voyageur apparaît dans une forêt, deux versions de lui-même se tiennent l’une à côté de l’autre : l’une armée, l’autre observatrice, avec un effet de lumière séparant les réalités.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[5]",
+                                           "field":  "voice_over",
+                                           "before":  "La conjecture de Novikov impose que les ├â┬®v├â┬®nements du pass├â┬® se conforment d├â┬®j├â┬á ├â┬á votre futur.",
+                                           "after":  "La conjecture de Novikov impose que les événements du passé se conforment déjà à votre futur.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[5]",
+                                           "field":  "visual_description",
+                                           "before":  "Un chercheur pointe du doigt un diagramme intitul├â┬® ├é┬½ Novikov self├ó┬Ç┬æconsistency ├é┬╗ affich├â┬® sur un ├â┬®cran, des ├â┬®quations et des fl├â┬¿ches boucl├â┬®es s├ó┬Ç┬Öaniment.",
+                                           "after":  "Un chercheur pointe du doigt un diagramme intitulé « Novikov self‑consistency » affiché sur un écran, des équations et des flèches bouclées s’animent.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[6]",
+                                           "field":  "voice_over",
+                                           "before":  "Ainsi, vous pourriez seulement influencer le pass├â┬® de fa├â┬ºon ├â┬á garantir votre naissance, jamais l├ó┬Ç┬Öinverser.",
+                                           "after":  "Ainsi, vous pourriez seulement influencer le passé de façon à garantir votre naissance, jamais l’inverser.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[6]",
+                                           "field":  "visual_description",
+                                           "before":  "Animation d├ó┬Ç┬Öune boucle : un b├â┬®b├â┬® na├â┬«t, grandit, entre dans une machine ├â┬á voyager, revient au point de naissance, cr├â┬®ant un cercle continu.",
+                                           "after":  "Animation d’une boucle : un bébé naît, grandit, entre dans une machine à voyager, revient au point de naissance, créant un cercle continu.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[7]",
+                                           "field":  "voice_over",
+                                           "before":  "Le voyage temporel reste th├â┬®orique, mais il r├â┬®v├â┬¿le les limites de notre logique face aux boucles infinies.",
+                                           "after":  "Le voyage temporel reste théorique, mais il révèle les limites de notre logique face aux boucles infinies.",
+                                           "equal":  false
+                                       },
+                                       {
+                                           "scope":  "scene[7]",
+                                           "field":  "visual_description",
+                                           "before":  "Le voyageur sort de la machine, regarde le ciel urbain, sourit pensivement; le cadre se fige et le texte ├é┬½ Paradoxe ? ├é┬╗ appara├â┬«t.",
+                                           "after":  "Le voyageur sort de la machine, regarde le ciel urbain, sourit pensivement; le cadre se fige et le texte « Paradoxe ? » apparaît.",
+                                           "equal":  false
+                                       }
+                                   ]
+                  },
+    "voice_over":  {
+                       "script_scene_count":  8,
+                       "scene_plan_scene_count":  8,
+                       "comparison_count":  8,
+                       "exact_matches":  8,
+                       "status":  "PASS",
+                       "comparisons":  [
+                                           {
+                                               "scene_number":  1,
+                                               "scene_voice_over":  "Si vous voyagez dans le passé et tuez votre grand‑père, comment avez‑vous pu exister ?",
+                                               "script_candidate":  "Si vous voyagez dans le passé et tuez votre grand‑père, comment avez‑vous pu exister ?",
+                                               "normalized_equal":  true,
+                                               "scene_voice_length":  86,
+                                               "script_candidate_length":  86
+                                           },
+                                           {
+                                               "scene_number":  2,
+                                               "scene_voice_over":  "La théorie de la relativité autorise les courbes fermées, mais la logique reste fragile.",
+                                               "script_candidate":  "La théorie de la relativité autorise les courbes fermées, mais la logique reste fragile.",
+                                               "normalized_equal":  true,
+                                               "scene_voice_length":  88,
+                                               "script_candidate_length":  88
+                                           },
+                                           {
+                                               "scene_number":  3,
+                                               "scene_voice_over":  "En détruisant l’ancêtre, vous annulez la chaîne d\u0027événements qui vous a permis de voyager.",
+                                               "script_candidate":  "En détruisant l’ancêtre, vous annulez la chaîne d\u0027événements qui vous a permis de voyager.",
+                                               "normalized_equal":  true,
+                                               "scene_voice_length":  90,
+                                               "script_candidate_length":  90
+                                           },
+                                           {
+                                               "scene_number":  4,
+                                               "scene_voice_over":  "Certains physiciens proposent des univers parallèles où chaque action crée une branche séparée.",
+                                               "script_candidate":  "Certains physiciens proposent des univers parallèles où chaque action crée une branche séparée.",
+                                               "normalized_equal":  true,
+                                               "scene_voice_length":  95,
+                                               "script_candidate_length":  95
+                                           },
+                                           {
+                                               "scene_number":  5,
+                                               "scene_voice_over":  "Dans cette vue, votre version tue le grand‑père, mais vous continuez d’exister dans une autre réalité.",
+                                               "script_candidate":  "Dans cette vue, votre version tue le grand‑père, mais vous continuez d’exister dans une autre réalité.",
+                                               "normalized_equal":  true,
+                                               "scene_voice_length":  102,
+                                               "script_candidate_length":  102
+                                           },
+                                           {
+                                               "scene_number":  6,
+                                               "scene_voice_over":  "La conjecture de Novikov impose que les événements du passé se conforment déjà à votre futur.",
+                                               "script_candidate":  "La conjecture de Novikov impose que les événements du passé se conforment déjà à votre futur.",
+                                               "normalized_equal":  true,
+                                               "scene_voice_length":  93,
+                                               "script_candidate_length":  93
+                                           },
+                                           {
+                                               "scene_number":  7,
+                                               "scene_voice_over":  "Ainsi, vous pourriez seulement influencer le passé de façon à garantir votre naissance, jamais l’inverser.",
+                                               "script_candidate":  "Ainsi, vous pourriez seulement influencer le passé de façon à garantir votre naissance, jamais l’inverser.",
+                                               "normalized_equal":  true,
+                                               "scene_voice_length":  106,
+                                               "script_candidate_length":  106
+                                           },
+                                           {
+                                               "scene_number":  8,
+                                               "scene_voice_over":  "Le voyage temporel reste théorique, mais il révèle les limites de notre logique face aux boucles infinies.",
+                                               "script_candidate":  "Le voyage temporel reste théorique, mais il révèle les limites de notre logique face aux boucles infinies.",
+                                               "normalized_equal":  true,
+                                               "scene_voice_length":  106,
+                                               "script_candidate_length":  106
+                                           }
+                                       ]
+                   },
+    "verdict":  "FAIL"
+}

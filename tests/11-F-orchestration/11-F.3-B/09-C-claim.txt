@@ -1,0 +1,14 @@
+﻿WORKER: C-CLAIM
+EXIT CODE: 0
+
+BEGIN
+SET
+SET
+ claimed |  stage_id   |   run_id    |   stage_name   | attempt | status  |                           message                           
+---------+-------------+-------------+----------------+---------+---------+-------------------------------------------------------------
+ t       | STG-11F3B-C | RUN-11F3B-C | CLAIM_COMPLETE |       1 | RUNNING | Stage reclame avec succes apres validation des dependances.
+(1 row)
+
+COMMIT
+
+

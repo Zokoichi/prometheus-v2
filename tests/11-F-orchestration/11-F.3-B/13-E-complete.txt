@@ -1,0 +1,19 @@
+﻿WORKER: E-COMPLETE
+EXIT CODE: 0
+
+BEGIN
+SET
+SET
+ pg_sleep 
+----------
+ 
+(1 row)
+
+ allowed | error_code |                   error_message                   | resulting_status 
+---------+------------+---------------------------------------------------+------------------
+ t       |            | Stage complete atomiquement avec artifact valide. | SUCCEEDED
+(1 row)
+
+COMMIT
+
+

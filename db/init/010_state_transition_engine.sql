@@ -1,0 +1,282 @@
+CREATE OR REPLACE FUNCTION request_run_transition(
+    p_run_id VARCHAR(64),
+    p_to_status VARCHAR(32),
+    p_stage VARCHAR(64),
+    p_event_type VARCHAR(64),
+    p_event_data JSONB DEFAULT '{}'::jsonb
+)
+RETURNS TABLE (
+    allowed BOOLEAN,
+    error_code VARCHAR(128),
+    error_message TEXT,
+    resulting_status VARCHAR(32)
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_from_status VARCHAR(32);
+    v_allowed BOOLEAN := FALSE;
+    v_consistency_allowed BOOLEAN;
+    v_consistency_error_code VARCHAR(128);
+    v_consistency_error_message TEXT;
+    v_attempt INTEGER;
+BEGIN
+
+    -- ========================================================
+    -- 1. VERROUILLAGE DU RUN
+    -- ========================================================
+
+    SELECT pr.status
+    INTO v_from_status
+    FROM production_run AS pr
+    WHERE pr.run_id = p_run_id
+    FOR UPDATE;
+
+    IF NOT FOUND THEN
+        RETURN QUERY
+        SELECT
+            FALSE,
+            'RUN_NOT_FOUND'::VARCHAR(128),
+            ('Run inexistant : ' || p_run_id)::TEXT,
+            NULL::VARCHAR(32);
+        RETURN;
+    END IF;
+
+    -- ========================================================
+    -- 2. TRANSITION IDENTIQUE INTERDITE
+    -- ========================================================
+
+    IF v_from_status = p_to_status THEN
+        RETURN QUERY
+        SELECT
+            FALSE,
+            'INVALID_TRANSITION'::VARCHAR(128),
+            ('Transition identique interdite : ' ||
+             v_from_status || ' -> ' || p_to_status)::TEXT,
+            v_from_status;
+        RETURN;
+    END IF;
+
+    -- ========================================================
+    -- 3. MATRICE DES TRANSITIONS
+    -- ========================================================
+
+    CASE v_from_status
+
+        WHEN 'CREATED' THEN
+            IF p_to_status IN (
+                'VALIDATED',
+                'ERROR',
+                'CANCELLED'
+            ) THEN
+                v_allowed := TRUE;
+            END IF;
+
+        WHEN 'VALIDATED' THEN
+            IF p_to_status IN (
+                'ASSET_READY',
+                'ERROR',
+                'CANCELLED'
+            ) THEN
+                v_allowed := TRUE;
+            END IF;
+
+        WHEN 'ASSET_READY' THEN
+            IF p_to_status IN (
+                'AUDIO_READY',
+                'ERROR',
+                'CANCELLED'
+            ) THEN
+                v_allowed := TRUE;
+            END IF;
+
+        WHEN 'AUDIO_READY' THEN
+            IF p_to_status IN (
+                'COMPOSED',
+                'ERROR',
+                'CANCELLED'
+            ) THEN
+                v_allowed := TRUE;
+            END IF;
+
+        WHEN 'COMPOSED' THEN
+            IF p_to_status IN (
+                'RENDERED',
+                'ERROR',
+                'CANCELLED'
+            ) THEN
+                v_allowed := TRUE;
+            END IF;
+
+        WHEN 'RENDERED' THEN
+            IF p_to_status IN (
+                'QC_PASSED',
+                'ERROR',
+                'CANCELLED'
+            ) THEN
+                v_allowed := TRUE;
+            END IF;
+
+        WHEN 'QC_PASSED' THEN
+            IF p_to_status IN (
+                'READY_TO_PUBLISH',
+                'ERROR',
+                'CANCELLED'
+            ) THEN
+                v_allowed := TRUE;
+            END IF;
+
+        WHEN 'READY_TO_PUBLISH' THEN
+            IF p_to_status IN (
+                'PUBLISHED',
+                'ERROR',
+                'CANCELLED'
+            ) THEN
+                v_allowed := TRUE;
+            END IF;
+
+        WHEN 'ERROR' THEN
+            IF p_to_status IN (
+                'VALIDATED',
+                'CANCELLED'
+            ) THEN
+                v_allowed := TRUE;
+            END IF;
+
+        WHEN 'CANCELLED' THEN
+            v_allowed := FALSE;
+
+        WHEN 'PUBLISHED' THEN
+            v_allowed := FALSE;
+
+        ELSE
+            v_allowed := FALSE;
+
+    END CASE;
+
+    -- ========================================================
+    -- 4. REFUS IMMEDIAT D'UNE TRANSITION INTERDITE
+    -- ========================================================
+
+    IF NOT v_allowed THEN
+        RETURN QUERY
+        SELECT
+            FALSE,
+            'INVALID_TRANSITION'::VARCHAR(128),
+            ('Transition interdite : ' ||
+             v_from_status || ' -> ' || p_to_status)::TEXT,
+            v_from_status;
+        RETURN;
+    END IF;
+
+    -- ========================================================
+    -- 5. CAPTURE DE L'ATTEMPT
+    -- ========================================================
+
+    SELECT pr.attempt
+    INTO v_attempt
+    FROM production_run AS pr
+    WHERE pr.run_id = p_run_id;
+
+    -- ========================================================
+    -- 6. MODIFICATION DU RUN
+    --
+    -- IMPORTANT :
+    -- Qualification explicite des colonnes pour éviter
+    -- l'ambiguïté avec les variables RETURNS TABLE.
+    -- ========================================================
+
+    UPDATE production_run AS pr
+    SET
+        status = p_to_status,
+        current_stage = p_stage,
+        error_code = CASE
+            WHEN p_to_status = 'ERROR'
+                THEN pr.error_code
+            ELSE NULL
+        END,
+        error_message = CASE
+            WHEN p_to_status = 'ERROR'
+                THEN pr.error_message
+            ELSE NULL
+        END
+    WHERE pr.run_id = p_run_id;
+
+    -- ========================================================
+    -- 7. GARDE RUN <-> STAGE
+    -- ========================================================
+
+    SELECT
+        v.allowed,
+        v.error_code,
+        v.error_message
+    INTO
+        v_consistency_allowed,
+        v_consistency_error_code,
+        v_consistency_error_message
+    FROM validate_run_stage_consistency(p_run_id) AS v;
+
+    IF NOT v_consistency_allowed THEN
+
+        RAISE EXCEPTION
+            USING
+                ERRCODE = 'P0001',
+                MESSAGE =
+                    'RUN_STAGE_INCONSISTENCY: ' ||
+                    v_consistency_error_message;
+
+    END IF;
+
+    -- ========================================================
+    -- 8. EVENEMENT OBLIGATOIRE
+    --
+    -- Cet INSERT appartient à la même transaction.
+    -- S'il échoue, l'UPDATE précédent est rollbacké.
+    -- ========================================================
+
+    INSERT INTO production_run_event (
+        run_id,
+        event_type,
+        from_status,
+        to_status,
+        stage,
+        attempt,
+        event_data
+    )
+    VALUES (
+        p_run_id,
+        p_event_type,
+        v_from_status,
+        p_to_status,
+        p_stage,
+        v_attempt,
+        COALESCE(
+            p_event_data,
+            '{}'::jsonb
+        )
+    );
+
+    -- ========================================================
+    -- 9. RESULTAT
+    -- ========================================================
+
+    RETURN QUERY
+    SELECT
+        TRUE,
+        NULL::VARCHAR(128),
+        ('Transition autorisée : ' ||
+         v_from_status || ' -> ' ||
+         p_to_status)::TEXT,
+        p_to_status;
+
+END;
+$$;
+
+COMMENT ON FUNCTION request_run_transition(
+    VARCHAR,
+    VARCHAR,
+    VARCHAR,
+    VARCHAR,
+    JSONB
+) IS
+'Central state transition engine for Prometheus V2 production runs. Validates transition matrix, Run/Stage consistency and records the transition event atomically.';

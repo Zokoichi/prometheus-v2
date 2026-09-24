@@ -1,0 +1,31 @@
+﻿{
+  "$schema": "prometheus-v2-storage-config-v1",
+  "storage": {
+    "provider": "SEAWEEDFS_S3",
+    "endpoint": "http://prometheus-v2-seaweedfs:8333",
+    "production_bucket": "prometheus-v2-artifacts",
+    "test_bucket": "prometheus-v2-test",
+    "network": "prometheus-v2-network",
+    "addressing_style": "path",
+    "region": "us-east-1"
+  },
+  "credentials": {
+    "source": "environment",
+    "access_key_variable": "SEAWEEDFS_ACCESS_KEY",
+    "secret_key_variable": "SEAWEEDFS_SECRET_KEY"
+  },
+  "artifact_policy": {
+    "production_bucket_is_immutable_by_test_runs": true,
+    "test_bucket_isolated": true,
+    "object_key_is_canonical": true,
+    "sha256_required_for_validated_artifacts": true,
+    "physical_presence_must_be_verified": true
+  },
+  "operations": {
+    "put": true,
+    "head": true,
+    "get": true,
+    "delete": true
+  },
+  "version": 1
+}

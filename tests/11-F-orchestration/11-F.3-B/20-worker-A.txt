@@ -1,0 +1,20 @@
+﻿WORKER: FK-A-STAGE-THEN-EVENT
+EXIT CODE: 0
+
+BEGIN
+SET
+SET
+     step     |   stage_id   | status  
+--------------+--------------+---------
+ A_STAGE_LOCK | STG-11F3B-FK | RUNNING
+(1 row)
+
+ pg_sleep 
+----------
+ 
+(1 row)
+
+INSERT 0 1
+COMMIT
+
+

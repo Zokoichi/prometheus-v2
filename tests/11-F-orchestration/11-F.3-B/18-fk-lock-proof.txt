@@ -1,0 +1,29 @@
+﻿PSQL EXIT CODE: 0
+
+Pager usage is off.
+    section    |         constraint_name         |       table_name       | column_name | referenced_table | referenced_column 
+---------------+---------------------------------+------------------------+-------------+------------------+-------------------
+ FK_CONSTRAINT | production_stage_event_run_fk   | production_stage_event | run_id      | production_run   | run_id
+ FK_CONSTRAINT | production_stage_event_stage_fk | production_stage_event | stage_id    | production_stage | stage_id
+(2 rows)
+
+       section       |            tgname            |       table_name       | trigger_function  |                                                                                                 trigger_definition                                                                                                  
+---------------------+------------------------------+------------------------+-------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ INTERNAL_FK_TRIGGER | RI_ConstraintTrigger_c_20947 | production_stage_event | RI_FKey_check_ins | CREATE CONSTRAINT TRIGGER "RI_ConstraintTrigger_c_20947" AFTER INSERT ON public.production_stage_event FROM production_stage NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION "RI_FKey_check_ins"()
+ INTERNAL_FK_TRIGGER | RI_ConstraintTrigger_c_20948 | production_stage_event | RI_FKey_check_upd | CREATE CONSTRAINT TRIGGER "RI_ConstraintTrigger_c_20948" AFTER UPDATE ON public.production_stage_event FROM production_stage NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION "RI_FKey_check_upd"()
+ INTERNAL_FK_TRIGGER | RI_ConstraintTrigger_c_20952 | production_stage_event | RI_FKey_check_ins | CREATE CONSTRAINT TRIGGER "RI_ConstraintTrigger_c_20952" AFTER INSERT ON public.production_stage_event FROM production_run NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION "RI_FKey_check_ins"()
+ INTERNAL_FK_TRIGGER | RI_ConstraintTrigger_c_20953 | production_stage_event | RI_FKey_check_upd | CREATE CONSTRAINT TRIGGER "RI_ConstraintTrigger_c_20953" AFTER UPDATE ON public.production_stage_event FROM production_run NOT DEFERRABLE INITIALLY IMMEDIATE FOR EACH ROW EXECUTE FUNCTION "RI_FKey_check_upd"()
+(4 rows)
+
+            section             | error_runs | error_stages 
+--------------------------------+------------+--------------
+ CURRENT_PRODUCTION_ERROR_STATE |          0 |            1
+(1 row)
+
+         result         
+------------------------
+ 11-F.3-B-FK-LOCK-PROOF
+(1 row)
+
+
+

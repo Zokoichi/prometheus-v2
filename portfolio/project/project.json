@@ -1,0 +1,48 @@
+﻿{
+  "schema_version": "1.0",
+  "project": {
+    "id": "prometheus-v2",
+    "name": "PROMETHEUS V2",
+    "type": "engineering-project",
+    "status": "active",
+    "visibility": "portfolio-candidate"
+  },
+  "purpose": {
+    "summary": "Système expérimental de production média automatisée et validée par preuves.",
+    "portfolio_rule": "Aucune compétence n'est déclarée sans réalisation, preuve ou validation associée."
+  },
+  "evidence": {
+    "source_of_truth": [
+      "tests/",
+      "contracts/",
+      "scripts/",
+      "config/",
+      "docs/"
+    ],
+    "generated_from_real_work": true,
+    "validation_required": true
+  },
+  "technical": {
+    "stack": [
+      "Docker",
+      "PostgreSQL",
+      "n8n",
+      "SeaweedFS",
+      "PowerShell",
+      "JSON",
+      "SQL"
+    ]
+  },
+  "skills": [],
+  "achievements": [],
+  "validated_tests": [],
+  "technical_decisions": [],
+  "measured_results": [],
+  "limitations": [],
+  "evolution": [],
+  "portfolio": {
+    "publishable": false,
+    "last_generated": null,
+    "evidence_count": 0
+  }
+}

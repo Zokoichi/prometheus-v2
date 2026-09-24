@@ -1,0 +1,24 @@
+﻿WORKER: D-FAIL-STAGE
+EXIT CODE: 0
+
+BEGIN
+SET
+SET
+ pg_sleep 
+----------
+ 
+(1 row)
+
+ROLLBACK
+
+ERROR:  deadlock detected
+DETAIL:  Process 460550 waits for ShareLock on transaction 2419; blocked by process 460549.
+Process 460549 waits for ShareLock on transaction 2420; blocked by process 460550.
+HINT:  See server log for query details.
+CONTEXT:  while locking tuple (1,31) in relation "production_stage"
+SQL statement "SELECT *
+                     FROM public.production_stage ps
+    WHERE ps.stage_id = p_stage_id
+    FOR UPDATE"
+PL/pgSQL function fail_stage_atomically(character varying,character varying,text,jsonb) line 65 at SQL statement
+

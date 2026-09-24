@@ -1,0 +1,69 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "prometheus://contracts/music-asset/v1",
+  "title": "PROMETHEUS V2 Music Asset",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "content_type",
+    "duration_seconds",
+    "sample_rate_hz",
+    "channels",
+    "license"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_type": {
+      "type": "string",
+      "enum": ["audio/wav", "audio/mpeg", "audio/mp4"]
+    },
+    "duration_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "sample_rate_hz": {
+      "type": "integer",
+      "minimum": 8000
+    },
+    "channels": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2
+    },
+    "bpm": {
+      "type": "number",
+      "minimum": 20,
+      "maximum": 300
+    },
+    "mood": {
+      "type": "string"
+    },
+    "intensity": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "loopable": {
+      "type": "boolean"
+    },
+    "license": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "proof_artifact_id": {
+          "type": ["string", "null"]
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

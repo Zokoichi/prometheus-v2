@@ -1,0 +1,309 @@
+CREATE OR REPLACE FUNCTION validate_run_stage_consistency(
+    p_run_id VARCHAR(64)
+)
+RETURNS TABLE (
+    allowed BOOLEAN,
+    error_code VARCHAR(128),
+    error_message TEXT
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    v_run_status VARCHAR(32);
+    v_current_stage VARCHAR(64);
+    v_stage_count INTEGER;
+    v_pending_count INTEGER;
+    v_running_count INTEGER;
+    v_succeeded_count INTEGER;
+    v_error_count INTEGER;
+    v_cancelled_count INTEGER;
+    v_skipped_count INTEGER;
+BEGIN
+
+    SELECT
+        r.status,
+        r.current_stage
+    INTO
+        v_run_status,
+        v_current_stage
+    FROM production_run r
+    WHERE r.run_id = p_run_id;
+
+    IF NOT FOUND THEN
+        RETURN QUERY
+        SELECT
+            FALSE,
+            'RUN_NOT_FOUND'::VARCHAR(128),
+            ('Run inexistant : ' || p_run_id)::TEXT;
+        RETURN;
+    END IF;
+
+    SELECT
+        COUNT(*)::INTEGER,
+        COUNT(*) FILTER (WHERE s.status = 'PENDING')::INTEGER,
+        COUNT(*) FILTER (WHERE s.status = 'RUNNING')::INTEGER,
+        COUNT(*) FILTER (WHERE s.status = 'SUCCEEDED')::INTEGER,
+        COUNT(*) FILTER (WHERE s.status = 'ERROR')::INTEGER,
+        COUNT(*) FILTER (WHERE s.status = 'CANCELLED')::INTEGER,
+        COUNT(*) FILTER (WHERE s.status = 'SKIPPED')::INTEGER
+    INTO
+        v_stage_count,
+        v_pending_count,
+        v_running_count,
+        v_succeeded_count,
+        v_error_count,
+        v_cancelled_count,
+        v_skipped_count
+    FROM production_stage s
+    WHERE s.run_id = p_run_id;
+
+    /*
+     * CREATED
+     *
+     * Etat initial :
+     * des stages PENDING sont normaux.
+     *
+     * Mais un Run CREATED ne doit pas deja avoir :
+     * - des stages SUCCEEDED,
+     * - des stages RUNNING,
+     * - des stages ERROR,
+     * - des stages CANCELLED.
+     */
+    IF v_run_status = 'CREATED' THEN
+
+        IF v_succeeded_count > 0 THEN
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'RUN_STAGE_STATE_MISMATCH'::VARCHAR(128),
+                'Run CREATED mais au moins un stage est deja SUCCEEDED.'::TEXT;
+            RETURN;
+        END IF;
+
+        IF v_running_count > 0 THEN
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'RUN_STAGE_STATE_MISMATCH'::VARCHAR(128),
+                'Run CREATED mais au moins un stage est RUNNING.'::TEXT;
+            RETURN;
+        END IF;
+
+        IF v_error_count > 0 THEN
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'RUN_STAGE_STATE_MISMATCH'::VARCHAR(128),
+                'Run CREATED mais au moins un stage est ERROR.'::TEXT;
+            RETURN;
+        END IF;
+
+        IF v_cancelled_count > 0 THEN
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'RUN_STAGE_STATE_MISMATCH'::VARCHAR(128),
+                'Run CREATED mais au moins un stage est CANCELLED.'::TEXT;
+            RETURN;
+        END IF;
+
+        RETURN QUERY
+        SELECT
+            TRUE,
+            NULL::VARCHAR(128),
+            'Run CREATED coherent avec ses stages.'::TEXT;
+        RETURN;
+    END IF;
+
+    /*
+     * VALIDATED
+     *
+     * Tous les stages existants doivent etre termines :
+     * SUCCEEDED ou SKIPPED.
+     */
+    IF v_run_status = 'VALIDATED' THEN
+
+        IF v_stage_count = 0 THEN
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'NO_STAGES'::VARCHAR(128),
+                'Run VALIDATED sans aucun stage.'::TEXT;
+            RETURN;
+        END IF;
+
+        IF v_pending_count > 0
+           OR v_running_count > 0
+           OR v_error_count > 0
+           OR v_cancelled_count > 0 THEN
+
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'RUN_STAGE_STATE_MISMATCH'::VARCHAR(128),
+                'Run VALIDATED mais des stages ne sont pas dans un etat terminal valide.'::TEXT;
+            RETURN;
+        END IF;
+
+        RETURN QUERY
+        SELECT
+            TRUE,
+            NULL::VARCHAR(128),
+            'Run VALIDATED coherent avec ses stages.'::TEXT;
+        RETURN;
+    END IF;
+
+    /*
+     * ASSET_READY
+     * AUDIO_READY
+     * COMPOSED
+     * RENDERED
+     * QC_PASSED
+     * READY_TO_PUBLISH
+     *
+     * Pour ces etats, aucun stage ne doit etre PENDING,
+     * RUNNING ou ERROR.
+     */
+    IF v_run_status IN (
+        'ASSET_READY',
+        'AUDIO_READY',
+        'COMPOSED',
+        'RENDERED',
+        'QC_PASSED',
+        'READY_TO_PUBLISH'
+    ) THEN
+
+        IF v_stage_count = 0 THEN
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'NO_STAGES'::VARCHAR(128),
+                ('Run ' || v_run_status ||
+                 ' sans aucun stage.')::TEXT;
+            RETURN;
+        END IF;
+
+        IF v_pending_count > 0
+           OR v_running_count > 0
+           OR v_error_count > 0 THEN
+
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'RUN_STAGE_STATE_MISMATCH'::VARCHAR(128),
+                ('Run ' || v_run_status ||
+                 ' mais des stages restent PENDING, RUNNING ou ERROR.')::TEXT;
+            RETURN;
+        END IF;
+
+        RETURN QUERY
+        SELECT
+            TRUE,
+            NULL::VARCHAR(128),
+            ('Run ' || v_run_status ||
+             ' coherent avec ses stages.')::TEXT;
+        RETURN;
+    END IF;
+
+    /*
+     * PUBLISHED
+     *
+     * Publication est terminale.
+     * Aucun stage ne peut rester actif ou en erreur.
+     */
+    IF v_run_status = 'PUBLISHED' THEN
+
+        IF v_stage_count = 0 THEN
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'NO_STAGES'::VARCHAR(128),
+                'Run PUBLISHED sans aucun stage.'::TEXT;
+            RETURN;
+        END IF;
+
+        IF v_pending_count > 0
+           OR v_running_count > 0
+           OR v_error_count > 0 THEN
+
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'RUN_STAGE_STATE_MISMATCH'::VARCHAR(128),
+                'Run PUBLISHED mais des stages ne sont pas termines correctement.'::TEXT;
+            RETURN;
+        END IF;
+
+        RETURN QUERY
+        SELECT
+            TRUE,
+            NULL::VARCHAR(128),
+            'Run PUBLISHED coherent avec ses stages.'::TEXT;
+        RETURN;
+    END IF;
+
+    /*
+     * ERROR
+     *
+     * Un Run ERROR doit avoir au moins un stage ERROR.
+     */
+    IF v_run_status = 'ERROR' THEN
+
+        IF v_error_count = 0 THEN
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'RUN_ERROR_WITHOUT_STAGE_ERROR'::VARCHAR(128),
+                'Run ERROR mais aucun stage n est ERROR.'::TEXT;
+            RETURN;
+        END IF;
+
+        RETURN QUERY
+        SELECT
+            TRUE,
+            NULL::VARCHAR(128),
+            'Run ERROR coherent avec au moins un stage ERROR.'::TEXT;
+        RETURN;
+    END IF;
+
+    /*
+     * CANCELLED
+     *
+     * Un Run CANCELLED ne doit plus avoir de stage RUNNING.
+     */
+    IF v_run_status = 'CANCELLED' THEN
+
+        IF v_running_count > 0 THEN
+            RETURN QUERY
+            SELECT
+                FALSE,
+                'RUN_CANCELLED_WITH_RUNNING_STAGE'::VARCHAR(128),
+                'Run CANCELLED mais un stage est encore RUNNING.'::TEXT;
+            RETURN;
+        END IF;
+
+        RETURN QUERY
+        SELECT
+            TRUE,
+            NULL::VARCHAR(128),
+            'Run CANCELLED coherent avec ses stages.'::TEXT;
+        RETURN;
+    END IF;
+
+    /*
+     * Etat Run inconnu.
+     *
+     * La contrainte SQL actuelle devrait deja l'interdire,
+     * mais le guard reste defensif.
+     */
+    RETURN QUERY
+    SELECT
+        FALSE,
+        'UNSUPPORTED_RUN_STATUS'::VARCHAR(128),
+        ('Statut Run non gere par le guard : ' || v_run_status)::TEXT;
+END;
+$$;
+
+COMMENT ON FUNCTION validate_run_stage_consistency(VARCHAR)
+IS
+'Guard de coherence entre production_run et production_stage. Detecte les combinaisons de statuts incompatibles avant orchestration ou transition.';
